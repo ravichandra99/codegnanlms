@@ -1,0 +1,38 @@
+{% extends "registration/registration_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "" %}{% endblock %}
+
+{% block content %}
+ <section class="container mt-5">
+ <div class="row details-form">
+    
+      <div class="col-md-6">
+     
+<form class="p-3 p-lg-4" method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+     {% include 'bs4_form_label.html' with form=form %}
+    <input class="btn  btn-primary btn-block form-button" type="submit" value="{% trans 'Update' %}" />
+    <input class="btn  btn-primary btn-block form-button" type="hidden" name="next" value="{{ next }}" />
+    
+  
+</form>
+
+
+  </div>
+     <div class="col-md-6 regbg text-center">
+        <h3 class="logintext">Edit Profile</h3>
+        <img class="regimg" src="{% static 'img/edit001.png' %}" class="img-fluid"
+            alt="Responsive image">
+           <p class="editpar mt-3">
+Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin, lorem quis bibendum auci elit consequat is simply free text available in the psutis sem nibh id eis sed odio sit amet.Lorem ipsum gravida nibh vel velit auctor aliquetnean sollicitudin.</p>
+      </div>
+  </div>
+  </section>
+{% endblock %}
+
+
+{% comment %}
+
+{% endcomment %}

@@ -1,0 +1,31 @@
+{% extends "registration/registration_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Activation email sent" %}{% endblock %}
+
+{% block content %}
+<section>
+	<div class="container">
+		<div class="row mt-5 text-center">
+			<div class="col-12">
+<img class="regimg mb-3" src="{% static 'img/emailicon002.png' %}" class="img-fluid"
+            alt="Responsive image">
+<p class="allmsg">
+{% trans "Please check your email to complete the registration process." %}
+</p>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}
+
+
+{% comment %}
+**registration/registration_complete.html**
+
+Used after successful completion of the registration form. This
+template has no context variables of its own, and should simply inform
+the user that an email containing account-activation information has
+been sent.
+{% endcomment %}

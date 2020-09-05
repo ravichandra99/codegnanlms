@@ -1,0 +1,7 @@
+{% load static %} {% csrf_token %}
+<form action="http://127.0.0.1:8000/payment/success?order_id={{order_id}}/" method="POST">
+	<script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_wv0ntAoxdPAhGJ"
+		data-amount="{{amount}}" data-currency="INR" data-order_id="{{order_id}}" data-buttontext="Make Payment"
+		data-name="Codegnan" data-description="{{description}}" data-image="{% static 'img/razlogo.jpg' %}"
+		data-prefill.name="{{name}}" data-theme.color="#3383FF"></script>
+</form>

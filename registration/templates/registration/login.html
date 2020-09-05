@@ -1,0 +1,106 @@
+{% extends "registration/registration_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Log in" %}{% endblock %}
+
+{% block content %}
+<section class="container mt-5">
+    <div class="row details-form">
+        <div class="col-md-6 regbg text-center">
+            <h3 class="logintext">Welcome to CodeGnan</h3>
+            <img class="regimg" src="{% static 'img/login001.png' %}" class="img-fluid" alt="Responsive image">
+
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center mt-4 py-2 formHead">LET'S GET STARTED</h3>
+            <form class="p-3 p-lg-4" method="post" action="" id="loginModal">
+                {% csrf_token %}
+                {% include 'bs4_form_label.html' with form=form %}
+                <input class="btn  btn-primary btn-block form-button" type="submit" value="{% trans 'Log in' %}" />
+                <input class="btn  btn-primary btn-block form-button" type="hidden" name="next" value="{{ next }}" />
+                <p class="mt-4">{% trans "Forgot your password?" %} <a
+                        href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>.</p>
+                <p>{% trans "Don't have an account?" %} <a href="{% url 'lms:signup' %}" 
+                         class="reg-button">{% trans "Register" %}</a>.
+                        <!-- <button
+                         class="reg-button">{% trans "Register" %}</button> -->
+                    </p>
+                    
+
+                    </div>
+
+            </form>
+
+
+        </div>
+
+    </div>
+</section>
+<!-- Registration Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Register Now</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $('.reg-button').on('click', function () {
+      // e.preventDefault();
+      $('.modal-body').load("{% url 'lms:signup' %}", function () {
+        $('#registerModal').modal({ show: true });
+      });
+    });
+     $(function () {
+      $('#registerModal').on('submit', function (e) {
+        $.ajax({
+          url: "{% url 'lms:signup' %}",
+          type: 'POST',
+          data: $('#registerModal').serialize(),
+          success: function (data) {
+            window.location.href = "{% url 'payment:payment' %}";
+            alert('successfully submitted')
+          }
+        });
+      });
+    });
+</script>
+{% endblock %}
+
+
+{% comment %}
+**registration/login.html**
+
+It's your responsibility to provide the login form in a template called
+registration/login.html by default. This template gets passed four
+template context variables:
+
+``form``
+A Form object representing the login form. See the forms
+documentation for more on Form objects.
+
+``next``
+The URL to redirect to after successful login. This may contain a
+query string, too.
+
+``site``
+The current Site, according to the SITE_ID setting. If you don't
+have the site framework installed, this will be set to an instance
+of RequestSite, which derives the site name and domain from the
+current HttpRequest.
+
+``site_name``
+An alias for site.name. If you don't have the site framework
+installed, this will be set to the value of
+request.META['SERVER_NAME']. For more on sites, see The
+"sites" framework.
+{% endcomment %}

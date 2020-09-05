@@ -1,0 +1,1931 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Page</title>
+    <link rel="stylesheet" href="{% static 'sass/style.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+{% endblock %}
+ {% block content %}
+    
+    <!-- Intro Section  -->
+    <section class="course-intro py-2">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Breadcrumbs  -->
+          <div class="col-12 breadcrumb-column">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb course-breadcrumb px-0 pb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Certifications</a></li>
+                <!-- Page Heading One  -->
+                <li class="breadcrumb-item active" aria-current="page">
+                  Data Science Certification
+                </li>
+              </ol>
+            </nav>
+          </div>
+
+          <!-- Rating  -->
+          <div class="col-12 py-2 py-lg-0">
+            <h1>{{object.title}}</h1>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-7 text-justify py-2 align-self-center">
+            <div class="d-flex flex-column flex-md-row">
+              <div class="flex-row px-0">
+                <i class="fas fa-star star-checked"></i
+                ><i class="fas fa-star star-checked"></i
+                ><i class="fas fa-star star-checked"></i
+                ><i class="fas fa-star star-checked"></i
+                ><i class="fas fa-star star-checked"></i>
+              </div>
+              <div class="flex-row px-0 px-md-2">
+                <h6 class="mt-1">(4.9/5) 1300+ Students Enrolled</h6>
+              </div>
+            </div>
+            <p>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here,
+              content here', making it look like readable English.
+              <br />
+            </p>
+            <p>
+              Many desktop publishing packages and web page editors now use
+              Lorem Ipsum as their default model text, and a search for 'lorem
+              ipsum' will uncover many web sites still in their infancy.t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+            </p>
+            <button class="btn btn-lg enroll-btn" type="button">
+              Get Started Now
+            </button>
+          </div>
+
+          <div class="col-lg-5 py-2">
+            <!-- 16:9 aspect ratio Video Embed-->
+            <div class="embed-responsive embed-responsive-16by9 intro-video">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/fXPSWyHtu6U"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                class="embed-responsive-item"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="d-flex flex-column flex-md-row mt-4 mb-2 py-2 px-1 intro-certification justify-content-around">
+              <div class="px-1 align-self-center">
+                <h6 style="color:black">Get Certified From:</h6>
+              </div>
+              <div class="px-2 certification-partner align-self-center">
+                <img src="img/hp-enterprise-logo.png" alt="" class="px-2"/>
+                <img src="img/microsoft-logo.png" alt="" class="px-2"/>
+              </div>
+              <!-- <div class="px-2 certification-partner align-self-center">
+                
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Navigation  -->
+    <nav class="navbar navbar-expand-lg course-menu">
+      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#courseNavigation" aria-controls="courseNavigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon hamburger-icon"><span class="dark-blue-text"><i
+          class="fas fa-bars fa-1x"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="courseNavigation">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item m-1">
+            <a href="#courseOverview" class="nav-link">Overview</a>
+          </li>
+          <li class="nav-item m-1">
+            <a href="#keyFeatures" class="nav-link">Key Features</a>
+          </li>
+          <li class="nav-item m-1">
+            <a href="#onlineClassroom" class="nav-link">Upcoming Batches</a>
+          </li>
+          <li class="nav-item m-1">
+            <a href="#courseCurriculum" class="nav-link">Curriculum</a>
+          </li>
+          <li class="nav-item m-1">
+            <a href="#desktopProject" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item m-1">
+            <a href="#partners" class="nav-link">Testimonials</a>
+          </li>
+          <li class="nav-item m-1">
+            <a href="#faqSection" class="nav-link">FAQs</a>
+          </li>
+        </ul>
+             
+      </div>
+      <form class="form-inline">
+        <button class="btn enroll-btn">Enroll Now</button>
+      </form>  
+    </nav>
+
+    <!-- Course Details Section  -->
+    <section class="course-view " id="courseOverview">
+      <div class="container-fluid">
+        <div class="row py-3">
+          <div class="col-12 col-lg-9">
+            <h2 class="text-center text-md-left py-3">Course Overview</h2>
+            <p class="text-justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit assumenda optio quas reprehenderit deleniti possimus alias mollitia rerum? Natus laudantium facere nobis. Assumenda dolorum veritatis minus temporibus voluptatem quia perspiciatis explicabo minima error tempora! Error maiores recusandae fugiat ipsa nobis, quos iste et magnam, culpa eius cum! Autem, amet. Sunt, qui cum dolor ad aliquid facilis quidem voluptas explicabo asperiores voluptatum suscipit reprehenderit! Enim voluptates eligendi hic, vitae consectetur corrupti sit delectus nobis necessitatibus minus sequi accusamus magni. Officiis, placeat.Sunt, qui cum dolor ad aliquid facilis quidem voluptas explicabo asperiores voluptatum suscipit reprehenderit! Enim voluptates eligendi hic, vitae consectetur corrupti sit delectus nobis necessitatibus minus sequi accusamus magni. Officiis, placeat.Sunt, qui cum dolor ad aliquid facilis quidem voluptas explicabo asperiores voluptatum suscipit reprehenderit! Enim voluptates eligendi hic, vitae consectetur corrupti sit delectus nobis necessitatibus minus sequi accusamus magni. Officiis, placeat.
+            </p>
+          </div>
+          <div class="d-none d-lg-block col-12 col-lg-3 form-container pt-5">
+              <form action="" class="p-3 p-lg-4 details-form">
+                <h5 class="text-center py-2">GET MORE INFORMATION</h5>
+                <div class="form-group">
+                  <input class="form-control" type="text" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="number" placeholder="Phone Number">
+                </div>
+                <button class="btn btn-block form-button" type="submit">Submit</button>
+              </form>        
+          </div>
+          <div class="col-12 col-lg-9">
+            <div class="col-md-12 py-2 py-lg-0" id="keyFeatures">
+              <h2 class="text-center text-lg-left py-3">Key Features</h2>
+            </div>
+            <div class="row">
+              <div class="col-6 col-lg-3 text-center pb-1">
+                <img src="img/icons/instructor-led.jpg" alt="" class="img-fluid">
+                <p class="text-center align-self-center px-2">232 Hrs Instructor Led Training</p>
+              </div>
+              <div class="col-6 col-lg-3 text-center pb-1">
+                <img src="img/icons/video.jpg" alt="" class="img-fluid">
+                <p class="align-self-center px-2">Self-Paced Videos</p>
+              </div>
+              <div class="col-6 col-lg-3 text-center pb-1">
+                <img src="img/icons/exercises.jpg" alt="" class="img-fluid">
+                <p class="align-self-center px-2">Exercises & Projects</p>
+              </div>
+              <div class="col-6 col-lg-3 text-center pb-1">
+                <img src="img/icons/certification.jpg" alt="" class="img-fluid">
+                <p class="align-self-center px-2">Certification & Job Assistance</p>
+              </div>
+              <div class="col-6 col-lg-3 text-center pb-1">
+                <img src="img/icons/flexible-schedule.jpg" alt="" class="img-fluid">
+                <p class="align-self-center px-2">Flexible Schedule</p>
+              </div>
+              <div class="col-6 col-lg-3 text-center pb-1">
+                <img src="img/icons/upgrade.jpg" alt="" class="img-fluid">
+                <p class="align-self-center px-2">Lifetime Access & Upgrade</p>
+              </div>
+              <div class="col-6 col-lg-3 text-center pb-1">
+                <img src="img/icons/support.jpg" alt="" class="img-fluid">
+                <p class="align-self-center px-2">24/7 Lifetime Support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>            
+    </section>
+
+    <!-- Training Options Section  -->
+    <section class="container-fluid training-options" id="trainingOptions">
+      <!-- Self paced and Heading  -->
+      <div class="row px-2 mx-2">
+        <div class="col-12">
+          <h2 class="text-center py-3">Training Options</h2>
+        </div>
+
+        <div class="self-paced col-12">
+
+          <div class="col-12">
+            <h4 class="text-lg-left">
+              Self Paced Training
+            </h4>
+          </div>
+
+          <div class="col-12 col-lg-12">
+
+            <div class="row justify-content-lg-center px-2">
+              <div class="col-12 col-lg-3">                
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> 60Hrs E-Learning Videos</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> Lifetime Access</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> 24/7 Support</p>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-3">
+                <div class="row ml-auto justify-content-center justify-content-lg-end">
+                  <div class="col-12 col-lg-6">
+                    <p class="text-center text-lg-right training-price"><i class="fas fa-rupee-sign align-self-center"></i> 50,000</p>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <button class="btn btn-block enroll-btn">Enroll Now</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <!-- Online Education Mobile  -->
+      <div class="row online-education-mobile self-paced mx-2">
+
+        <div class="col-12 px-3">
+          <h4 class="text-lg-left">
+            Online Classroom
+          </h4>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div class="">
+            <table class="table online-schedule">
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion" id="trainingRadion1" value="batch1"></td>
+                  <td>6th June</td>
+                  <td>MON-FRI</td>
+                  <td>07:00 AM - 10:00 AM</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion" id="trainingRadion2" value="batch2" checked></td>
+                  <td>13th June</td>
+                  <td>MON-FRI</td>
+                  <td>07:00 AM - 10:00 AM</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion" id="trainingRadion3" value="batch3"></td>
+                  <td>20th June</td>
+                  <td>MON-FRI</td>
+                  <td>07:00 AM - 10:00 AM</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion" id="trainingRadion4" value="batch4"></td>
+                  <td>4th July</td>
+                  <td>MON-FRI<p><small>Weekend Batches</small></p></td>
+                  <td>07:00 AM - 10:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>          
+        </div>
+
+        <div class="col-12 col-lg-4 text-center">
+          <h6>Course Price</h6>
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center px-2 online-training-price"><i class="fas fa-rupee-sign align-self-center pt-1"></i> 25,000</p>             
+            </div>
+            <div class="col-12">
+              <p class="text-center px-2 online-price-disabled"><s><i class="fas fa-rupee-sign align-self-center pt-1" style="color:grey"></i> 50,000</s></p>             
+            </div>
+            <div class="col-12">
+              <p class="text-center px-2 pt-1"><span style="color:#02429f; font-size: 18px;">50% Off</span>, Expires in 5 days!</p>             
+            </div>
+            <div class="col-12">
+              <div class="text-center">
+                <button class="btn enroll-btn mx-auto online-edu-btn" type="submit">Enroll Now</button>
+              </div>              
+            </div>
+          </div>
+          </div>
+          
+      </div>
+      <!-- Corporate Training Mobile  -->
+      <div class="row corporate-training-mobile px-2 mx-2 mb-5">
+        <div class="self-paced col-12">
+
+          <div class="col-12 p-2">
+            <h4 class="text-lg-left">
+              Corporate Training
+            </h4>
+          </div>
+  
+          <div class="col-12 col-lg-12">
+  
+            <div class="row justify-content-lg-center px-2">
+              <div class="col-12 col-lg-3">                
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> Customized Learning</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> 24/7 Support</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> Strong Reporting</p>
+                </div>
+              </div>
+  
+              <div class="col-12 col-lg-3">
+                <div class="row ml-auto justify-content-center justify-content-lg-end">
+                  <div class="col-12 col-lg-6">
+                    <button class="btn btn-block enroll-btn">Contact Us</button>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Online Classroom  -->
+    <section class="container-fluid online-classroom mt-5" id="onlineClassroom">
+      <div class="row online-education mx-lg-3">
+
+        <div class="col-12 px-3">
+          <h4 class="text-lg-left">
+            Online Classroom
+          </h4>
+        </div>
+        <div class="col-12 col-lg-8">
+          <div class="m-2">
+            <table class="table online-schedule">
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion" id="trainingRadion1" value="batch1"></td>
+                  <td>6th June</td>
+                  <td>MON-FRI</td>
+                  <td>07:00 AM - 10:00 AM</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion" id="trainingRadion2" value="batch2"></td>
+                  <td>13th June</td>
+                  <td>MON-FRI</td>
+                  <td>07:00 AM - 10:00 AM</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion" id="trainingRadion3" value="batch3"></td>
+                  <td>20th June</td>
+                  <td>MON-FRI</td>
+                  <td>07:00 AM - 10:00 AM</td>
+                </tr>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion" id="trainingRadion4" value="batch4"></td>
+                  <td>4th July</td>
+                  <td>MON-FRI<p><small>Weekend Batches</small></p></td>
+                  <td>07:00 AM - 10:00 AM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>          
+        </div>
+
+        <div class="col-12 col-lg-4 text-center">
+          <h6>Course Price</h6>
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center px-2 online-training-price"><i class="fas fa-rupee-sign align-self-center pt-3"></i> 25,000</p>             
+            </div>
+            <div class="col-12">
+              <p class="text-center px-2 online-price-disabled"><s><i class="fas fa-rupee-sign align-self-center pt-3" style="color:grey"></i> 50,000</s></p>             
+            </div>
+            <div class="col-12">
+              <p class="text-center px-2 pt-3"><span style="color:#02429f; font-size: 18px;">50% Off</span>, Expires in 5 days!</p>             
+            </div>
+            <div class="col-12">
+              <div class="text-center">
+                <button class="btn enroll-btn mx-auto online-edu-btn" type="button">Enroll Now</button>
+              </div>              
+            </div>
+          </div>
+          </div>
+          
+      </div>      
+    </section>
+
+    <!-- Corporate Training  -->
+    <section class="container-fluid corporate-training px-4 mt-4" id="corporateTraining">
+      <div class="row px-2 mx-2">
+        <div class="self-paced col-12">
+
+          <div class="col-12 p-2">
+            <h4 class="text-lg-left">
+              Corporate Training
+            </h4>
+          </div>
+  
+          <div class="col-12 col-lg-12">
+  
+            <div class="row justify-content-lg-center px-2">
+              <div class="col-12 col-lg-3">                
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> Customized Learning</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> 24/7 Support</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-3">
+                <div class="row justify-content-lg-start pt-3">
+                  <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> Strong Reporting</p>
+                </div>
+              </div>
+  
+              <div class="col-12 col-lg-3">
+                <div class="row ml-auto justify-content-center justify-content-lg-end">
+                  <div class="col-12 col-lg-6">
+                    <button class="btn btn-block enroll-btn">Contact Us</button>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+  
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Course Curriculum  -->
+    <section class="container-fluid curriculum mt-4" id="courseCurriculum">
+      <!-- Curriculum  -->
+      <div class="row">
+        <div class="col-12 col-lg-9 py-3 mb-3">
+          <h2 class="text-center text-lg-left py-0">Data Science Course Curriculum</h2>
+        </div>
+
+        <div class="col-12 col-lg-9">
+          <div id="curriculumAccordion">
+
+            <!-- Title 1  -->
+            <div class="card curriculum-card">
+              <div class="card-header panel-title" id="c-heading1" onclick="toggleCurriculum()"> 
+                  
+                <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#curriculumAccordion" href="#cDescription1" aria-expanded="false" aria-controls="cDescription1">
+                  <div class="row">
+                    <div class="col-10 col-md-11">
+                      <h6>
+                        Machine Learning Course For Data Science
+                      </h6>
+                    </div>
+                    <div class="col-2 col-md-1 mr-auto">
+                      <!-- Closed Card  -->
+                      <i class="toggle-curriculum fas fa-plus-circle"></i>
+                    </div> 
+                  </div>
+                                     
+                </a>
+              </div>
+              <!-- Description 1  -->
+              <div id="cDescription1" class="panel-collapse collapse show" aria-labelledby="c-heading1" data-parent="#curriculumAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem accusantium distinctio culpa, vero, at esse eaque voluptatibus sapiente necessitatibus praesentium molestiae unde obcaecati aliquam eveniet quas repellendus ex soluta, voluptas dignissimos nam! Veritatis blanditiis enim vitae facilis atque eum aliquam.
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title 2 -->
+            <div class="card curriculum-card">
+              <div class="card-header panel-title" id="c-heading2" onclick="toggleCurriculum()"> 
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#curriculumAccordion" href="#cDescription2" aria-expanded="false" aria-controls="cDescription2">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Machine Learning Course For Data Science
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+              </div>
+              <!-- Description 2  -->
+              <div id="cDescription2" class="panel-collapse collapse" aria-labelledby="c-heading2" data-parent="#curriculumAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem accusantium distinctio culpa, vero, at esse eaque voluptatibus sapiente necessitatibus praesentium molestiae unde obcaecati aliquam eveniet quas repellendus ex soluta, voluptas dignissimos nam! Veritatis blanditiis enim vitae facilis atque eum aliquam.
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title 3 -->
+            <div class="card curriculum-card">
+              <div class="card-header panel-title" id="c-heading3" onclick="toggleCurriculum()"> 
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#curriculumAccordion" href="#cDescription3" aria-expanded="false" aria-controls="cDescription3">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Deep Learning Course For Data Science
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 3  -->
+              <div id="cDescription3" class="panel-collapse collapse" aria-labelledby="c-heading3" data-parent="#curriculumAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem accusantium distinctio culpa, vero, at esse eaque voluptatibus sapiente necessitatibus praesentium molestiae unde obcaecati aliquam eveniet quas repellendus ex soluta, voluptas dignissimos nam! Veritatis blanditiis enim vitae facilis atque eum aliquam.
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title 4  -->
+            <div class="card curriculum-card">
+              <div class="card-header panel-title" id="c-heading4" onclick="toggleCurriculum()"> 
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#curriculumAccordion" href="#cDescription4" aria-expanded="false" aria-controls="cDescription4">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          R Programming Course For Data Science
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 4  -->
+              <div id="cDescription4" class="panel-collapse collapse" aria-labelledby="c-heading4" data-parent="#curriculumAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem accusantium distinctio culpa, vero, at esse eaque voluptatibus sapiente necessitatibus praesentium molestiae unde obcaecati aliquam eveniet quas repellendus ex soluta, voluptas dignissimos nam! Veritatis blanditiis enim vitae facilis atque eum aliquam.
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title 5  -->
+            <div class="card curriculum-card">
+              <div class="card-header panel-title" id="c-heading5" onclick="toggleCurriculum()"> 
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#curriculumAccordion" href="#cDescription5" aria-expanded="false" aria-controls="cDescription5">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          NLP Course For Data Science
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 5  -->
+              <div id="cDescription5" class="panel-collapse collapse" aria-labelledby="c-heading5" data-parent="#curriculumAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem accusantium distinctio culpa, vero, at esse eaque voluptatibus sapiente necessitatibus praesentium molestiae unde obcaecati aliquam eveniet quas repellendus ex soluta, voluptas dignissimos nam! Veritatis blanditiis enim vitae facilis atque eum aliquam.
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, qui.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+           <!-- About Course  -->
+          <h2 class="text-center text-lg-left py-3 mt-4">About Data Science Certification Program</h2>
+          <div id="aboutAccordion">
+
+            <!-- Title 1  -->
+            <div class="card about-course-card">
+              <div class="card-header panel-title" id="a-heading1" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#aDescription1" aria-expanded="true" aria-controls="aDescription1">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Opened Card  -->
+                        <i class="toggle-curriculum fas fa-minus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="aDescription1" class="panel-collapse collapse show" aria-labelledby="a-heading1" data-parent="#aboutAccordion">
+                <div class="card-body">
+                  <p>
+                    Following aspirants can opt for Data Science Certification Course:
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Programming Enthusisats.</li>
+                    <li>Project Maanagers</li>
+                    <li>Software Developers</li>
+                    <li>Software Engineers</li>
+                    <li>Technical Lead Architects</li>
+                    <li>Mathematicians</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title 2 -->
+            <div class="card about-course-card">
+              <div class="card-header panel-title" id="a-heading2" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#aDescription2" aria-expanded="false" aria-controls="aDescription2">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          What are the pre-requisites for learning Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-minus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 2  -->
+              <div id="aDescription2" class="panel-collapse collapse" aria-labelledby="a-heading2" data-parent="#aboutAccordion">
+                <div class="card-body">
+                  <p>
+                    Following aspirants can opt for Data Science Certification Course:
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Programming Enthusisats.</li>
+                    <li>Project Maanagers</li>
+                    <li>Software Developers</li>
+                    <li>Software Engineers</li>
+                    <li>Technical Lead Architects</li>
+                    <li>Mathematicians</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title 3 -->
+            <div class="card about-course-card">
+              <div class="card-header panel-title" id="a-heading3" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#aDescription3" aria-expanded="false" aria-controls="aDescription3">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          What is the future of Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-minus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 3  -->
+              <div id="aDescription3" class="panel-collapse collapse" aria-labelledby="a-heading3" data-parent="#aboutAccordion">
+                <div class="card-body">
+                  <p>
+                    Following aspirants can opt for Data Science Certification Course:
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Programming Enthusisats.</li>
+                    <li>Project Maanagers</li>
+                    <li>Software Developers</li>
+                    <li>Software Engineers</li>
+                    <li>Technical Lead Architects</li>
+                    <li>Mathematicians</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title 4  -->
+            <div class="card about-course-card">
+              <div class="card-header panel-title" id="a-heading4" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#aDescription4" aria-expanded="false" aria-controls="aDescription4">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          What will you become afte successful completion of Data Science Course?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-minus-circle"></i>
+                      </div> 
+                    </div>                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 4  -->
+              <div id="aDescription4" class="panel-collapse collapse" aria-labelledby="a-heading4" data-parent="#aboutAccordion">
+                <div class="card-body">
+                  <p>
+                    Following aspirants can opt for Data Science Certification Course:
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Programming Enthusisats.</li>
+                    <li>Project Maanagers</li>
+                    <li>Software Developers</li>
+                    <li>Software Engineers</li>
+                    <li>Technical Lead Architects</li>
+                    <li>Mathematicians</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Title 5  -->
+            <div class="card about-course-card">
+              <div class="card-header panel-title" id="a-heading5" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#aDescription5" aria-expanded="false" aria-controls="aDescription5">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Why you should learn Data Science? and Advantages?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-minus-circle"></i>
+                      </div> 
+                    </div>                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 5  -->
+              <div id="aDescription5" class="panel-collapse collapse" aria-labelledby="a-heading5" data-parent="#aboutAccordion">
+                <div class="card-body">
+                  <p>
+                    Following aspirants can opt for Data Science Certification Course:
+                  </p>
+                  <p><strong>Topics Covered</strong></p>
+                  <ul>
+                    <li>Programming Enthusisats.</li>
+                    <li>Project Maanagers</li>
+                    <li>Software Developers</li>
+                    <li>Software Engineers</li>
+                    <li>Technical Lead Architects</li>
+                    <li>Mathematicians</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="d-none d-lg-block col-12 col-lg-3 form-container-course">
+          <form action="" class="p-3 p-lg-4 details-form">
+            <h5 class="text-center py-2">GET MORE INFORMATION</h5>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="number" placeholder="Phone Number">
+            </div>
+            <button class="btn btn-block form-button" type="submit">Submit</button>
+          </form> 
+        </div>
+      </div>
+
+      
+
+    </section>
+
+    <!-- Course Projects Section  -->
+      <!-- Mobile Version  -->
+    <section id="courseProjects" class="container-fluid pb-5 pb-md-1 mt-4">
+
+      <!-- Mobile View  -->
+      <div class="row py-3">
+        <div class="col">
+          <h4 class="text-center text-lg-left">Projects In This Program</h4>
+        </div>
+      </div>
+      <div class="course-projects">
+        <div class="hs">
+          <div class="card project-card full">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+          </div>
+          <div class="card project-card full">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+          </div>
+          <div class="card project-card full">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+          </div>
+          <div class="card project-card full">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+        </div>        
+      </div>            
+    </section>
+
+      <!-- Desktop Version  -->
+    <section class="container-fluid desktop-project" id="desktopProject">
+      
+      <div class="row flex-row flex-nowrap">
+
+        <div class="col-4">
+
+          <div class="card project-card">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-4">
+
+          <div class="card project-card">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-4">
+
+          <div class="card project-card">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-4">
+
+          <div class="card project-card">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-4">
+
+          <div class="card project-card">
+            <div class="card-header project-card-head">
+              <p>Project 1</p>
+              <h6>Project Name</h6>
+            </div>
+            <div class="card-body project-card-body">
+              <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse blanditiis dignissimos quibusdam rem excepturi minima alias debitis ratione perferendis? Assumenda eligendi harum tenetur provident sunt maxime, excepturi quo quod deleniti, ab aperiam perferendis placeat voluptates dicta consequuntur nisi, quaerat beatae!</p>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certifications Section  -->
+    <!-- Title  -->
+    <section class="container-fluid mt-5" id="certificationHeading">
+      <div class="row py-3">
+        <div class="col-12">
+          <h3 class="text-center">Data Science Certifications</h3>
+        </div>
+      </div>
+    </section>
+    <!-- MS Certification  -->
+    <section class="section container-fluid my-2 pb-2" id="certifications">
+      <div class="row px-lg-5 ms-certification mx-0 mx-lg-5">
+        <div class="col-12 col-lg-8 align-self-center">
+          <h4 class="py-2">Microsoft Certification</h4>
+          <h5>What will be the cost of MTA Certification?</h5>
+          <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptates explicabo beatae assumenda, quae molestiae consequuntur cupiditate fuga! Quasi veritatis quod incidunt adipisci dolorum necessitatibus vel illo doloribus porro iusto?</p>
+          <h5>Can I get a job with Data Science MTA Certification?</h5>
+          <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptates explicabo beatae assumenda, quae molestiae consequuntur cupiditate fuga! Quasi veritatis quod incidunt adipisci dolorum necessitatibus vel illo doloribus porro iusto?</p>
+        </div>
+        <div class="col-12 col-lg-4">
+          <img src="img/sample-certificate1.jpg" alt="" class="img-fluid justify-content-center mx-auto d-block">
+        </div>
+      </div>
+    </section>
+    <!-- HPE Certification  -->
+    <section class="section container-fluid my-2 pb-2 mb-4" id="certificationsHP">
+      <div class="row px-lg-5 hp-certification mx-0 mx-lg-5">
+        <div class="col-12 col-lg-8 align-self-center">
+          <h4 class="py-2">HPE Certification</h4>
+          <h5>What will be the cost of MTA Certification?</h5>
+          <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptates explicabo beatae assumenda, quae molestiae consequuntur cupiditate fuga! Quasi veritatis quod incidunt adipisci dolorum necessitatibus vel illo doloribus porro iusto?</p>
+          <h5>Can I get a job with Data Science MTA Certification?</h5>
+          <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptates explicabo beatae assumenda, quae molestiae consequuntur cupiditate fuga! Quasi veritatis quod incidunt adipisci dolorum necessitatibus vel illo doloribus porro iusto?</p>
+        </div>
+        <div class="col-12 col-lg-4">
+          <img src="img/hp-certification.png" alt="" class="img-fluid justify-content-center mx-auto d-block">
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainers Section  -->
+    <section class="container-fluid my-2" id="trainersSection">
+      <div class="row mx-3 py-3 pt-4">
+        <div class="col">
+          <h3 class="text-center">Program Trainers</h3>
+        </div>
+        <!-- Mobile View  -->
+        <div class="row p-3 trainer-mobile-1">
+          <div class="col-12 col-lg-3 py-2 align-self-center trainer-img-container">
+            <img src="img/sairam.png" alt="" class="mx-auto d-block img-fluid trainer-img m-lg-4">
+          </div>
+          <div class="col-12 col-lg-9 p-3 align-self-center trainer-details">
+            <h5 class="text-center text-lg-left">Sairam Uppugundla</h5>
+            <p class="text-justify trainer-experience">
+              7+ Years of eperience in Data Science, Machine Learning and Artificial Intelligence
+            </p>
+            <p class="text-justify">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quibusdam earum non velit exercitationem voluptatibus veniam repellendus ratione assumenda laborum?
+            </p>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ut animi dolorem veritatis reiciendis fugiat doloremque amet eos accusamus officia?</p>
+            <div class="d-flex flex-row">
+              <a href="#" class="linkedin-link-trainer">
+                <i class="fab fa-linkedin-in p-2"></i>
+              </a>
+              <a href="#" class="quora-link-trainer">
+                <i class="fab fa-quora p-2"></i>
+              </a>            
+            </div>
+            
+          </div>
+        </div>
+        <div class="row p-3 trainer-mobile-2">
+          <div class="col-12 col-lg-3 py-2 align-self-center trainer-img-container">
+            <img src="img/saketh.png" alt="" class="mx-auto d-block img-fluid trainer-img m-lg-4">
+          </div>
+          <div class="col-12 col-lg-9 p-3 align-self-center trainer-details">
+            <h5 class="text-center text-lg-left">Saketh Reddy Kallepu</h5>
+            <p class="text-justify trainer-experience">
+              7+ Years of eperience in Data Science, Machine Learning and Artificial Intelligence
+            </p>
+            <p class="text-justify">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quibusdam earum non velit exercitationem voluptatibus veniam repellendus ratione assumenda laborum?
+            </p>
+            <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ut animi dolorem veritatis reiciendis fugiat doloremque amet eos accusamus officia?</p>
+            <div class="d-flex flex-row">
+              <a href="#" class="linkedin-link-trainer">
+                <i class="fab fa-linkedin-in p-2"></i>
+              </a>
+              <a href="#" class="quora-link-trainer">
+                <i class="fab fa-quora p-2"></i>
+              </a>            
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <!-- Desktop View  -->
+    <!-- Trainer 1  -->
+    <section class="container-fluid my-2 pb-2" id="trainer1">
+      <div class="row mx-3 mx-lg-4 px-3 trainer-1">
+        <div class="col-12 col-lg-3 py-2 align-self-center trainer-img-container">
+          <img src="img/sairam.png" alt="" class="mx-auto d-block img-fluid trainer-img m-lg-4">
+        </div>
+        <div class="col-12 col-lg-9 p-5 align-self-center trainer-details">
+          <h5 class="text-center text-lg-left">Sairam Uppugundla</h5>
+          <p class="text-justify trainer-experience">
+            7+ Years of eperience in Data Science, Machine Learning and Artificial Intelligence
+          </p>
+          <p class="text-justify">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quibusdam earum non velit exercitationem voluptatibus veniam repellendus ratione assumenda laborum?
+          </p>
+          <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ut animi dolorem veritatis reiciendis fugiat doloremque amet eos accusamus officia?</p>
+          <div class="d-flex flex-row">
+            <a href="#" class="linkedin-link-trainer">
+              <i class="fab fa-linkedin-in p-2"></i>
+            </a>
+            <a href="#" class="quora-link-trainer">
+              <i class="fab fa-quora p-2"></i>
+            </a>            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    <!-- Trainer 2  -->
+    <section class="container-fluid my-2 pb-2" id="trainer2">
+      <div class="row mx-3 mx-lg-4 px-3 trainer-2">
+        <div class="col-12 col-lg-3 py-2 align-self-center trainer-img-container">
+          <img src="img/saketh.png" alt="" class="mx-auto d-block img-fluid trainer-img m-lg-4">
+        </div>
+        <div class="col-12 col-lg-9 p-5 align-self-center trainer-details">
+          <h5 class="text-center text-lg-left">Saketh Reddy Kallepu</h5>
+          <p class="text-justify trainer-experience">
+            7+ Years of eperience in Data Science, Machine Learning and Artificial Intelligence
+          </p>
+          <p class="text-justify">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum quibusdam earum non velit exercitationem voluptatibus veniam repellendus ratione assumenda laborum?
+          </p>
+          <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam ut animi dolorem veritatis reiciendis fugiat doloremque amet eos accusamus officia?</p>
+          <div class="d-flex flex-row">
+            <a href="#" class="linkedin-link-trainer">
+              <i class="fab fa-linkedin-in p-2"></i>
+            </a>
+            <a href="#" class="quora-link-trainer">
+              <i class="fab fa-quora p-2"></i>
+            </a>            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- FAQs Section  -->
+    <section class="container-fluid mt-4" id="faqSection">
+      <div class="row pt-3">
+        <div class="col-12">
+          <h4>Frequently Asked Questions</h4>
+        </div>
+      </div>
+      <div class="row py-3">
+        <div class="col-12 col-lg-9">
+          <div id="faqAccordion">
+            <div class="card faq-card">
+              <div class="card-header panel-title" id="f-heading1" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#fDescription1" aria-expanded="false" aria-controls="fDescription1">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Opened Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="fDescription1" class="panel-collapse collapse" aria-labelledby="f-heading1" data-parent="#faqAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime? Reiciendis, laborum doloribus temporibus porro inventore facere dignissimos ut. Rerum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card faq-card">
+              <div class="card-header panel-title" id="f-heading2" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#fDescription2" aria-expanded="false" aria-controls="fDescription2">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Opened Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="fDescription2" class="panel-collapse collapse" aria-labelledby="f-heading2" data-parent="#faqAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime? Reiciendis, laborum doloribus temporibus porro inventore facere dignissimos ut. Rerum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card faq-card">
+              <div class="card-header panel-title" id="f-heading3" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#fDescription3" aria-expanded="false" aria-controls="fDescription3">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="fDescription3" class="panel-collapse collapse" aria-labelledby="f-heading3" data-parent="#faqAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime? Reiciendis, laborum doloribus temporibus porro inventore facere dignissimos ut. Rerum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card faq-card">
+              <div class="card-header panel-title" id="f-heading4" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#fDescription4" aria-expanded="false" aria-controls="fDescription4">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="fDescription4" class="panel-collapse collapse" aria-labelledby="f-heading4" data-parent="#faqAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime? Reiciendis, laborum doloribus temporibus porro inventore facere dignissimos ut. Rerum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card faq-card">
+              <div class="card-header panel-title" id="f-heading5" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#fDescription5" aria-expanded="false" aria-controls="fDescription5">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="fDescription5" class="panel-collapse collapse" aria-labelledby="f-heading5" data-parent="#faqAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime? Reiciendis, laborum doloribus temporibus porro inventore facere dignissimos ut. Rerum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card faq-card">
+              <div class="card-header panel-title" id="f-heading6" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#fDescription6" aria-expanded="false" aria-controls="fDescription6">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="fDescription6" class="panel-collapse collapse" aria-labelledby="f-heading6" data-parent="#faqAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime? Reiciendis, laborum doloribus temporibus porro inventore facere dignissimos ut. Rerum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card faq-card">
+              <div class="card-header panel-title" id="f-heading7" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#fDescription7" aria-expanded="false" aria-controls="fDescription7">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="fDescription7" class="panel-collapse collapse" aria-labelledby="f-heading7" data-parent="#faqAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime? Reiciendis, laborum doloribus temporibus porro inventore facere dignissimos ut. Rerum.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="card faq-card">
+              <div class="card-header panel-title" id="f-heading8" onclick="toggleCurriculum()">
+                  
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#aboutAccordion" href="#fDescription8" aria-expanded="false" aria-controls="fDescription8">
+                    <div class="row">
+                      <div class="col-10 col-md-11">
+                        <h6>
+                          Who can learn Data Science?
+                        </h6>
+                      </div>
+                      <div class="col-2 col-md-1 mr-auto">
+                        <!-- Closed Card  -->
+                        <i class="toggle-curriculum fas fa-plus-circle"></i>
+                      </div> 
+                    </div>
+                                       
+                  </a>
+                  </button>
+              </div>
+              <!-- Description 1  -->
+              <div id="fDescription8" class="panel-collapse collapse" aria-labelledby="f-heading8" data-parent="#faqAccordion">
+                <div class="card-body">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime? Reiciendis, laborum doloribus temporibus porro inventore facere dignissimos ut. Rerum.
+                  </p>
+                </div>
+              </div>
+            </div>            
+          </div>          
+        </div>
+        <div class="d-none d-lg-block col-12 col-lg-3">
+          <form action="" class="p-3 p-lg-4 details-form">
+            <h5 class="text-center py-2">GET MORE INFORMATION</h5>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="number" placeholder="Phone Number">
+            </div>
+            <button class="btn btn-block form-button" type="submit">Submit</button>
+          </form> 
+        </div>
+      </div>
+    </section>
+    <div class="scrollbar scrollbar-juicy-peach">
+      <div class="force-overflow"></div>
+    </div>
+
+    <!-- Partners/Clients Section  -->
+    <section class="container-fluid mt-4" id="partners">
+      <div class="row mx-2 mx-lg-5 partners-block px-3 px-lg-5">
+        <div class="col-12 py-3">          
+          <h4 class="text-center">We are authorised partners of</h4>
+          <hr>
+        </div>
+        <div class="col-12 col-md-4 p-2">
+          <img src="img/partner/microsoft-part.png" alt="" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-12 col-md-4 p-2">
+          <img src="img/partner/unity-part.png" alt="" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-12 col-md-4 p-2">
+          <img src="img/partner/adobe-part.png" alt="" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-12 col-md-4 p-2">
+          <img src="img/partner/hp-part.png" alt="" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-12 col-md-4 p-2">
+          <img src="img/partner/apple-part.png" alt="" class="img-fluid mx-auto d-block">
+        </div>
+        <div class="col-12 col-md-4 p-2">
+          <img src="img/partner/icphp-part.png" alt="" class="img-fluid mx-auto d-block">
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Certifications  -->
+    <section id="trendingCertification" class="my-4 container-fluid">
+      <div class="col-12 py-3">
+        <h4 class="text-lg-center">Trending Certifications</h4>
+      </div>
+             <!-- Desktop View  -->
+      <div id="carouselControls" class="carousel slide certificate-desktop" data-ride="carousel" data-interval="false">
+
+        <div class="carousel-inner">
+          
+          <div class="carousel-item active">
+            <div class="row mx-5 px-5">
+              <div class="col-3">
+                <div class="card project-card cert1">
+                  <div class="card-header">
+                    <h5 class="pt-5">Machine Learning Certification</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row">
+                      <div class="course-rating d-flex flex-row align-items-center">
+                        <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                        <p class="mx-3">(452)</p> 
+                       </div>
+                    </div>
+                    <h6>Certification from Microsoft</h6>
+                    <div class="d-flex flex-row justify-content-between mt-3">
+                      <p>352 Learners</p>
+                      <p>30 Days</p>
+                    </div>
+                  </div>
+                  <div class="overlay card pt-3 justify-content-center mx-auto">
+                    <div class="text">
+                      <h6 >Machine Learning Certification Course</h6>
+                      <hr>
+                      <p>Next Batch:<br>1st July - 31st July, 2020</p>
+                      <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+                      <button class="btn view-details-btn mx-auto text-center">
+                        View Details
+                      </button> 
+                    </div>                                         
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card project-card cert2">
+                  <div class="card-header">
+                    <h5 class="pt-5">Machine Learning Certification</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row">
+                      <div class="course-rating d-flex flex-row align-items-center">
+                        <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                        <p class="mx-3">(452)</p> 
+                       </div>
+                    </div>
+                    <h6>Certification from Microsoft</h6>
+                    <div class="d-flex flex-row justify-content-between mt-3">
+                      <p>352 Learners</p>
+                      <p>30 Days</p>
+                    </div>
+                  </div>
+                  <div class="overlay card pt-3 justify-content-center mx-auto">
+                    <div class="text">
+                      <h6 >Machine Learning Certification Course</h6>
+                      <hr>
+                      <p>Next Batch:<br>1st July - 31st July, 2020</p>
+                      <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+                      <button class="btn view-details-btn mx-auto text-center">
+                        View Details
+                      </button> 
+                    </div>                                         
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card project-card cert3">
+                  <div class="card-header">
+                    <h5 class="pt-5">Machine Learning Certification</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row">
+                      <div class="course-rating d-flex flex-row align-items-center">
+                        <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                        <p class="mx-3">(452)</p> 
+                       </div>
+                    </div>
+                    <h6>Certification from Microsoft</h6>
+                    <div class="d-flex flex-row justify-content-between mt-3">
+                      <p>352 Learners</p>
+                      <p>30 Days</p>
+                    </div>
+                  </div>
+                  <div class="overlay card pt-3 justify-content-center mx-auto">
+                    <div class="text">
+                      <h6 >Machine Learning Certification Course</h6>
+                      <hr>
+                      <p>Next Batch:<br>1st July - 31st July, 2020</p>
+                      <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+                      <button class="btn view-details-btn mx-auto text-center">
+                        View Details
+                      </button> 
+                    </div>                                         
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card project-card cert4">
+                  <div class="card-header">
+                    <h5 class="pt-5">Machine Learning Certification</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row">
+                      <div class="course-rating d-flex flex-row align-items-center">
+                        <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                        <p class="mx-3">(452)</p> 
+                       </div>
+                    </div>
+                    <h6>Certification from Microsoft</h6>
+                    <div class="d-flex flex-row justify-content-between mt-3">
+                      <p>352 Learners</p>
+                      <p>30 Days</p>
+                    </div>
+                  </div>
+                  <div class="overlay card pt-3 justify-content-center mx-auto">
+                    <div class="text">
+                      <h6 >Machine Learning Certification Course</h6>
+                      <hr>
+                      <p>Next Batch:<br>1st July - 31st July, 2020</p>
+                      <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+                      <button class="btn view-details-btn mx-auto text-center">
+                        View Details
+                      </button> 
+                    </div>                                         
+                  </div>
+                </div>
+              </div>
+            </div>            
+          </div>
+          <div class="carousel-item">
+            <div class="row mx-5 px-5">
+              <div class="col-3">
+                <div class="card project-card cert1">
+                  <div class="card-header">
+                    <h5 class="pt-5">Machine Learning Certification</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row">
+                      <div class="course-rating d-flex flex-row align-items-center">
+                        <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                        <p class="mx-3">(452)</p> 
+                       </div>
+                    </div>
+                    <h6>Certification from Microsoft</h6>
+                    <div class="d-flex flex-row justify-content-between mt-3">
+                      <p>352 Learners</p>
+                      <p>30 Days</p>
+                    </div>
+                  </div>
+                  <div class="overlay card pt-3 justify-content-center mx-auto">
+                    <div class="text">
+                      <h6 >Machine Learning Certification Course</h6>
+                      <hr>
+                      <p>Next Batch:<br>1st July - 31st July, 2020</p>
+                      <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+                      <button class="btn view-details-btn mx-auto text-center">
+                        View Details
+                      </button> 
+                    </div>                                         
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card project-card cert2">
+                  <div class="card-header">
+                    <h5 class="pt-5">Machine Learning Certification</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row">
+                      <div class="course-rating d-flex flex-row align-items-center">
+                        <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                        <p class="mx-3">(452)</p> 
+                       </div>
+                    </div>
+                    <h6>Certification from Microsoft</h6>
+                    <div class="d-flex flex-row justify-content-between mt-3">
+                      <p>352 Learners</p>
+                      <p>30 Days</p>
+                    </div>
+                  </div>
+                  <div class="overlay card pt-3 justify-content-center mx-auto">
+                    <div class="text">
+                      <h6 >Machine Learning Certification Course</h6>
+                      <hr>
+                      <p>Next Batch:<br>1st July - 31st July, 2020</p>
+                      <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+                      <button class="btn view-details-btn mx-auto text-center">
+                        View Details
+                      </button> 
+                    </div>                                         
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card project-card cert3">
+                  <div class="card-header">
+                    <h5 class="pt-5">Machine Learning Certification</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row">
+                      <div class="course-rating d-flex flex-row align-items-center">
+                        <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                        <p class="mx-3">(452)</p> 
+                       </div>
+                    </div>
+                    <h6>Certification from Microsoft</h6>
+                    <div class="d-flex flex-row justify-content-between mt-3">
+                      <p>352 Learners</p>
+                      <p>30 Days</p>
+                    </div>
+                  </div>
+                  <div class="overlay card pt-3 justify-content-center mx-auto">
+                    <div class="text">
+                      <h6 >Machine Learning Certification Course</h6>
+                      <hr>
+                      <p>Next Batch:<br>1st July - 31st July, 2020</p>
+                      <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+                      <button class="btn view-details-btn mx-auto text-center">
+                        View Details
+                      </button> 
+                    </div>                                         
+                  </div>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="card project-card cert4">
+                  <div class="card-header">
+                    <h5 class="pt-5">Machine Learning Certification</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="d-flex flex-row">
+                      <div class="course-rating d-flex flex-row align-items-center">
+                        <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                        <p class="mx-3">(452)</p> 
+                       </div>
+                    </div>
+                    <h6>Certification from Microsoft</h6>
+                    <div class="d-flex flex-row justify-content-between mt-3">
+                      <p>352 Learners</p>
+                      <p>30 Days</p>
+                    </div>
+                  </div>
+                  <div class="overlay card pt-3 justify-content-center mx-auto">
+                    <div class="text">
+                      <h6 >Machine Learning Certification Course</h6>
+                      <hr>
+                      <p>Next Batch:<br>1st July - 31st July, 2020</p>
+                      <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+                      <button class="btn view-details-btn mx-auto text-center">
+                        View Details
+                      </button> 
+                    </div>                                         
+                  </div>
+                </div>
+              </div>
+            </div>            
+          </div>
+
+        </div>
+        
+        <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+          <span aria-hidden="true"><i class="fas fa-chevron-circle-left"></i></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+          <span aria-hidden="true"><i class="fas fa-chevron-circle-right"></i></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+        <!-- Mobile View  -->
+        <div id="carouselControlsMobile" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+          
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card project-card cert1">
+                    <div class="card-header">
+                      <h5 class="pt-5">Machine Learning Certification</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-row">
+                        <div class="course-rating d-flex flex-row align-items-center">
+                          <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                          <p class="mx-3">(452)</p> 
+                         </div>
+                      </div>
+                      <h6>Certification from Microsoft</h6>
+                      <div class="d-flex flex-row justify-content-between mt-3">
+                        <p>352 Learners</p>
+                        <p>30 Days</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>             
+              </div>            
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card project-card cert2">
+                    <div class="card-header">
+                      <h5 class="pt-5">Machine Learning Certification</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-row">
+                        <div class="course-rating d-flex flex-row align-items-center">
+                          <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                          <p class="mx-3">(452)</p> 
+                         </div>
+                      </div>
+                      <h6>Certification from Microsoft</h6>
+                      <div class="d-flex flex-row justify-content-between mt-3">
+                        <p>352 Learners</p>
+                        <p>30 Days</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>              
+              </div>            
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card project-card cert3">
+                    <div class="card-header">
+                      <h5 class="pt-5">Machine Learning Certification</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-row">
+                        <div class="course-rating d-flex flex-row align-items-center">
+                          <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                          <p class="mx-3">(452)</p> 
+                         </div>
+                      </div>
+                      <h6>Certification from Microsoft</h6>
+                      <div class="d-flex flex-row justify-content-between mt-3">
+                        <p>352 Learners</p>
+                        <p>30 Days</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>              
+              </div>            
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-12">
+                  <div class="card project-card cert1">
+                    <div class="card-header">
+                      <h5 class="pt-5">Machine Learning Certification</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex flex-row">
+                        <div class="course-rating d-flex flex-row align-items-center">
+                          <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i class="fas fa-star star-checked p-1"></i></p>
+                          <p class="mx-3">(452)</p> 
+                         </div>
+                      </div>
+                      <h6>Certification from Microsoft</h6>
+                      <div class="d-flex flex-row justify-content-between mt-3">
+                        <p>352 Learners</p>
+                        <p>30 Days</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>              
+              </div>            
+            </div>
+    
+          </div>
+          <a class="carousel-control-prev" href="#carouselControlsMobile" role="button" data-slide="prev">
+            <span aria-hidden="true"><i class="fas fa-chevron-circle-left"></i></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselControlsMobile" role="button" data-slide="next">
+            <span aria-hidden="true"><i class="fas fa-chevron-circle-right"></i></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      
+  
+    </section>
+    
+
+
+    <!-- Scripts -->
+    <script
+      src="https://kit.fontawesome.com/a01bd6bffe.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+     <!-- Curriculum accordion script  -->
+    <script>
+      $(".collapse.show").each(function(){
+          $(this).prev(".card-header").find(".fas").addClass("fa-minus-cirlce").removeClass("fa-plus-circle");
+        });        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+          $(this).prev(".card-header").find(".fas").removeClass("fa-plus-circle").addClass("fa-minus-circle");
+        }).on('hide.bs.collapse', function(){
+          $(this).prev(".card-header").find(".fas").removeClass("fa-minus-circle").addClass("fa-plus-circle");
+        });
+    </script>
+{% endblock %}

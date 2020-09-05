@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>ALL courses page </h1>
+{% for j in category %}
+{% for j in i.course_set.all %}
+<h2> {{j.title}} </h2>
+{% endfor %}
+{% endfor %}
+
+  <!-- Trending Certifications  -->
+  <section id="trendingCertification" class="container-fluid">
+  
+    <!-- Desktop View  -->
+    <div class="row mt-3" id="trendingCertDesktop">
+      {% for i in category %}
+        {% for j in i.course_set.all|slice:":3" %}
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <!-- card start -->
+        
+        
+        <div class="card project-card cert1">
+          <div class="card-header">
+            <h5 class="pt-5">{{ j.title }}</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">{{ j.reviews }} <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">({{ j.credits }})</p>
+              </div>
+            </div>
+            <h6>Certification From Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>{{ j.enrolled }} Learners</p>
+              <p>{{ j.duration }}</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>{{ j.title }}</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>{{ j.tags }}</p>
+              <a href="{% url 'lms:coursedetail' j.slug %}"><button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button></a>
+            </div>
+          </div>
+        </div>
+        <!-- card end -->
+      </div>
+      {% endfor %} 
+        {% endfor %}
+    </div>
+
+
+    <!-- Mobile View  -->
+    <div id="carouselControlsMobile" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-12">
+              <div class="card project-card cert1">
+                <div class="card-header">
+                  <h5 class="pt-5">Machine Learning Certification</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-row">
+                    <div class="course-rating d-flex flex-row align-items-center">
+                      <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                          class="fas fa-star star-checked p-1"></i></p>
+                      <p class="mx-3">(452)</p>
+                    </div>
+                  </div>
+                  <h6>Certification from Microsoft</h6>
+                  <div class="d-flex flex-row justify-content-between mt-3">
+                    <p>352 Learners</p>
+                    <p>30 Days</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-12">
+              <div class="card project-card cert2">
+                <div class="card-header">
+                  <h5 class="pt-5">Machine Learning Certification</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-row">
+                    <div class="course-rating d-flex flex-row align-items-center">
+                      <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                          class="fas fa-star star-checked p-1"></i></p>
+                      <p class="mx-3">(452)</p>
+                    </div>
+                  </div>
+                  <h6>Certification from Microsoft</h6>
+                  <div class="d-flex flex-row justify-content-between mt-3">
+                    <p>352 Learners</p>
+                    <p>30 Days</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-12">
+              <div class="card project-card cert3">
+                <div class="card-header">
+                  <h5 class="pt-5">Machine Learning Certification</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-row">
+                    <div class="course-rating d-flex flex-row align-items-center">
+                      <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                          class="fas fa-star star-checked p-1"></i></p>
+                      <p class="mx-3">(452)</p>
+                    </div>
+                  </div>
+                  <h6>Certification from Microsoft</h6>
+                  <div class="d-flex flex-row justify-content-between mt-3">
+                    <p>352 Learners</p>
+                    <p>30 Days</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-12">
+              <div class="card project-card cert1">
+                <div class="card-header">
+                  <h5 class="pt-5">Machine Learning Certification</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-row">
+                    <div class="course-rating d-flex flex-row align-items-center">
+                      <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                          class="fas fa-star star-checked p-1"></i></p>
+                      <p class="mx-3">(452)</p>
+                    </div>
+                  </div>
+                  <h6>Certification from Microsoft</h6>
+                  <div class="d-flex flex-row justify-content-between mt-3">
+                    <p>352 Learners</p>
+                    <p>30 Days</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselControlsMobile" role="button" data-slide="prev">
+        <span aria-hidden="true"><i class="fas fa-chevron-circle-left"></i></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselControlsMobile" role="button" data-slide="next">
+        <span aria-hidden="true"><i class="fas fa-chevron-circle-right"></i></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+{% endblock %}

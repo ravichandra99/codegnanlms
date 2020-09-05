@@ -1,0 +1,627 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'sass/home-style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+ <!-- Landing Slider Section -->
+  <section id="landingSlider" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner">
+      <!-- Offer Slider  -->
+      <div class="container-fluid py-5 carousel-item active px-5" id="offerSlide">
+        <div class="row align-items-center px-md-5" >
+          <div class="col-12 col-md-4 offer-block">
+            <p>Codegnan Presents</p>
+            <h1>2nd Year Anniversary Offer</h1>
+            <h2>50% Off On Available Courses</h2>
+            <small>*Available till 23rd August</small><br>
+            <button class="btn offer-btn mt-3">Explore Courses</button>
+          </div>
+          <div class="col-12 col-md-4 text-center">
+            <img src="img/2ndYearAnniversary.png" alt="" class="img-fluid">
+          </div>
+          <div class="col-12 col-md-4 text-center benefits-block">
+            <h2 class="mb-3">Purchase Now<br>Join Any Batch Till</h2>
+            <h1 class="mb-3">August 31st, 2021</h1>
+            <h4 class="mb-3">Utilize in Next One Year</h4>
+            <small>*No Questions Asked</small>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 1  -->
+      <div class="container-fluid py-5 carousel-item" id="landingSlide1">
+        <div class="row">
+          <div class="col-12 col-md-7 px-5">
+            <h1>Become a Data Scientist in 4 Months</h1>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Placeat tempora sequi ut repudiandae optio magnam in velit, rem
+              maiores vero accusamus eaque, officia quasi explicabo? Dolores
+              ducimus quae omnis magni?
+            </p>
+            <div class="row py-4 align-items-center">
+              <div class="col-12">
+                <h6>Get Certified From</h6>
+              </div>
+              <div class="col-6">
+                <img src="img/Microsoft White.png" alt="" class="img-fluid" />
+              </div>
+              <div class="col-6">
+                <img src="img/HP white.png" alt="" class="img-fluid" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button class="btn slider-btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5"></div>
+        </div>
+      </div>
+      <!-- Slide 2  -->
+      <div class="container-fluid py-5 carousel-item" id="landingSlide2">
+        <div class="row">
+          <div class="col-12 col-md-7 px-5">
+            <h1>Master Python in 3 Months</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              est laboriosam accusamus molestias aspernatur exercitationem
+              eligendi nihil distinctio eum itaque tempora omnis vero quisquam
+              esse, amet enim officiis eveniet in.
+            </p>
+            <div class="row py-4 align-items-center">
+              <div class="col-12">
+                <h6>Get Certified From</h6>
+              </div>
+              <div class="col">
+                <img src="img/Microsoft White.png" alt="" class="img-fluid" />
+              </div>
+              <div class="col">
+                <img src="img/HP white.png" alt="" class="img-fluid" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button class="btn slider-btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5"></div>
+        </div>
+      </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#landingSlider" role="button" data-slide="prev">
+      <span aria-hidden="true" class="left-icon">
+        <div>
+          <i class="fas fa-chevron-circle-left"></i>
+        </div>
+      </span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#landingSlider" role="button" data-slide="next">
+      <span aria-hidden="true" class="right-icon"><i class="fas fa-chevron-circle-right"></i></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </section>
+
+  <!-- Partners Section  -->
+  <section id="authorizedPartners" class="container py-4 px-4">
+    <div class="row mt-lg-4 px-lg-5">
+      <div class="col-12 mb-5">
+        <h2 class="text-center">We are Authorized Partners Of</h2>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="row text-center align-items-center">
+          <div class="col">
+            <img src="img/partner/adobe-part.png" alt="" class="img-fluid">
+          </div>
+          <div class="col">
+            <img src="img/partner/apple-part.png" alt="" class="img-fluid">
+          </div>
+          <div class="col">
+            <img src="img/partner/icphp-part.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="row mt-4 text-center align-items-center">
+          <div class="col">
+            <img src="img/microsoft-logo.png" alt="" class="img-fluid">
+          </div>
+          <div class="col">
+            <img src="img/hp-enterprise-logo.png" alt="" class="img-fluid">
+          </div>
+        </div>
+        <div class="row mt-4 text-center align-items-center">
+          <div class="col">
+            <img src="img/partner/unity-part.png" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-8 pt-4 pt-md-0">
+        <p class="text-justify">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti officiis porro, voluptatem repudiandae
+          quisquam nesciunt vel a saepe maiores facilis? Labore vero ipsam ex esse ipsa temporibus at, nulla recusandae
+          maiores ad soluta impedit hic ea, odio corporis ducimus libero?<br>
+        </p>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus laborum sit atque
+          illo fugiat laudantium, non quis quam voluptas. Inventore.</p>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus laborum sit atque
+          illo fugiat laudantium, non quis quam voluptas. Inventore.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Certifications  -->
+  <section id="trendingCertification" class="container-fluid">
+    <div class="row py-3">
+      <div class="col">
+        <h4 class="text-center">Trending Certifications at Codegnan</h4>
+      </div>
+    </div>
+    <!-- Desktop View  -->
+    <div class="row mt-3" id="trendingCertDesktop">
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <div class="card project-card cert1">
+          <div class="card-header">
+            <h5 class="pt-5">Machine Learning Certification</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">(452)</p>
+              </div>
+            </div>
+            <h6>Certification from Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>352 Learners</p>
+              <p>30 Days</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>Machine Learning Certification Course</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+              <button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <div class="card project-card cert2">
+          <div class="card-header">
+            <h5 class="pt-5">Machine Learning Certification</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">(452)</p>
+              </div>
+            </div>
+            <h6>Certification from Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>352 Learners</p>
+              <p>30 Days</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>Machine Learning Certification Course</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+              <button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <div class="card project-card cert3">
+          <div class="card-header">
+            <h5 class="pt-5">Machine Learning Certification</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">(452)</p>
+              </div>
+            </div>
+            <h6>Certification from Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>352 Learners</p>
+              <p>30 Days</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>Machine Learning Certification Course</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+              <button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <div class="card project-card cert4">
+          <div class="card-header">
+            <h5 class="pt-5">Machine Learning Certification</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">(452)</p>
+              </div>
+            </div>
+            <h6>Certification from Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>352 Learners</p>
+              <p>30 Days</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>Machine Learning Certification Course</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+              <button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <div class="card project-card cert1">
+          <div class="card-header">
+            <h5 class="pt-5">Machine Learning Certification</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">(452)</p>
+              </div>
+            </div>
+            <h6>Certification from Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>352 Learners</p>
+              <p>30 Days</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>Machine Learning Certification Course</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+              <button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <div class="card project-card cert2">
+          <div class="card-header">
+            <h5 class="pt-5">Machine Learning Certification</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">(452)</p>
+              </div>
+            </div>
+            <h6>Certification from Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>352 Learners</p>
+              <p>30 Days</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>Machine Learning Certification Course</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+              <button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <div class="card project-card cert3">
+          <div class="card-header">
+            <h5 class="pt-5">Machine Learning Certification</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">(452)</p>
+              </div>
+            </div>
+            <h6>Certification from Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>352 Learners</p>
+              <p>30 Days</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>Machine Learning Certification Course</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+              <button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+        <div class="card project-card cert4">
+          <div class="card-header">
+            <h5 class="pt-5">Machine Learning Certification</h5>
+          </div>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="course-rating d-flex flex-row align-items-center">
+                <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                    class="fas fa-star star-checked p-1"></i></p>
+                <p class="mx-3">(452)</p>
+              </div>
+            </div>
+            <h6>Certification from Microsoft</h6>
+            <div class="d-flex flex-row justify-content-between mt-3">
+              <p>352 Learners</p>
+              <p>30 Days</p>
+            </div>
+          </div>
+          <div class="overlay card pt-3 justify-content-center mx-auto">
+            <div class="text">
+              <h6>Machine Learning Certification Course</h6>
+              <hr>
+              <p>Next Batch:<br>1st July - 31st July, 2020</p>
+              <p>Key Skills: <br>Python basics, OOPS Concepts, etc.,</p>
+              <button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile View  -->
+    <div id="carouselControlsMobile" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-12">
+              <div class="card project-card cert1">
+                <div class="card-header">
+                  <h5 class="pt-5">Machine Learning Certification</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-row">
+                    <div class="course-rating d-flex flex-row align-items-center">
+                      <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                          class="fas fa-star star-checked p-1"></i></p>
+                      <p class="mx-3">(452)</p>
+                    </div>
+                  </div>
+                  <h6>Certification from Microsoft</h6>
+                  <div class="d-flex flex-row justify-content-between mt-3">
+                    <p>352 Learners</p>
+                    <p>30 Days</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-12">
+              <div class="card project-card cert2">
+                <div class="card-header">
+                  <h5 class="pt-5">Machine Learning Certification</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-row">
+                    <div class="course-rating d-flex flex-row align-items-center">
+                      <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                          class="fas fa-star star-checked p-1"></i></p>
+                      <p class="mx-3">(452)</p>
+                    </div>
+                  </div>
+                  <h6>Certification from Microsoft</h6>
+                  <div class="d-flex flex-row justify-content-between mt-3">
+                    <p>352 Learners</p>
+                    <p>30 Days</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-12">
+              <div class="card project-card cert3">
+                <div class="card-header">
+                  <h5 class="pt-5">Machine Learning Certification</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-row">
+                    <div class="course-rating d-flex flex-row align-items-center">
+                      <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                          class="fas fa-star star-checked p-1"></i></p>
+                      <p class="mx-3">(452)</p>
+                    </div>
+                  </div>
+                  <h6>Certification from Microsoft</h6>
+                  <div class="d-flex flex-row justify-content-between mt-3">
+                    <p>352 Learners</p>
+                    <p>30 Days</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-12">
+              <div class="card project-card cert1">
+                <div class="card-header">
+                  <h5 class="pt-5">Machine Learning Certification</h5>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex flex-row">
+                    <div class="course-rating d-flex flex-row align-items-center">
+                      <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">5.0 <i
+                          class="fas fa-star star-checked p-1"></i></p>
+                      <p class="mx-3">(452)</p>
+                    </div>
+                  </div>
+                  <h6>Certification from Microsoft</h6>
+                  <div class="d-flex flex-row justify-content-between mt-3">
+                    <p>352 Learners</p>
+                    <p>30 Days</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselControlsMobile" role="button" data-slide="prev">
+        <span aria-hidden="true"><i class="fas fa-chevron-circle-left"></i></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselControlsMobile" role="button" data-slide="next">
+        <span aria-hidden="true"><i class="fas fa-chevron-circle-right"></i></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="row text-center mt-3">
+      <div class="col">
+        <button class="btn pageHighlightBtn">
+          All Courses
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Codegnan  -->
+  <section id="whyCodegnan" class="container py-5 px-4">
+    <div class="row text-center px-lg-5">
+      <div class="col">
+        <h2>Why Codegnan to be chosen</h2>
+        <p class="mt-3 mt-md-4 text-justify text-md-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Tempora aliquid fugit aut porro culpa voluptate, perferendis est ratione alias necessitatibus quos minima,
+          vitae aperiam, amet ducimus. Sed officiis dignissimos numquam doloribus facere ipsam provident ducimus iure!
+          Deserunt quidem neque magnam.</p>
+      </div>
+    </div>
+    <div class="row text-center mt-4 cg-metrics p-md-4 align-items-start pt-2 mx-lg-5">
+      <div class="col-12 col-md-4">
+        <h2>20+</h2>
+        <p>Certification Courses Available</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h2>1000+</h2>
+        <p>Certified Students</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h2>15+</h2>
+        <p>Industry Experts</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Journey  -->
+  <section id="studentJourney" class="container py-2">
+    <div class="row text-center">
+      <div class="col-12 py-4">
+        <h3>Student Journey</h3>
+      </div>
+      <div class="col-12 pb-4">
+        <img src="img/student-journey.jpg" alt="" class="img-fluid">
+      </div>
+    </div>
+  </section>
+  <!-- Review Metrics  -->
+  <section id="reviewMetrics" class="container py-2">
+    <div class="row py-4">
+      <div class="col">
+        <h4 class="text-center">Student Reviews</h4>
+      </div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-12 col-sm-4 text-center pt-2 pb-1">
+        <div class="row no-gutters">
+          <div class="col-4">
+            <img src="img/google.png" alt="" class="img-fluid">
+          </div>
+          <div class="col-8">
+            <p class="px-2 text-left">350+ Positive<br>Reviews on Google</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12  col-sm-4 text-center pt-2 pb-1">
+        <div class="row no-gutters">
+          <div class="col-4">
+            <img src="img/fb.png" alt="" class="img-fluid">
+          </div>
+          <div class="col-8">
+            <p class="px-2 text-left">500+ Positive<br>Reviews on Facebook</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12  col-sm-4 text-center pt-2 pb-1">
+        <div class="row no-gutters">
+          <div class="col-4">
+            <img src="img/jd.png" alt="" class="img-fluid">
+          </div>
+          <div class="col-8">
+            <p class="px-2 text-left">1000+ Positive<br>Reviews on JustDial</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

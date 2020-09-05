@@ -1,0 +1,732 @@
+{% load static %}
+{% load meta %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head {% meta_namespaces %}>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% include "meta/meta.html" %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'sass/home-style.css' %}">
+     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+  <!-- Main Navigation Section  -->
+  <nav class="navbar navbar-expand-lg main-menu sticky-top align-items-center">
+    <!-- Logo  -->
+    <a href="{% url 'lms:index' %}" class="navbar-brand cg-logo">
+      <img src="{% static 'img/logo.png' %}" alt="" />
+    </a>
+    <!-- Hamburger menu  -->
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#courseMainMenu" aria-controls="courseMainMenu"
+      aria-expanded="false" aria-label="Toggle navigation" type="button">
+      <span class="navbar-toggler-icon hamburger-icon">
+        <span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span>
+      </span>
+    </button>
+    <!-- Menu Items  -->
+    <div class="collapse navbar-collapse" id="courseMainMenu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item m-1 text-center">
+          <a href="#" class="nav-link">Interview Questions</a>
+        </li>
+        <li class="nav-item m-1 text-center">
+          <a href="{% url 'lms:blog' %}" class="nav-link">Blogs</a>
+        </li>
+        <li class="nav-item m-1 text-center">
+          <a href="#" class="nav-link">Community</a>
+        </li>
+        {% if not user.is_authenticated %}
+        <a class="btn nav-link signup-btn p-2 m-1 align-self-center" href="{% url 'auth_login' %}">Sign In</a>
+        <a class="btn nav-link signup-btn p-2 m-1 align-self-center" href="{% url 'lms:signup' %}">Sign Up</a>
+        {% else %}
+        <a class="btn nav-link signup-btn p-2 m-1 align-self-center" href="{% url 'auth_logout' %}">Logout</a>
+        {% endif %}
+        <a class="btn nav-link highlight-btn p-2 m-1 align-self-center" href="{% url 'lms:bootcamps' %}">Bootcamps</a>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile main menu  -->
+  <nav class="navbar justify-content-around sticky-top mobile-menu-height" id="mobileMenu">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileMenuItems"
+      aria-controls="mobileMenuItems" aria-expanded="false" aria-lable="Toggle Navigation">
+      <span class=""><i class="fas fa-bars fa-1x"></i></span>
+    </button>
+    <!-- Logo  -->
+    <a href="{% static 'lms:index' %}" class="navbar-brand cg-logo mx-0">
+      <img src="{% static 'img/logo.png' %}" alt="" class="mx-0" />
+    </a>
+    <div class="" id="searchBarMobile">
+      <form action="" class="form-inline" id="searchForm">
+        <div class="" id="searchInput">
+          <input type="search" class="d-none form-control" placeholder="Search.." aria-label="Search" />
+
+          <div class="" id="searchIconGroup">
+            <span class="" id="searchIcon">
+              <i class="fas fa-search p-3" id="searchBarIcon"></i>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="collapse navbar-collapse" id="mobileMenuItems">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item m-1 text-center">
+          <a href="#" class="nav-link">Interview Questions</a>
+        </li>
+        <li class="nav-item m-1 text-center">
+          <a href="{% static 'lms:blog' %}" class="nav-link">Blogs</a>
+        </li>
+        <li class="nav-item m-1 text-center">
+          <a href="#" class="nav-link">Community</a>
+        </li>
+        <li class="nav-item m-1 text-center">
+          <a href="#" class="nav-link">Courses</a>
+        </li>
+        <li class="nav-item m-1 text-center">
+          <a href="{% url 'lms:contact_us' %}" class="nav-link">Contact Us</a>
+        </li>
+        <li class="nav-item m-1 text-center">
+          <a href="#" class="nav-link">Cart</a>
+        </li>
+
+
+ {% if not user.is_authenticated %}
+        <a class="btn nav-link signup-btn p-2 m-1 align-self-center" href="{% url 'auth_login' %}">Sign In</a>
+        <a class="btn nav-link signup-btn p-2 m-1 align-self-center" href="{% url 'registration_register' %}">Sign Up</a>
+        {% else %}
+        <a class="btn nav-link signup-btn p-2 m-1 align-self-center" href="{% url 'auth_logout' %}">Logout</a>
+        {% endif %}
+        <a class="btn nav-link highlight-btn p-2 m-1 align-self-center" href="{% url 'registration_register' %}">Bootcamps</a>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Secondary Menu  -->
+  <div class="secondary-menu container-fluid py-2">
+    <div class="row mt-1">
+      <div class="col-3 col-lg-2 text-left">
+        <button class="btn highlight-btn" id="allCourses" type="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">All Courses <i class="px-2 fas fa-bars"></i></button>
+        <div class="dropdown-menu px-2" aria-labelledby="allCourses">
+          {% for i in category %}
+          {% for j in i.course_set.all %}
+          <a href="{% url 'lms:coursedetail' j.slug %}" class="dropdown-item">{{j.title}}</a>
+          {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-6 col-lg-8 text-left">
+        <form action="" class="form-inline">
+          <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search.." aria-label="Search" />
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-3 col-lg-2 text-right">
+        <a class="btn contact-btn" href="{% url 'lms:contact_us' %}">Contact Us</a>
+      </div>
+    </div>
+
+  </div>
+{% block content %}
+{% endblock %}
+  
+
+  <!-- Testimonials Section  -->
+  <section id="testimonialSection" class="container-fluid py-2">
+    <!-- Nav Pill Tabs  -->
+    <div class="row">
+      <div class="col">
+        <ul class="nav nav-pills justify-content-center" role="tablist">
+          <li class="nav-item">
+            <a href="#googleReviews" class="nav-link active" data-toggle="tab" role="tab" aria-controls="googleReviews"
+              aria-selected="true" id="google-reviews-tab">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a href="#videoTestimonials" class="nav-link" data-toggle="tab" role="tab" aria-controls="videoTestimonials"
+              aria-selected="false" id="video-reviews-tab">Video Reviews</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="tab-content mt-4" id="testimonialTabs">
+      <!-- Google Reviews  -->
+      <section id="googleReviews" class="tab-pane fade show active" role="tabpanel"
+        aria-labelledby="google-reviews-tab">
+        <!-- Google Reviews Desktop-->
+        <div class="carousel slide" id="reviewSliderDesktop" data-ride="carousel" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#reviewSliderDesktop" data-slide-to="0" class="active"></li>
+            <li data-target="#reviewSliderDesktop" data-slide-to="1"></li>
+            <li data-target="#reviewSliderDesktop" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <!-- Testiominal 1 and 2  -->
+            {% for i in testimonials %}
+                {% if i.id == 1 or i.id == 2 %}
+                 {% if not forloop.counter|divisibleby:2 %}
+            <div class="container-fluid carousel-item active">
+              <div class="row mt-2 mb-5">
+                {% endif %}
+                <!-- Testimonial 1  -->
+                <div class="col-12 col-md-6">
+                  <div class="p-2 review-card">
+                    <!-- Student  -->
+                    <div class="col-12 py-3">
+                      <div class="row no-gutters">
+                        <div class="col-3">
+                          <img src="{{i.image.url}}" alt="" class="img-fluid" />
+                        </div>
+                        <div class="col-7 align-self-center pt-2">
+                          <h6>{{i.name}}</h6>
+                          <p>{{i.organization}}</p>
+                        </div>
+                        <div class="col-2 p-1">
+                          <img src="{{i.logo.image.url}}" alt="" class="img-fluid" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Review  -->
+                    <div class="col-12">
+                      <p class="text-justify">
+                        <em>
+                          {{i.review|linebreaks}}</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Testimonial 2  -->
+                 {% else %}
+            <!-- Testimonial 3 and 4  -->
+             {% if not forloop.counter|divisibleby:2 %}
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                {% endif %}
+                <!-- Testimonial 3  -->
+                <div class="col-12 col-md-6">
+                  <div class="p-2 review-card">
+                    <!-- Student  -->
+                    <div class="col-12 py-3">
+                      <div class="row no-gutters">
+                        <div class="col-3">
+                         <img src="{{i.image.url}}" alt="" class="img-fluid" />
+                        </div>
+                        <div class="col-7 align-self-center pt-2">
+                        <h6>{{i.name}}</h6>
+                          <p>{{i.organization}}</p>
+                        </div>
+                        <div class="col-2 p-1">
+                          <img src="{{i.logo.image.url}}" alt="" class="img-fluid" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Review  -->
+                    <div class="col-12">
+                      <p class="text-justify">
+                        <em>
+                         {{i.review|linebreaks}}</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+                <!-- Testimonial 4  -->
+                {% if forloop.counter|divisibleby:2 %}
+              </div>
+            </div>
+             {% endif %}
+            {% endfor %}
+            <!-- Testimonial 5 and 6  -->
+         
+          </div>
+        </div>
+        <!-- Google Reviews Mobile  -->
+        <div class="carousel slide" id="reviewSliderMobile" data-ride="carousel" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#reviewSliderMobile" data-slide-to="0" class="active"></li>
+            <li data-target="#reviewSliderMobile" data-slide-to="1"></li>
+            <li data-target="#reviewSliderMobile" data-slide-to="2"></li>
+            <li data-target="#reviewSliderMobile" data-slide-to="3"></li>
+            <li data-target="#reviewSliderMobile" data-slide-to="4"></li>
+            <li data-target="#reviewSliderMobile" data-slide-to="5"></li>
+          </ol>
+          <div class="carousel-inner">
+            <!-- Testiominal 1 -->
+
+            <div class="container-fluid carousel-item active">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-card">
+                    <!-- Student  -->
+                    <div class="col-12 py-3">
+                      <div class="row no-gutters">
+                        <div class="col-3">
+                          <img src="img/testimonials/Testimonial1.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="col-7 align-self-center pt-2">
+                          <h6>Udanya Korupolu</h6>
+                          <p>Student, KL University</p>
+                        </div>
+                        <div class="col-2 p-2">
+                          <img src="img/google.png" alt="" class="img-fluid" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Review  -->
+                    <div class="col-12">
+                      <p class="text-justify">
+                        <em>
+                          I got to know codegnan through online.I attended python
+                          course . The team helped me to overcome the problems I
+                          face while programing in python language. I learned much
+                          here so that I am pretty good with my core python.</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testiominal 2 -->
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-card">
+                    <!-- Student  -->
+                    <div class="col-12 py-3">
+                      <div class="d-flex no-gutters">
+                        <div class="col-3">
+                          <img src="img/testimonials/Testimonial2.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="col-7 align-self-center pt-2">
+                          <h6>Sasanc Reddy</h6>
+                          <p>Employee, Mc Afee</p>
+                        </div>
+                        <div class="col-2 p-2">
+                          <img src="img/google.png" alt="" class="img-fluid" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Review  -->
+                    <div class="col-12">
+                      <p class="text-justify">
+                        <em>
+                          Got to know about Codegnan through google and joined in it
+                          after going through their reviews.It been a very
+                          encouraging and postivie experience right from getting
+                          details,joining and completing my microsoft certification
+                          exam.The staff here is very helpful in every possible way
+                          especially sai ram sir has been really good in helping
+                          through out the course.i highly recommend Codegnan..</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testiominal 3 -->
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-card">
+                    <!-- Student  -->
+                    <div class="col-12 py-3">
+                      <div class="d-flex no-gutters">
+                        <div class="col-3">
+                          <img src="img/testimonials/Testimonial3.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="col-7 align-self-center pt-2">
+                          <h6>Sree Kavya Kondaveeti</h6>
+                          <p>Student, Bapatla Engineering College</p>
+                        </div>
+                        <div class="col-2 p-2">
+                          <img src="img/google.png" alt="" class="img-fluid" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Review  -->
+                    <div class="col-12">
+                      <p class="text-justify">
+                        <em>
+                          I have learned PYTHON course here.The teaching environment
+                          is very friendly here.they clear the doubts immediatly. I
+                          am very happy as i trained here and gained MTA badge.The
+                          best part is they focus on practical training.I suggest
+                          who are willing get train in python this is best
+                          place.</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testiominal 4 -->
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-card">
+                    <!-- Student  -->
+                    <div class="col-12 py-3">
+                      <div class="d-flex no-gutters">
+                        <div class="col-3">
+                          <img src="img/testimonials/Testimonial4.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="col-7 align-self-center pt-2">
+                          <h6>T.B.K. Parameswar</h6>
+                          <p>Student, Sri CSVMV College of Engineering</p>
+                        </div>
+                        <div class="col-2 p-2">
+                          <img src="img/google.png" alt="" class="img-fluid" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Review  -->
+                    <div class="col-12">
+                      <p class="text-justify">
+                        <em>
+                          It was an wonderful training center.I have learnt a lot in
+                          Codegnan it solutions. thank you.</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testiominal 5 -->
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-card">
+                    <!-- Student  -->
+                    <div class="col-12 py-3">
+                      <div class="d-flex no-gutters">
+                        <div class="col-3">
+                          <img src="img/testimonials/Testimonial5.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="col-7 align-self-center pt-2">
+                          <h6>Priya Nagothi</h6>
+                          <p>Student, Vignan University</p>
+                        </div>
+                        <div class="col-2 p-2">
+                          <img src="img/google.png" alt="" class="img-fluid" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Review  -->
+                    <div class="col-12">
+                      <p class="text-justify">
+                        <em>
+                          Came to know about Codegnan through web and the faculty
+                          was really good with practical knowledge on problems and
+                          projects</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testiominal 6 -->
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-card">
+                    <!-- Student  -->
+                    <div class="col-12 py-3">
+                      <div class="d-flex no-gutters">
+                        <div class="col-3">
+                          <img src="img/testimonials/Testimonial6.png" alt="" class="img-fluid" />
+                        </div>
+                        <div class="col-7 align-self-center pt-2">
+                          <h6>Soumya Vema</h6>
+                          <p>Student, PB Siddhartha Arts and Science College</p>
+                        </div>
+                        <div class="col-2 p-2">
+                          <img src="img/google.png" alt="" class="img-fluid" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Review  -->
+                    <div class="col-12">
+                      <p class="text-justify">
+                        <em>
+                          Those people who want learn python for data science and
+                          artifical intelligence,It is right place.For me it helps a
+                          lot.Faculty is very good and cooperative.</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Controls  -->
+          <a class="carousel-control-prev" href="#reviewSliderMobile" role="button" data-slide="prev">
+            <span aria-hidden="true" class="left-icon"><i class="fas fa-chevron-circle-left"></i></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#reviewSliderMobile" role="button" data-slide="next">
+            <span aria-hidden="true" class="right-icon"><i class="fas fa-chevron-circle-right"></i></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </section>
+      <!-- Video Testimonials  -->
+      <section id="videoTestimonials" role="tabpanel" aria-labelledby="video-reviews-tab" class="tab-pane fade show">
+        <!-- Video Testimonials Desktop  -->
+        <div class="carousel slide" id="videoSliderDesktop" data-ride="carousel" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#videoSliderDesktop" data-slide-to="0" class="active"></li>
+            <li data-target="#videoSliderDesktop" data-slide-to="1"></li>
+          </ol>
+          <div class="carousel-inner">
+            <!-- Testimonial 1 and 2  -->
+            {% for i in videoreviews %}
+                {% if i.id == 1 or i.id == 2 %}
+                 {% if not forloop.counter|divisibleby:2 %}
+            <div class="container-fluid carousel-item active">
+              <div class="row mt-2 mb-5">
+                {% endif %}
+                <!-- Testimonial 1  -->
+                <div class="col-12 col-md-6">
+                  <div class="p-2 review-video embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="{{i.embed_link}}" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      class="embed-responsive-item" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <!-- Testimonial 2  -->
+                {% else %}
+             
+            <!-- Testimonial 2 and 3  -->
+             {% if not forloop.counter|divisibleby:2 %}
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                {% endif %}
+                <!-- Testimonial 1  -->
+                <div class="col-12 col-md-6">
+                  <div class="p-2 review-video embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="{{i.embed_link}}" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      class="embed-responsive-item" allowfullscreen></iframe>
+                  </div>
+                </div>
+                <!-- Testimonial 2  -->
+                 {% endif %}
+                  {% if forloop.counter|divisibleby:2 %}
+              </div>
+            </div>
+               {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <!-- Video Testimonials Mobile  -->
+        <div class="carousel slide" id="videoSliderMobile" data-ride="carousel" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#videoSliderMobile" data-slide-to="0" class="active"></li>
+            <li data-target="#videoSliderMobile" data-slide-to="1"></li>
+            <li data-target="#videoSliderMobile" data-slide-to="2"></li>
+            <li data-target="#videoSliderMobile" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <!-- Testimonial 1  -->
+            <div class="container-fluid carousel-item active">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-video embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ox9FspCBF_k" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      class="embed-responsive-item" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2  -->
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-video embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/N5VoaZzqcPw" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      class="embed-responsive-item" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3  -->
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-video embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ox9FspCBF_k" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      class="embed-responsive-item" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 4  -->
+            <div class="container-fluid carousel-item">
+              <div class="row mt-2 mb-5">
+                <div class="col-12">
+                  <div class="p-2 review-video embed-responsive embed-responsive-16by9">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/N5VoaZzqcPw" frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      class="embed-responsive-item" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Controls  -->
+          <a class="carousel-control-prev" href="#videoSliderMobile" role="button" data-slide="prev">
+            <span aria-hidden="true" class="left-icon"><i class="fas fa-chevron-circle-left"></i></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#videoSliderMobile" role="button" data-slide="next">
+            <span aria-hidden="true" class="right-icon"><i class="fas fa-chevron-circle-right"></i></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Footer  -->
+  {% for i in footer %}
+  <footer class="container-fluid pt-4 pb-2" id="footer">
+    <div class="row" id="footerRow">
+      <div class="col-12 col-md-3" id="footerDescription">
+        <div class="row">
+          <div class="col-10 col-lg-12">
+            <img src="{{i.logo.url}}" alt="" class="img-fluid" />
+          </div>
+          <div class="col-2 col-lg-12" id="footerToggleIcon">
+            <p class="text-right">
+              <i id="footer-toogle-icon" class="fas fa-plus-circle"></i>
+            </p>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-12">
+            <p class="text-justify">
+              {{i.description}}
+            </p>
+          </div>
+        </div>
+       
+      </div>
+      <div class="col-6 col-md-2 py-2 py-md-4 mobile-footer" id="footerCourses">
+        <h6>Popular Courses</h6>
+        {% for i in category %}
+        {% for j in i.course_set.all %}
+        <a href="{% url 'lms:coursedetail' j.slug %}">{{j.title}}</a><br />
+        {% endfor %}
+        {% endfor %}
+      </div>
+      <div class="col-6 col-md-2 py-2 py-md-4 mobile-footer" id="footerCategories">
+        <h6>Blog Categories</h6>
+        {% for i in blogcategory %}
+        <a href="">{{i.category}}</a><br />
+        {% endfor %}
+      </div>
+      <div class="col-12 col-md-2 py-2 py-md-4 mobile-footer" id="footerResources">
+        <h6>Resources</h6>
+        <a href="">Blogs</a><br />
+        <a href="">Webinars</a><br />
+        <a href="">Bootcamps</a><br />
+      </div>
+      <div class="col-12 col-md-3 py-2 py-md-4" id="footerSocial">
+        <h6>Follow Us</h6>
+        <div class="row no-gutters">
+          {% for j in i.followus_set.all %}
+          <div class="col col-md-3 p-1">
+            <a href="{{j.url}}"><img src="{{j.follow.url}}" alt="" class="img-fluid" /></a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-12 text-center px-5 mobile-footer" id="footerTnC">
+        <hr />
+        <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a> |
+        <a href="#">Refund Policy</a> |
+        <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="col-12 text-center px-3 pt-4" id="footerCredsDesktop">
+        <p>
+          &copy; Copyright 2018-2020 | Codegnan IT Solutions OPC PVT LTD | All
+          Rights Reserved
+        </p>
+      </div>
+      <div class="col-12 text-center px-3 pt-4" id="footerCredsMobile">
+        <p>
+          &copy; Copyright 2018-2020<br />
+          Codegnan IT Solutions OPC PVT LTD<br />
+          All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+   {% endfor %}
+  <script src="https://kit.fontawesome.com/a01bd6bffe.js" crossorigin="anonymous"></script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <!-- Search bar mobile script  -->
+  <script>
+    $(document).ready(function () {
+      $.fn.toggleHTML = function (t1, t2) {
+        if (this.html() == t1) {
+          this.html(t2);
+        } else {
+          this.html(t1);
+        }
+        return this;
+      };
+
+      $("#searchIcon").click(function () {
+        $("#mobileMenu").toggleClass("mobile-menu-height");
+        $("#searchBarMobile").toggleClass("search-box");
+        $("#searchInput").toggleClass("input-group");
+        $("input").toggleClass("search-form");
+        $("#searchIcon").toggleClass("input-group-text");
+        $("#searchIconGroup").toggleClass("input-group-append");
+        $("#searchBarIcon")
+          .toggleClass("fa-search")
+          .toggleClass("fa-times")
+          .toggleClass("p-3");
+      });
+    });
+
+    $("#footerToggleIcon").click(function(){
+      $("#footer-toggle-icon").find(".fas").toggleClass("fa-plus-circle");
+      $("#footerCourses").toggleClass("mobile-footer");
+      $("#footerCategories").toggleClass("mobile-footer");
+      $("#footerResources").toggleClass("mobile-footer");
+      $("#footerTnC").toggleClass("mobile-footer");
+    });
+  </script>
+</body>
+
+</html>

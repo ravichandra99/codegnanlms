@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+
+
+    
+    <script src="https://kit.fontawesome.com/2c3c26015e.js" crossorigin="anonymous"></script>
+    <title>Codegnan | ORDER </title>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+{% block content %}
+
+
+
+
+
+
+
+
+    <div class="container-fluid mt-5 mb-5">
+          <h2>Order Summary</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">{{object.big_title}}</td>
+      <td><i class="fas fa-rupee-sign"></i> {{object.offer_price}}</td>
+      <td>1</td>
+      <td><i class="fas fa-rupee-sign"></i> {{object.offer_price}}</td>
+    </tr>
+    <tr>
+      <td scope="row">{{reg_class}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td scope="row">GST (18%) </td>
+      <td></td>
+      <td></td>
+       {% widthratio object.offer_price 100 18 as gst %}
+      <td><i class="fas fa-rupee-sign"></i> {{gst}}</td>
+    </tr>
+    <tr>
+      <td scope="row">Total</td>
+      <td></td>
+      <td></td>
+      <td><i class="fas fa-rupee-sign"></i> {{object.offer_price|add:gst}}</td>
+
+    </tr>
+ <tr>
+      <td scope="row"></td>
+      <td></td>
+        <td></td>
+        <td><a href="{% url 'payment:payment' %}">Check</a></td>
+            
+
+    </tr>
+
+  </tbody>
+</table>
+  
+        </div>
+    </div>
+
+{% endblock %}

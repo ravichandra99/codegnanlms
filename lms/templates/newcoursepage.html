@@ -1,0 +1,1212 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
+  rel="stylesheet">
+<link rel="stylesheet" href="{% static 'sass/style.css' %}" />
+
+{% endblock %}
+
+{% block content %}
+
+{% include 'msg.html' %}
+
+<!-- Intro Section  -->
+<section class="course-intro py-2">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Breadcrumbs  -->
+      <div class="col-12 breadcrumb-column">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb course-breadcrumb px-0 pb-0">
+            <li class="breadcrumb-item"><a href="{% url 'lms:index' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'lms:allcourses' %}">Certifications</a></li>
+            <!-- Page Heading One  -->
+            <li class="breadcrumb-item active" aria-current="page">
+              {{object.title}}
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+      <!-- Rating  -->
+      <div class="col-12 py-2 py-lg-0">
+        <h1>{{object.big_title}}</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 text-justify py-2">
+        <div class="d-flex flex-column flex-md-row">
+          <div class="flex-row px-0">
+            <i class="fas fa-star star-checked"></i><i class="fas fa-star star-checked"></i><i
+              class="fas fa-star star-checked"></i><i class="fas fa-star star-checked"></i><i
+              class="fas fa-star star-checked"></i>
+          </div>
+          <div class="flex-row px-0 px-md-2">
+            <h6 class="mt-1">({{object.rating}}/5) {{object.enrolled}}+ Students Enrolled</h6>
+          </div>
+        </div>
+        <p>
+          {{object.short_description|linebreaks}}
+
+        </p>
+
+        <a href="#trainingOptions"><button class="btn btn-lg enroll-btn" type="button">
+            Get Started Now
+          </button></a>
+      </div>
+
+      <div class="col-lg-4 py-2">
+        <!-- 16:9 aspect ratio Video Embed-->
+        <div class="embed-responsive embed-responsive-16by9 intro-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/{{object.video_id}}" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            class="embed-responsive-item" allowfullscreen></iframe>
+        </div>
+        <div
+          class="d-flex flex-column flex-xl-row mt-4 mb-2 py-2 px-1 intro-certification justify-content-around align-items-center no-gutters">
+          <div class="px-1 align-self-center">
+            <h6 style="color:black">Get Certified From:</h6>
+          </div>
+          <div class="px-1 row certification-partner align-items-center">
+            <div class="col-6">
+              <img src="{{object.cert1.url}}" alt="" class="px-1 img-fluid" />
+            </div>
+            <div class="col-6">
+              <img src="{{object.cert2.url}}" alt="" class="px-1 img-fluid" />
+            </div>
+          </div>
+          <!-- <div class="px-2 certification-partner align-self-center">
+                
+              </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Course Navigation  -->
+<nav class="navbar navbar-expand-lg course-menu sticky-top">
+  <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#courseNavigation"
+    aria-controls="courseNavigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon hamburger-icon"><span class="dark-blue-text"><i
+          class="fas fa-bars fa-1x"></i></span>
+  </button>
+  <div class="collapse navbar-collapse" id="courseNavigation">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item m-1">
+        <a href="#keyFeatures" class="nav-link">Key Features</a>
+      </li>
+      <li class="nav-item m-1">
+        <a href="#courseOverview" class="nav-link">Overview</a>
+      </li>
+      <li class="nav-item m-1">
+        <a href="#trainingOptions" class="nav-link">Upcoming Batches</a>
+      </li>
+      <li class="nav-item m-1">
+        <a href="#curriculumCourse" class="nav-link">Curriculum</a>
+      </li>
+      <li class="nav-item m-1">
+        <a href="#desktopProject" class="nav-link">Projects</a>
+      </li>
+      <li class="nav-item m-1">
+        <a href="#reviewMetrics" class="nav-link">Testimonials</a>
+      </li>
+      <li class="nav-item m-1">
+        <a href="#faqSection" class="nav-link">FAQs</a>
+      </li>
+    </ul>
+
+  </div>
+  <form class="form-inline" action="#trainingOptions">
+    <a href="#trainingOptions">
+      <button class="btn enroll-btn">Enroll Now</button>
+    </a>
+  </form>
+</nav>
+
+<!-- Course Details Section  -->
+<section class="course-view " id="courseOverview">
+  <div class="container-fluid">
+    <div class="row py-3">
+      <div class="col-12 col-lg-9">
+        <h2 class="text-center text-md-left py-3">{{object.title}}</h2>
+        <p class="text-justify">
+          {{object.description|linebreaks}}
+        </p>
+      </div>
+      <div class="d-none d-lg-block col-12 col-lg-3 form-container pt-5">
+        <form action="" method="post" class="p-3 p-lg-4 details-form">
+          {% csrf_token %}
+          <h5 class="text-center py-2">GET MORE INFORMATION</h5>
+          {% include 'bs4_form.html' with form=infoform %}
+          <button class="btn btn-block form-button" type="submit">Submit</button>
+        </form>
+
+        <div class="col-md-12 coursemailResponse" style="display:none;">
+          <div class="alert alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">×</span></button>
+            <p class="coursemailResponseText"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-9">
+        <div class="col-md-12 py-2 py-lg-0" id="keyFeatures">
+          <h2 class="text-center text-lg-left py-3">Key Features</h2>
+        </div>
+        <div class="row">
+          <div class="col-6 col-lg-3 text-center pb-1">
+            <img src="{% static 'img/img/icons/instructor-led.jpg' %}" alt="" class="img-fluid">
+            <p class="text-center align-self-center px-2">{{object.duration}} Instructor Led Training</p>
+          </div>
+          <div class="col-6 col-lg-3 text-center pb-1">
+            <img src="{% static 'img/img/icons/video.jpg' %}" alt="" class="img-fluid">
+            <p class="align-self-center px-2">Self-Paced Videos</p>
+          </div>
+          <div class="col-6 col-lg-3 text-center pb-1">
+            <img src="{% static 'img/img/icons/exercises.jpg' %}" alt="" class="img-fluid">
+            <p class="align-self-center px-2">Exercises & Projects</p>
+          </div>
+          <div class="col-6 col-lg-3 text-center pb-1">
+            <img src="{% static 'img/img/icons/certification.jpg' %}" alt="" class="img-fluid">
+            <p class="align-self-center px-2">Certification & Job Assistance</p>
+          </div>
+          <div class="col-6 col-lg-3 text-center pb-1">
+            <img src="{% static 'img/img/icons/flexible-schedule.jpg' %}" alt="" class="img-fluid">
+            <p class="align-self-center px-2">Flexible Schedule</p>
+          </div>
+          <div class="col-6 col-lg-3 text-center pb-1">
+            <img src="{% static 'img/img/icons/upgrade.jpg' %}" alt="" class="img-fluid">
+            <p class="align-self-center px-2">Lifetime Access & Upgrade</p>
+          </div>
+          <div class="col-6 col-lg-3 text-center pb-1">
+            <img src="{% static 'img/img/icons/support.jpg' %}" alt="" class="img-fluid">
+            <p class="align-self-center px-2">24/7 Lifetime Support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Training Options Section  -->
+<section class="container-fluid training-options">
+  <!-- Self paced and Heading  -->
+  <div class="container">
+    <div class="row px-2 mx-2">
+      <div class="col-12">
+        <h2 class="text-center py-3" id="trainingOptions">Self Placed Trainng</h2>
+      </div>
+
+      <div class="self-paced col-12">
+
+        <div class="col-12">
+          <h4 class="text-lg-left">
+            Self Placed Trainng
+          </h4>
+        </div>
+
+        <div class="col-12 col-lg-12 px-3 px-lg-5">
+
+          <div class="row justify-content-lg-center px-2">
+            <div class="col-12 col-lg-3">
+              <div class="row justify-content-lg-start pt-3">
+                <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> 60Hrs E-Learning Videos</p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3">
+              <div class="row justify-content-lg-start pt-3">
+                <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> Lifetime Access</p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3">
+              <div class="row justify-content-lg-start pt-3">
+                <i class="fas fa-check-circle" style="font-size:20px"></i>
+                <p class="px-1 px-lg-2"> 24/7 Support</p>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-3">
+              <div class="row ml-auto justify-content-center">
+                <div class="col-12 col-lg-6">
+                  <p class="text-center text-lg-center training-price"> Coming Soon</p>
+                </div>
+                <!-- <?php if (!empty($this->session->userdata('USER_ID'))) {
+                              $path='CartController/addToCart';
+                          }else{
+                              $path='login';
+                          }?> -->
+
+                <!--<div class="col-12 col-lg-6">
+               <?php //echo form_open(base_url($path)); ?> 
+                          <input type="hidden" name="price" value="<?php //echo $selfpacedprice[0]['price'] ?>">
+                          <input type="hidden" name="trainingname" value="<?php //echo "Self-Paced" ?>">
+                          <input type="hidden" name="id" value="<?php //echo $singleblogdata[0]['id'] ?>">
+                          <input type="hidden" name="coursename" value="<?php //echo $singleblogdata[0]['course_name'] ?>">
+                                          <?php //if(in_array("Self-Paced",$batchname)){
+                                            ?>
+                      <button class="btn btn-block enroll-btn">Enrolled</button>
+                    </div>-->
+
+                <!-- <div class="col-12 col-lg-6">
+                      <?php //}else{?>
+                      <button type="submit" class="btn btn-block enroll-btn">Enroll Now</button>
+                  </div>-->
+                <!-- <?php //}?>
+  
+  
+            <?php //echo form_close(); ?>  -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Online Education Mobile  -->
+  <!-- <form method="post" action=""> -->
+  <div class="row online-education-mobile self-paced mx-2">
+
+    <div class="col-12 px-3">
+      <h4 class="text-lg-left">
+        Online Classroom Training
+      </h4>
+    </div>
+    <div class="col-12 col-lg-8">
+      <div class="row mx-3" id="id_batch">
+        {% for i in object.onlineclassroom_set.all %}
+        <div class="col-12 online-batch-mobile">
+          <div class="row no-gutters pt-2">
+            <div class="col-1 text-right">
+              <input type="radio" name="batch" value="{{i.id}}" required="" id="id_batch_{{i.id}}"
+                class="online-batch-radio-mobile">
+            </div>
+            <div class="col-11">
+              <label for="id_batch_{{i.id}}" class="px-3 online-batch-label-mobile">{{i.batch}}</label>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-4 text-center">
+      <h6>Course Price</h6>
+      <div class="row">
+        <div class="col-12">
+          <p class="text-center px-2 online-training-price"><i
+              class="fas fa-rupee-sign align-self-center pt-1"></i>{{object.offer_price}}</p>
+        </div>
+        <div class="col-12">
+          <p class="text-center px-2 online-price-disabled"><s><i class="fas fa-rupee-sign align-self-center pt-1"
+                style="color:grey"></i>{{object.original_price}}</s></p>
+        </div>
+        <div class="col-12">
+          <p class="text-center px-2 pt-1"><span
+              style="color:#02429f; font-size: 18px;">{% widthratio object.offer_price object.original_price 100 %}%
+              Off</span>, Expires in
+            {{object.offer_expires}} days!</p>
+        </div>
+        <div class="col-12">
+          <!-- <input type="hidden" name="price" value="<?php echo $onlineprice[0]['price'] ?>">
+		<input type="hidden" name="trainingname" value="<?php echo "Batch-Wise Online" ?>">
+		<input type="hidden" name="id" value="<?php echo $singleblogdata[0]['id'] ?>">
+		<input type="hidden" name="coursename" value="<?php echo $singleblogdata[0]['course_name'] ?>"> -->
+          <!-- <div class="text-center">
+                <button class="btn enroll-btn mx-auto online-edu-btn" type="button">Enrolled</button>
+              </div>   -->
+
+          <div class="text-center">
+            <button class="btn enroll-btn mx-auto online-edu-btn" type="submit">Enroll Now</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- </form> -->
+
+
+
+  <!-- Corporate Training Mobile  -->
+  <div class="row corporate-training-mobile px-2 mx-2 mb-5">
+    <div class="self-paced col-12">
+
+      <div class="col-12 p-2">
+        <h4 class="text-lg-left">
+          CORPORATE TRAINING
+        </h4>
+      </div>
+
+      <div class="col-12 col-lg-12">
+
+        <div class="row justify-content-lg-center px-2">
+          <div class="col-12 col-lg-3">
+            <div class="row justify-content-lg-start pt-3">
+              <i class="fas fa-check-circle" style="font-size:20px"></i>
+              <p class="px-1 px-lg-2"> Customized Learning</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="row justify-content-lg-start pt-3">
+              <i class="fas fa-check-circle" style="font-size:20px"></i>
+              <p class="px-1 px-lg-2"> 24/7 Support</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="row justify-content-lg-start pt-3">
+              <i class="fas fa-check-circle" style="font-size:20px"></i>
+              <p class="px-1 px-lg-2"> Strong Reporting</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-3">
+            <a href="#"><button class="btn btn-block enroll-btn">Contact Us</button></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- Online Classroom  -->
+<section class="container online-classroom mt-5" id="onlineClassroom">
+  <form method="post" action="">
+    {% csrf_token %}
+    <div class="row online-education mx-lg-3">
+
+      <div class="col-12 px-3">
+        <h4 class="text-lg-left px-2">
+          Online Classroom Training
+        </h4>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="m-2">
+          <!--<table class="table online-schedule">
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td class="d-none d-sm-table-cell"><input type="radio" class="form-check-input" name="trainingRadion"
+                      id="trainingRadion1" value="true"></td>
+                  <td>7th Sep</td>
+                  <td>Week day (Online)</td>
+                  <td>10:00 A.M -
+                    12:00 P.M</td>
+                </tr>
+              </tbody>
+            </table>-->
+          <div class="row mx-3" id="id_batch">
+            {% for i in object.onlineclassroom_set.all %}
+            <div class="col-12 online-batch">
+              <div class="row no-gutters pt-2">
+                <div class="col-1 text-right">
+                  <input type="radio" name="batch" value="{{i.id}}" required="" id="id_batch_{{i.id}}"
+                    class="online-batch-radio">
+                </div>
+                <div class="col-11">
+                  <label for="id_batch_{{i.id}}" class="px-3 online-batch-label">{{i.batch}}</label>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4 text-center">
+        <h6>Course Price</h6>
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center px-2 online-training-price"><i
+                class="fas fa-rupee-sign align-self-center pt-3"></i>{{object.offer_price}}</p>
+          </div>
+          <div class="col-12">
+            <p class="text-center px-2 online-price-disabled"><s><i class="fas fa-rupee-sign align-self-center pt-3"
+                  style="color:grey"></i>{{object.original_price}}</s></p>
+          </div>
+          <div class="col-12">
+            <p class="text-center px-2 pt-3"><span
+                style="color:#02429f; font-size: 18px;">{% widthratio object.offer_price object.original_price 100 %}%
+                Off</span>, Expires in
+              3 days!</p>
+          </div>
+          <div class="col-12">
+            <input type="hidden" name="price" value="">
+            <input type="hidden" name="trainingname" value="">
+            <input type="hidden" name="id" value="">
+            <input type="hidden" name="coursename" value="">
+            <!-- <div class="text-center">
+                <button class="btn enroll-btn mx-auto online-edu-btn" type="button">Enrolled</button>
+              </div>     -->
+            <div class="text-center">
+              <button class="btn enroll-btn mx-auto online-edu-btn" type="submit">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</section>
+
+<!-- Corporate Training  -->
+<section class="container corporate-training px-4 mt-4" id="corporateTraining">
+  <div class="row px-2 mx-2">
+    <div class="self-paced col-12">
+
+      <div class="col-12 px-2">
+        <h4 class="text-lg-left px-3">
+          CORPORATE TRAINING
+        </h4>
+      </div>
+
+      <div class="col-12 col-lg-12">
+
+        <div class="row justify-content-lg-center px-2">
+          <div class="col-12 col-lg-3">
+            <div class="row justify-content-lg-start pt-3">
+              <i class="fas fa-check-circle" style="font-size:20px"></i>
+              <p class="px-1 px-lg-2"> Customized Learning</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="row justify-content-lg-start pt-3">
+              <i class="fas fa-check-circle" style="font-size:20px"></i>
+              <p class="px-1 px-lg-2"> 24/7 Support</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <div class="row justify-content-lg-start pt-3">
+              <i class="fas fa-check-circle" style="font-size:20px"></i>
+              <p class="px-1 px-lg-2"> Strong Reporting</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-2">
+            <button class="btn btn-block enroll-btn">Contact Us </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- Course Curriculum  -->
+<section class="container-fluid curriculum mt-4" id="courseCurriculum">
+  <!-- Curriculum  -->
+  <div class="row">
+    <div class="col-12 col-lg-9 py-3 mb-3">
+      <h2 class="text-center text-lg-left py-0" id="curriculumCourse">DATA SCIENCE USING PYTHON COURSE CURRICULUM</h2>
+    </div>
+
+    <div class="col-12 col-lg-9">
+      <div id="curriculumAccordion">
+        <!-- Title 1  -->
+        {% for i in object.module_set.all %}
+        <div class="card curriculum-card">
+          <div class="card-header panel-title" id="c-heading1">
+            <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#curriculumAccordion"
+              href="#cDescription{{i.id}}" aria-expanded="true" aria-controls="cDescription1">
+              <div class="row">
+                <div class="col-10 col-md-11">
+                  <h6>
+                    Module{{forloop.counter}} : {{i.module}}
+                  </h6>
+                </div>
+                <div class="col-2 col-md-1 mr-auto">
+                  <!-- Opened Card  -->
+                  <i class="toggle-curriculum fas fa-minus-circle"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Description 1  -->
+          {% for j in i.lesson_set.all %}
+          {% if i.id == 1 %}
+          <div id="cDescription{{i.id}}" class="panel-collapse collapse show" aria-labelledby="c-heading1"
+            data-parent="#curriculumAccordion">
+            <div class="card-body">
+              {{j.lesson|linebreaks}}
+            </div>
+          </div>
+          {% else %}
+          <div id="cDescription{{i.id}}" class="panel-collapse collapse" aria-labelledby="c-heading1"
+            data-parent="#curriculumAccordion">
+            <div class="card-body">
+              {{j.lesson|linebreaks}}
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endfor %}
+        <!-- Title 2  -->
+
+      </div>
+    </div>
+
+    <div class="d-none d-lg-block col-12 col-lg-3 form-container-course">
+      <form action="" method="POST" class="p-3 p-lg-4 details-form">
+        <h5 class="text-center py-2">GET MORE INFORMATION</h5>
+        {% csrf_token %}
+        {% include 'bs4_form.html' with form=infoform %}
+        <button class="btn btn-block form-button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Course Projects Section  -->
+<!-- Mobile Version  -->
+<section id="courseProjects" class="container-fluid pb-5 pb-md-1 mt-4">
+
+  <!-- Mobile View  -->
+  <div class="row py-3">
+    <div class="col">
+      <h4 class="text-center text-lg-left">{{object.title}} PROJECTS
+      </h4>
+    </div>
+  </div>
+  <div class="course-projects">
+    <div class="hs">
+      <div class="card project-card full">
+        <div class="card-header project-card-head">
+          <p>Project 1</p>
+          <h6>Project title</h6>
+        </div>
+        <div class="card-body project-card-body">
+          <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis, nemo? Nesciunt
+            iste, dignissimos esse exercitationem excepturi consequuntur laborum fugit laudantium veritatis obcaecati
+            quia aliquam molestias suscipit eaque delectus, voluptas magni!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Desktop Version  -->
+<section class="container-fluid desktop-project" id="desktopProject" style="overflow-x:auto">
+  <div class="row flex-row flex-nowrap">
+    {% for i in object.project.all %}
+    <div class="col-4">
+      <div class="card project-card">
+        <div class="card-header project-card-head">
+          <p>Project {{forloop.counter}}</p>
+          <h6>{{i.title}}</h6>
+        </div>
+        <div class="card-body project-card-body">
+          {{i.description}}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Certifications Section  -->
+<!-- Title  -->
+<section class="container-fluid mt-5" id="certificationHeading">
+  <div class="row py-3">
+    <div class="col-12">
+      <h3 class="text-center">CERTIFICATION IN THIS PROGRAM
+      </h3>
+    </div>
+  </div>
+</section>
+<!-- MS Certification  -->
+<section class="section container-fluid my-2 pb-2" id="certifications">
+  {% for i in object.certification.all %}
+  <div class="row px-lg-5 ms-certification mx-0 mx-lg-5">
+    <div class="col-12 col-lg-8 align-self-center">
+
+
+      <h4 class="py-2">{{i.title}}</h4>
+      {% for j in i.certquestion_set.all %}
+      <h5>{{j.question}}
+      </h5>
+      <p class="text-justify">{{j.answer|linebreaks}}</p>
+      {% endfor %}
+
+
+    </div>
+    <div class="col-12 col-lg-4">
+      <img src="{{i.image.url}}" alt="" class="img-fluid justify-content-center mx-auto d-block">
+    </div>
+  </div>
+  <br><br><br><br>
+  {% endfor %}
+</section>
+
+<!-- Trainers Section  -->
+
+<section class="container-fluid my-2" id="trainersSection">
+  <div class="row mx-3 py-3 pt-4">
+    <div class="col">
+      <h3 class="text-center">{{object.title}} TRAINERS
+      </h3>
+    </div>
+    <!-- Mobile View  -->
+    {% for i in object.trainer.all %}
+    <div class="row p-3 trainer-mobile-1">
+      <div class="col-12 col-lg-3 py-2 align-self-center trainer-img-container">
+        <img src="{{i.image.url}}" alt="" class="mx-auto d-block img-fluid trainer-img m-lg-4">
+      </div>
+      <div class="col-12 col-lg-9 p-3 align-self-center trainer-details">
+        <h5 class="text-center text-lg-left">{{i.name}}
+        </h5>
+        <p class="text-justify trainer-experience">
+          {{i.about}}
+        </p>
+        <p class="text-justify">
+          {{i.description|linebreaks}}
+        </p>
+        <div class="d-flex flex-row">
+          <a href="{{i.linkedin}}" class="linkedin-link-trainer">
+            <i class="fab fa-linkedin p-2"></i>
+          </a>
+          <a href="{{i.quora}}" class="quora-link-trainer">
+            <i class="fab fa-quora p-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+
+</section>
+
+<!-- Desktop View  -->
+<!-- Trainer 1  -->
+<section class="container-fluid my-2 pb-2" id="trainer1">
+  {% for i in object.trainer.all %}
+  <div class="row mx-3 mx-lg-4 px-3 trainer-1">
+    <div class="col-12 col-lg-3 py-2 align-self-center trainer-img-container">
+      <img src="{{i.image.url}}" alt="" class="mx-auto d-block img-fluid trainer-img m-lg-4">
+    </div>
+    <div class="col-12 col-lg-9 p-5 align-self-center trainer-details">
+      <h5 class="text-center text-lg-left">{{i.name}}</h5>
+      <p class="text-justify trainer-experience">
+        {{i.about}}
+      </p>
+      <p class="text-justify">
+        {{i.description|linebreaks}}
+      </p>
+
+      <div class="d-flex flex-row">
+        <a href="{{i.linkedin}}" class="linkedin-link-trainer">
+          <i class="fab fa-linkedin-in p-2"></i>
+        </a>
+
+        <a href="{{i.quora}}" class="quora-link-trainer">
+          <i class="fab fa-quora p-2"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+  <br><br><br><br>
+  {% endfor %}
+</section>
+
+<!-- Review Metrics  -->
+<section id="reviewMetrics" class="container py-2">
+  <div class="row py-4">
+    <div class="col">
+      <h4 class="text-center">STUDENT TESTIMONIALS
+      </h4>
+    </div>
+  </div>
+  <div class="row mb-2">
+    {% for i in reviews %}
+    <div class="col-12 col-sm-4 text-center pt-2 pb-1">
+      <div class="row no-gutters">
+        <div class="col-4">
+          <img src="{{i.image.url}}" alt="" class="img-fluid">
+        </div>
+        <div class="col-8">
+          <p class="px-2 text-left">{{i.reviews}}+ Positive<br>Reviews on {{i.name}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+
+<!-- FAQs Section Don't consider the faqs here  -->
+<section class="container-fluid mt-4" id="faqSection">
+  <div class="row pt-3">
+    <div class="col-12">
+      <h4>{{object.title}} FAQs</h4>
+    </div>
+  </div>
+  <div class="row py-3">
+    <div class="col-12 col-lg-9">
+      <div id="faqAccordion">
+        {% for i in object.faq.all %}
+        <div class="card faq-card">
+          <div class="card-header panel-title" id="f-heading1">
+            <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#faqAccordion"
+              href="#fDescription{{i.id}}" aria-expanded="false" aria-controls="fDescription1">
+              <div class="row">
+                <div class="col-10 col-md-11">
+                  <h6>
+                    {{i.question}}
+                  </h6>
+                </div>
+                <div class="col-2 col-md-1 mr-auto">
+                  <!-- Opened Card  -->
+                  <i class="toggle-curriculum fas fa-plus-circle"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Description 1  -->
+          <div id="fDescription{{i.id}}" class="panel-collapse collapse" aria-labelledby="f-heading1"
+            data-parent="#faqAccordion">
+            <div class="card-body">
+              {{i.answer|linebreaks}}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-12 col-lg-3">
+      <form action="" method="POST" class="p-3 p-lg-4 details-form">
+        <h5 class="text-center py-2">GET MORE INFORMATION</h5>
+        {% csrf_token %}
+        {% include 'bs4_form.html' with form=infoform %}
+        <button class="btn btn-block form-button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+
+
+<!-- Partners/Clients Section  -->
+<section class="container-fluid mt-4" id="partners">
+  <div class="row mx-2 mx-lg-5 partners-block px-3 px-lg-5">
+    <div class="col-12 py-3">
+      <h4 class="text-center">We are authorised partners of</h4>
+      <hr>
+    </div>
+    <div class="col-12 col-md-4 p-2">
+      <img src="{% static 'img/img/partner/microsoft-part.png' %}" alt="" class="img-fluid mx-auto d-block">
+    </div>
+    <div class="col-12 col-md-4 p-2">
+      <img src="{% static 'img/img/partner/unity-part.png' %}" alt="" class="img-fluid mx-auto d-block">
+    </div>
+    <div class="col-12 col-md-4 p-2">
+      <img src="{% static 'img/img/partner/adobe-part.png' %}" alt="" class="img-fluid mx-auto d-block">
+    </div>
+    <div class="col-12 col-md-4 p-2">
+      <img src="{% static 'img/img/partner/hp-part.png' %}" alt="" class="img-fluid mx-auto d-block">
+    </div>
+    <div class="col-12 col-md-4 p-2">
+      <img src="{% static 'img/img/partner/apple-part.png' %}" alt="" class="img-fluid mx-auto d-block">
+    </div>
+    <div class="col-12 col-md-4 p-2">
+      <img src="{% static 'img/img/partner/icphp-part.png' %}" alt="" class="img-fluid mx-auto d-block">
+    </div>
+  </div>
+</section>
+
+<!-- Trending Certifications  -->
+<section id="trendingCertification" class="container-fluid">
+  <div class="row py-3">
+    <div class="col">
+      <h4 class="text-center">Trending Certifications at Codegnan</h4>
+    </div>
+  </div>
+  <!-- Desktop View  -->
+  <div class="row mt-3" id="trendingCertDesktop">
+    {% for i in category %}
+    {% for j in i.course_set.all|slice:"4" %}
+    <div class="col-12 col-md-6 col-lg-3 p-3 px-4 mb-4">
+      <!-- card start -->
+
+
+      <div class="card project-card cert1">
+        <div class="card-header">
+          <h5 class="pt-5">{{ j.title }}</h5>
+        </div>
+        <div class="card-body">
+          <div class="d-flex flex-row">
+            <div class="course-rating d-flex flex-row align-items-center">
+              <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">{{ j.rating }} <i
+                  class="fas fa-star star-checked p-1"></i></p>
+              <p class="mx-3">({{ j.credits }})</p>
+            </div>
+          </div>
+          <h6>Certification From Microsoft</h6>
+          <div class="d-flex flex-row justify-content-between mt-3">
+            <p>{{ j.enrolled }} Learners</p>
+            <p>{{ j.duration }}</p>
+          </div>
+        </div>
+        <div class="overlay card pt-3 justify-content-center mx-auto">
+          <div class="text">
+            <h6>{{ j.title }}</h6>
+            <hr>
+            <p>Next Batch:<br>{% for i in object.onlineclassroom_set.all|slice:'1' %}{{i.batch}}{% endfor %}</p>
+            <p>Key Skills: <br>{{ j.tags }}</p>
+            <a href="{% url 'lms:coursedetail' j.slug %}"><button class="btn view-details-btn mx-auto text-center">
+                View Details
+              </button></a>
+          </div>
+        </div>
+      </div>
+      <!-- card end -->
+    </div>
+    {% endfor %}
+    {% endfor %}
+  </div>
+
+
+  <!-- Mobile View  -->
+  <div id="carouselControlsMobile" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for i in category %}
+      {% for j in i.course_set.all|slice:"4" %}
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-12">
+            <div class="card project-card cert1">
+              <div class="card-header">
+                <h5 class="pt-5">{{ j.title }}</h5>
+              </div>
+              <div class="card-body">
+                <div class="d-flex flex-row">
+                  <div class="course-rating d-flex flex-row align-items-center">
+                    <p style="color:white; background-color: #FD6D02; font-weight: 600;" class="p-1">{{ j.rating }} <i
+                        class="fas fa-star star-checked p-1"></i></p>
+                    <p class="mx-3">({{ j.credits }})</p>
+                  </div>
+                </div>
+                <h6>Certification from Microsoft</h6>
+                <div class="d-flex flex-row justify-content-between mt-3">
+                  <p>{{ j.enrolled }} Learners</p>
+                  <p>{{ j.duration }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+
+    </div>
+    <a class="carousel-control-prev" href="#carouselControlsMobile" role="button" data-slide="prev">
+      <span aria-hidden="true"><i class="fas fa-chevron-circle-left"></i></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselControlsMobile" role="button" data-slide="next">
+      <span aria-hidden="true"><i class="fas fa-chevron-circle-right"></i></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div class="row text-center mt-3">
+    <div class="col">
+      <a href="{% url 'lms:allcourses' %}"><button class="btn pageHighlightBtn">
+          All Courses
+        </button></a>
+    </div>
+  </div>
+</section>
+<div>
+
+  <!-- Footer  -->
+
+
+
+
+
+  <!-- Curriculum accordion script  -->
+  <script>
+    $(".panel-collapse.collapse.show").each(function () {
+      $(this).prev(".card-header").find(".fas").addClass("fa-minus-cirlce").removeClass("fa-plus-circle");
+    });
+    // Toggle plus minus icon on show hide of collapse element
+    $(".panel-collapse.collapse").on('show.bs.collapse', function () {
+      $(this).prev(".card-header").find(".fas").removeClass("fa-plus-circle").addClass("fa-minus-circle");
+    }).on('hide.bs.collapse', function () {
+      $(this).prev(".card-header").find(".fas").removeClass("fa-minus-circle").addClass("fa-plus-circle");
+    });
+  </script>
+  <!--Mobile menu Functionality -->
+  <script>
+    $(document).ready(function () {
+      $.fn.toggleHTML = function (t1, t2) {
+        if (this.html() == t1) {
+          this.html(t2);
+        } else {
+          this.html(t1);
+        }
+        return this;
+      };
+
+      $("#searchIcon").click(function () {
+        $("#mobileMenu").toggleClass("mobile-menu-height");
+        $("#searchBarMobile").toggleClass("search-box");
+        $("#searchInput").toggleClass("input-group");
+        $("input").toggleClass("search-form");
+        $("#searchIcon").toggleClass("input-group-text");
+        $("#searchIconGroup").toggleClass("input-group-append");
+        $("#searchBarIcon")
+          .toggleClass("fa-search")
+          .toggleClass("fa-times")
+          .toggleClass("p-3");
+      });
+    });
+  </script>
+  <script>
+    // #sendMailForm takes the data from the form with given ID
+    $('#courseenquiry').submit(function (e) {
+      alert(123);
+      var data = {
+        'name': $('#name').val(),
+        'enroll': "courseenroll",
+        'email': $('#email').val(),
+        'phonenumber': $('#phonenumber').val(),
+      };
+      console.log(data);
+      // POST data to the php file
+      $.ajax({
+        url: 'email/send',
+        data: data,
+        type: 'POST',
+        success: function (data) {
+          //console.log(data);
+          // For Notification
+          document.getElementById("courseenquiry").reset();
+          var $alertDiv = $(".coursemailResponse");
+          $alertDiv.show();
+          $alertDiv.find('.alert').removeClass('alert-danger alert-success');
+          $alertDiv.find('.coursemailResponseText').text("");
+          if (data.error) {
+            alert("error");
+            $alertDiv.find('.alert').addClass('alert-danger');
+            $alertDiv.find('.coursemailResponseText').text(data.message);
+          } else {
+            //alert("success");
+            $alertDiv.find('.alert').addClass('alert-success');
+            $alertDiv.find('.coursemailResponseText').text(data);
+          }
+        }
+      });
+      e.preventDefault();
+    });
+
+  </script>
+  <script>
+    // #sendMailForm takes the data from the form with given ID
+    $('#courseenquiry1').submit(function (e) {
+      alert(123);
+      var data = {
+        'name': $('#name1').val(),
+        'enroll': "courseenroll",
+        'email': $('#email1').val(),
+        'phonenumber': $('#phonenumber1').val(),
+      };
+      console.log(data);
+      // POST data to the php file
+      $.ajax({
+        url: 'email/send',
+        data: data,
+        type: 'POST',
+        success: function (data) {
+          //console.log(data);
+          // For Notification
+          document.getElementById("courseenquiry").reset();
+          var $alertDiv = $(".coursemailResponse1");
+          $alertDiv.show();
+          $alertDiv.find('.alert').removeClass('alert-danger alert-success');
+          $alertDiv.find('.coursemailResponseText1').text("");
+          if (data.error) {
+            alert("error");
+            $alertDiv.find('.alert').addClass('alert-danger');
+            $alertDiv.find('.coursemailResponseText1').text(data.message);
+          } else {
+            //alert("success");
+            $alertDiv.find('.alert').addClass('alert-success');
+            $alertDiv.find('.coursemailResponseText1').text(data);
+          }
+        }
+      });
+      e.preventDefault();
+    });
+
+  </script>
+  <script>
+    // #sendMailForm takes the data from the form with given ID
+    $('#courseenquiry2').submit(function (e) {
+      alert(123);
+      var data = {
+        'name': $('#name2').val(),
+        'enroll': "courseenroll",
+        'email': $('#email2').val(),
+        'phonenumber': $('#phonenumber2').val(),
+      };
+      console.log(data);
+      // POST data to the php file
+      $.ajax({
+        url: 'email/send',
+        data: data,
+        type: 'POST',
+        success: function (data) {
+          //console.log(data);
+          // For Notification
+          document.getElementById("courseenquiry").reset();
+          var $alertDiv = $(".coursemailResponse2");
+          $alertDiv.show();
+          $alertDiv.find('.alert').removeClass('alert-danger alert-success');
+          $alertDiv.find('.coursemailResponseText1').text("");
+          if (data.error) {
+            alert("error");
+            $alertDiv.find('.alert').addClass('alert-danger');
+            $alertDiv.find('.coursemailResponseText1').text(data.message);
+          } else {
+            //alert("success");
+            $alertDiv.find('.alert').addClass('alert-success');
+            $alertDiv.find('.coursemailResponseText1').text(data);
+          }
+        }
+      });
+      e.preventDefault();
+    });
+
+  </script>
+  <script>
+    function fill(Value) {
+      //Assigning value to "search" div in "search.php" file.
+      $('#search').val(Value);
+      //Hiding "display" div in "search.php" file.
+      $('#justList').hide();
+    }
+
+
+    $(document).ready(function () {
+      $("#search").keyup(function () {
+        auto_search();
+      });
+      $("#search1").keyup(function () {
+        auto_search1();
+      });
+      $("#search_btn").on("click", function () {
+        auto_search();
+      });
+
+      function auto_search1() {
+        var name = $('#search1').val();
+        if (name == "") {
+          //$top("#justList").html("");
+        }
+
+        //If name is not empty.
+
+        else {
+
+          //AJAX is called.
+
+          $.ajax({
+            type: "POST",
+            url: "user/search",
+            data: {
+              search: name
+            },
+
+            success: function (res) {
+              //console.log(res)
+              var jsonObject = JSON.parse(res);
+              console.log(res);
+              $("#justList1").html("");
+              if (jsonObject.length > 0) {
+                $.each(jsonObject, function (index, key) {
+                  //$top('#search').val(key['course_name']);
+                  $("#justList1").append("<li><a href='" + key['url'] + "' style='color:black !important;'>" + key['course_name'] + "</a></li>");
+                });
+              }
+
+            }
+
+          });
+
+        }
+      }
+
+      function auto_search() {
+        var name = $('#search').val();
+        if (name == "") {
+          //$top("#justList").html("");
+        }
+
+        //If name is not empty.
+
+        else {
+
+          //AJAX is called.
+
+          $.ajax({
+            type: "POST",
+            url: "user/search",
+            data: {
+              search: name
+            },
+
+            success: function (res) {
+              //console.log(res)
+              var jsonObject = JSON.parse(res);
+              console.log(res);
+              $("#justList").html("");
+              if (jsonObject.length > 0) {
+                $.each(jsonObject, function (index, key) {
+                  //$top('#search').val(key['course_name']);
+                  $("#justList").append("<li><a href='" + key['url'] + "' style='color:black !important;'>" + key['course_name'] + "</a></li>");
+                });
+              }
+
+            }
+
+          });
+
+        }
+      }
+
+
+    });
+  </script>
+  {% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Welcome to Interview Questions Page</h1>
+{% for i in object_list %}
+	
+<a href="{% url 'lms:interview-detail' i.slug %}"><h2>{{ i.title }}</h2></a>
+
+{% endfor %}
+
+
+{% endblock %}

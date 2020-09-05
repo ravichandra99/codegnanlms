@@ -1,0 +1,738 @@
+// font-family: 'Mulish', sans-serif;
+// font-family: 'Sora', sans-serif;
+
+// General Styling
+
+// Uncomment for mobile responsiveness debugging
+//  html{
+//    scroll-behavior: smooth;
+//    scroll-padding-top: 220px;
+//   // *{
+//   //   border: 1px solid black;
+//   // }
+//  }
+// Uncomment for mobile responsiveness debugguing
+
+$highlightColor: #fd6d02;
+$siteBlue: #037cf1;
+$rowWidth: 90%;
+$breakpoint-mobile: 575px;
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 991px;
+$breakpoint-lg-desktop: 1199px;
+@media(max-width:768px){
+  body{
+    h1{
+      font-size: 26px !important;
+    }
+    h2{
+      font-size: 26px !important;
+    }
+    h3{
+      font-size: 22px !important;
+    }
+    h4{
+      font-size: 20px !important;
+    }
+    h5{
+      font-size: 18px !important;;
+    }
+    h6{
+      font-size: 16px !important;
+      font-weight: 700;
+    }
+    p{
+      font-size: 15px !important;
+    }
+  }
+}
+body {
+  .card{
+    ul{
+      padding-left: 30px !important;
+    }
+  }
+  h2 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 26px;
+  }
+  h1 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  h6 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  h3 {
+    font-family: "Mulish", sans-serif;
+    color: black;
+    font-weight: 800;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  h4 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 22px;
+  }
+  h5 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+  }
+  li {
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+  }
+}
+nav {
+  a {
+    font-size: 15px;
+    font-family: "Sora", sans-serif;
+  }
+}
+p {
+  font-size: 15px;
+  font-family: "Sora", sans-serif;
+  color: black;
+}
+td {
+  font-size: 15px;
+  font-family: "Sora", sans-serif;
+}
+th {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+}
+
+// Gradient Background styling
+@mixin gradientBGSection {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  // padding: 40px 0px 40px 0px !important;
+  color: white;
+}
+//General box-shadow styling
+@mixin courseBoxShadow {
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+  //   Used for modules in the body
+}
+@mixin lightShadow {
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+  //   Light shadow, used for navigation
+}
+@mixin buttonGeneralStyling {
+  font-family: "Sora", sans-serif;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  //   General button style
+}
+@mixin enrollButton {
+  background-color: $highlightColor;
+  color: white;
+  // Enroll button styling
+}
+@mixin whiteBlock {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+}
+@mixin sectionPadding{
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+body{
+  .container-fluid{
+    @include sectionPadding();
+  }
+}
+.pageHighlightBtn{
+  @include buttonGeneralStyling();
+  @include gradientBGSection();
+}
+// General Styling and config ends here 
+
+// Main menu Stlying 
+.cg-logo {
+  img {
+    width: 200px;
+  }
+}
+@media(max-width: $breakpoint-desktop){
+  .main-menu{
+    display: none !important;
+  }
+}
+@media(min-width: 992px){
+  #mobileMenu{
+    display: none !important;
+  }
+}
+.main-menu {
+  @include sectionPadding();
+  @include lightShadow();
+  height: 80px;
+  background-color: white !important;
+  a{
+    color: black !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+  }
+  .signup-btn{
+    background-color: transparent;
+    border-radius: 8px;
+    border : 1.5px solid $siteBlue;
+    color: $siteBlue;
+    padding: 10px 15px 10px 15px !important;
+  }
+  .sign-in{
+    font-weight: 800 !important;
+  }
+  .highlight-btn{
+    background-image: linear-gradient(45deg, #005bea, #00c6fb);
+    color: white !important;
+    border-radius: 8px;
+    padding: 10px 15px 10px 15px !important;
+  }
+  button{
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+  }
+  .fa-bars{
+    color: #313E99;
+  }
+}
+
+// Mobile menu styling 
+#mobileMenu{
+  @include sectionPadding();
+  @include lightShadow();
+  .fa-bars{
+    color: #313E99;
+  }
+  background-color: white !important;
+  a{
+    color: black !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+  }
+  .signup-btn{
+    background-color: transparent;
+    border-radius: 8px;
+    border : 2px solid $siteBlue;
+    color: $siteBlue;
+  }
+  .sign-in{
+    font-weight: 800 !important;
+  }
+  .highlight-btn{
+    background-image: linear-gradient(45deg, #005bea, #00c6fb);
+    color: white !important;
+    border-radius: 8px;
+  }
+  button{
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+  }
+
+  // Search Bar
+  #searchBarMobile{
+    position: relative;
+    overflow-x: visible !important;
+    transition: all 0.5s;
+    z-index: 9 !important;
+    #searchIconGroup{
+      cursor: pointer;
+      .fa-search{
+        color: $siteBlue;
+      }
+    }
+  }
+  .search-box{
+    border: 1.5px solid $siteBlue;
+    padding: 5px;
+    border-radius: 50px;
+    transition: all 0.5s;
+  }
+  .input-group{
+    input{
+      &:focus{
+        box-shadow: none;
+      }
+      border-radius: 50px !important;
+      outline: none;
+      border: none;
+      transition: all 0.5s;
+      font-size: 15px;
+      font-family: "Sora", sans-serif;
+    }
+  }
+  .input-group-append{
+    span{
+      border-radius: 50px !important;
+      border: none;
+      outline: none;
+      transition: all 0.5s;
+      z-index: 999;
+      @include gradientBGSection();
+    }
+  }
+  .search-form{
+    display: flex !important;
+    z-index: 999;
+    transition: all 0.5s;
+    width: 80%;
+  }
+}  
+
+@media(max-width: $breakpoint-desktop){
+  .secondary-menu{
+    display: none !important;
+  }
+}
+.secondary-menu{
+  @include sectionPadding();
+  background-color: white;
+  .highlight-btn{
+    background-image: linear-gradient(45deg, #005bea, #00c6fb);
+    color: white !important;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+    text-transform: uppercase !important;
+  }
+  a{
+    color: black !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    font-size: 15px;
+    font-family: "Sora", sans-serif;
+  }
+  .contact-btn{
+    background-color: transparent;
+    border-radius: 8px;
+    border : 2px solid $siteBlue;
+    color: $siteBlue;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    font-size: 15px;
+    font-family: "Sora", sans-serif;
+  }
+  input{
+    font-family: "Sora", sans-serif;
+    width: 350px !important;
+    border: 1.5px solid $siteBlue;
+    border-radius: 8px;
+  }
+  .input-group-text{
+    background-image: linear-gradient(45deg, #005bea, #00c6fb);
+    color: white;
+    border: 1.5px solid $siteBlue;
+    border-radius: 8px;
+  }
+}
+// Header styling ends here 
+
+// Footer Styling
+footer{
+  background-color: #e4e2e3;
+  @include sectionPadding();
+} 
+#footerRow{
+  p{
+    font-size: 14px !important;
+  }
+  a{
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    color: black;
+  }
+  @media(max-width: $breakpoint-tablet){
+    #footerCredsDesktop{
+      display: none;
+    }
+  }
+  @media(min-width: 768px){
+    #footerCredsMobile{
+      display: none;
+    }
+  }
+  hr{
+    border-top: 1px solid #b7b7b7;
+  }
+}
+
+// Landing slider styling starts here 
+@media (max-width: 575px) {
+  #offerSlide {
+    background-image: linear-gradient(140deg, #0660f1 50%, White 50.5%) !important;
+  }
+}
+
+#offerSlide {
+  background-image: linear-gradient(110deg, #0660f1 50%, White 50.5%);
+}
+
+#offerSlide .offer-block {
+  color: white !important;
+}
+
+#offerSlide .offer-block p {
+  color: white !important;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+#offerSlide .offer-block small {
+  text-transform: uppercase;
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+}
+
+#offerSlide .offer-block h2 {
+  font-weight: 300;
+}
+
+#offerSlide .offer-block .offer-btn {
+  background-color: #FD6D02;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+}
+
+#offerSlide img {
+  width: 250px !important;
+}
+
+#offerSlide .benefits-block h2 {
+  color: #066ff3;
+  font-weight: 800;
+}
+
+#offerSlide .benefits-block h1 {
+  color: #FD6D02;
+}
+
+#offerSlide .benefits-block h4 {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  color: white;
+  padding: 5px 0px 5px 0px !important;
+}
+
+#offerSlide .benefits-block small {
+  text-transform: uppercase;
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+}
+#landingSlide1{
+  background-image: linear-gradient(to right, rgba(0,0,0,.7), rgba(0,0,0,.4)), url(/img/slider04.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  color: white;
+  height: auto;
+  width: 100% !important;
+  p{
+    color: white;
+  }
+}
+#landingSlide2{
+  background-image: linear-gradient(to right, rgba(0,0,0,.7), rgba(0,0,0,.4)), url(/img/slider01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  color: white;
+  height: auto;
+  width: 100% !important;
+  p{
+    color: white;
+  }
+}
+#landingSlider{
+  img{
+    width: 150px;
+  }
+  @media(min-width: 992px){
+    a{
+      .left-icon{
+        margin-left: -40px;
+      }
+      .right-icon{
+        margin-right: -40px;
+      }
+    }
+  }
+  @media(min-width: 768px) and (max-width: 991px){
+    a{
+      .left-icon{
+        margin-left: -20px;
+      }
+      .right-icon{
+        margin-right: -20px;
+      }
+    }
+  }
+  a{
+    span{  
+      .fas{
+        color: white;
+        font-size: 24px;
+        border: 3px solid rgba(255,255,255,0.7);
+        border-radius: 50px;
+      }
+    }
+  }
+  .slider-btn{
+    color: black;
+    font-family: "Sora", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 8px;
+  }
+}
+
+// Testimonials Section Styling
+#googleReviews{
+  transition: all 0.5s ease-in-out;
+}
+#videoTestimonials{
+  transition: all 0.5s ease-in-out;
+}
+@mixin sliderIndicators{
+  .carousel-indicators{
+    li{
+      border: 1px solid $siteBlue;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px !important;
+    }
+    .active{
+      background: $siteBlue !important;
+    }
+  }
+}
+@media(max-width: $breakpoint-tablet){
+  #reviewSliderDesktop{
+    display: none !important;
+  }
+  #videoSliderDesktop{
+    display: none !important;
+  }
+}
+@media(min-width: 768px){
+  #reviewSliderMobile{
+    display: none !important;
+  }
+  #videoSliderMobile{
+    display: none !important;
+  }
+} 
+#testimonialSection{
+  li{
+    border: 1.5px solid $siteBlue;
+    .active{
+      @include gradientBGSection();
+    }
+    a{
+      border-radius: 0px;
+      }
+    }
+    .card{
+      height: 250px;
+    }
+  }
+
+.review-card{
+  background-color: #fefcfd;
+  @include lightShadow();
+  border-radius: 20px !important;
+}
+.review-video{
+  @include lightShadow();
+  border-radius: 20px !important;
+}
+#reviewSliderDesktop{
+  @include sliderIndicators();
+}
+#reviewSliderMobile{
+  @include sliderIndicators();
+  a{
+    span{
+      .fas{
+        color: $siteBlue !important;
+        font-size: 22px;
+      }
+    }
+  }
+}
+#videoSliderDesktop{
+  @include sliderIndicators();
+}
+#videoSliderMobile{
+  @include sliderIndicators();
+  a{
+    span{
+      .fas{
+        color: f7f7f7;
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+#reviewMetrics{
+  img{
+    width: 50px;
+  }
+}
+
+// Testimonial Section Styling Ends Here 
+
+//Trending Certifications Styling Starts Here
+#trendingCertification{
+  // Hover CSS
+  .project-card{
+    border-radius: 10px !important;
+  } 
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: black;
+    z-index: 2 !important;
+  }
+  
+  .card:hover .overlay {
+    opacity: 1;
+  }
+  .text {
+    color: white !important;
+    font-size: 20px;
+    position: absolute;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%; 
+    p{
+      color: white;;
+    }
+    hr{
+      border-top: 2px solid white;
+    }
+    .view-details-btn{
+      width: 100% !important;
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+  }
+  // Hover css ends here 
+
+  .card-header{
+    height: 180px;
+    color: white;
+  }
+  h5{
+    font-size: 28px;
+  }
+  .card{
+    @include lightShadow();
+  }
+  .card-body{
+    background-color: #fafafa;
+  }
+  .cert1{
+    .card-header{
+      background-color: #a18cd1 !important;
+    }
+  }
+  .cert2{
+    .card-header{
+      background-color: #5e98f9 !important;
+    }
+  }
+  .cert3{
+    .card-header{
+      background-color: #d299c2 !important;
+    }
+  }
+  .cert4{
+    .card-header{
+      background-color: #1cb8da !important;
+    }
+  }
+}
+
+.fa-chevron-circle-left{
+  color: white !important;
+  font-size: 40px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+  margin-bottom: 40px;
+}
+.fa-chevron-circle-right{
+  color: white !important;
+  font-size: 40px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.4);
+  margin-bottom: 40px;
+
+}
+@media(min-width: 576px){
+  #carouselControlsMobile{
+    display: none !important;
+  }
+}
+@media(max-width: $breakpoint-mobile){
+  #trendingCertDesktop{
+    display: none !important;
+  }
+}
+// Trending Certifications Styling Ends Here 
+
+// Why Codegnan Styling Starts Here 
+#whyCodegnan{
+  .cg-metrics{
+    border: 4px solid;
+    border-image-source: linear-gradient(45deg, #005bea, #00c6fb);
+    border-image-slice: 1;
+    h2{
+      font-size: 38px;
+      color: #0855ef;
+    }
+    p{
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+}
+// Why Codegnan Styling Ends Here
+
+// Student Journey Styling Starts Here 
+#studentJourney{
+  img{
+    width: 80%;
+  }
+}

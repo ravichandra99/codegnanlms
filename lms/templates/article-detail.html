@@ -1,0 +1,390 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<!--/.Navbar -->
+
+<div class="container pt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'lms:index' %}">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'lms:blog' %}">Blogs</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{blog.title}} </li>
+    </ol>
+  </nav>
+  <div class="row latest-blog">
+    <div class="col-md-9 latest-blog-div position-relative mb-4">
+      <div class="single-blog mb-5">
+        <h1 class="pb-2 pt-3 text-uppercase">{{blog.title}}</h1>
+        <div class="mb-3"><small><a href="#" class="author">Published by {{blog.author}}</a> | {{blog.created_at}} | {{blog.views}} Views</small></div>
+        <div class="blog-img"><img src="{{j.image1024x576.url}}" width="100%"></div>
+        {{blog.body|safe}}
+        <div class="tags pt-4">
+          <p class="text-uppercase"><strong>Tags:</strong></p>
+          <ul>
+          	{% for i in blog.get_tags %}
+            <li><a href="#">{{i}}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="pt-4 share">
+          <p class="text-uppercase pt-2"><strong>Share:</strong></p>
+          <ul>
+            <li><a href="{{blog.facebook}}" class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="{{blog.twitter}}" class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="{{blog.linkedin}}" class="btn-floating btn-lg btn-li" type="button" role="button"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="comments">
+          <form>
+            <div class="row">
+              <div class="col-md-12 mt-5">
+                <p class="font-weight-bold">Comments <strong>[0]</strong></p>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email">
+              </div>
+            </div>
+            <div class="mt-3 mb-3">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="box-content p-4 bg-light border mb-4">
+        <h3 class="gradient-text text-uppercase">Want to Become Data Scientist in 4 months?</h3>
+        <p>Codegnan helps you to become one, Enroll now and start One on One Live sessions.</p>
+        <p> Get Microsoft Technology Associate and HPE Certificate after successful completion of Exams </p>
+        <div class="gradient p-2 rounded">
+          <input type="text" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name *">
+          <input type="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="eMail *">
+          <a href="#" class="btn btn-light w-100">ENROLL NOW</a> </div>
+      </div>
+      <div class="box-content p-4 bg-light border mb-4">
+        <h3 class="gradient-text text-uppercase">Free Webinars</h3>
+        <p>Webinars are always part of our community. Attend regular webinars and gain knowledege from us</p>
+        <a href="#" class="btn btn-primary text-uppercase w-100">Learn more</a> </div>
+      <div class="box-content p-4 bg-light border mb-4">
+        <h3 class="gradient-text text-uppercase">Categories</h3>
+        <ul class="pl-3 category">
+          <li><a href="#">Data Science</a></li>
+          <li><a href="#">Python</a></li>
+          <li><a href="#">Machine Learning</a></li>
+          <li><a href="#">Java</a></li>
+          <li><a href="#">Web Technologies</a></li>
+          <li><a href="#">Deep Learning</a></li>
+        </ul>
+      </div>
+      <div class="box-content p-4 bg-light border mb-4">
+        <h3 class="gradient-text text-uppercase">Popular Courses</h3>
+        <ul class="pl-3 category">
+          <li><a href="#">Data Science</a></li>
+          <li><a href="#">Python</a></li>
+          <li><a href="#">Machine Learning</a></li>
+          <li><a href="#">Java</a></li>
+          <li><a href="#">Web Technologies</a></li>
+          <li><a href="#">Deep Learning</a></li>
+        </ul>
+      </div>
+      <div class="box-content p-4 bg-light border mb-4">
+        <h3 class="gradient-text text-uppercase">Join Codegnan to Learn Popular Technologies</h3>
+        <div class="mt-4 mb-4"><img src="images/courses-smal-icons.png" width="100%"></div>
+        <p class="text-uppercase mb-3 h-heading"><strong>Get Certified From</strong></p>
+        <div class="row mb-4 certified-logos">
+          <div class="col-md-6"><img src="images/microsoft-part.png" width="100%"></div>
+          <div class="col-md-6"><img src="images/hp-part.png" width="100%"></div>
+        </div>
+        <div class="m-auto w-75 text-center"><a href="#" class="btn btn-primary font-weight-bold rounded mb-4">Online or Offline</a></div>
+        <div class="gradient p-2 rounded">
+          <input type="text" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name *">
+          <input type="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="eMail *">
+          <select class="form-control mb-2" id="exampleFormControlSelect1">
+            <option>Choose you Course</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <a href="#" class="btn btn-light w-100">ENROLL NOW</a> </div>
+      </div>
+    </div>
+  </div>
+  <div class="category mt-5 mb-5 pb-3">
+    <h4>Trending Blogs</h4>
+    <div class="row blog-cat-title">
+    	{% for i in blogcategory|slice:'1' %}
+		{% for j in i.latest_blogs %}
+      <div class="col-md-3 mb-4">
+        <div class="shadow">
+          <div><img src="{{j.image1024x576.url}}" width="100%" alt="blog image"> </div>
+          <div class="p-3 pb-4">
+            <p class="pb-0 mb-2"><a href="#">{{j.title}}</a></p>
+            <div class="row">
+              <div class="col-md-8">
+                <p class="pb-0 mb-0"><small><a href="#">By {{j.author}}</a></small></p>
+              </div>
+              <div class="col-md-4"><small>{{j.views}} views</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+     {% endfor %}
+     {% endfor %}
+    </div>
+  </div>
+  <div class="Courses-scroll mb-5 pb-5">
+   <h4>Our Popular Courses</h4>
+    <div class="row p-courses">
+      <div class="col-md-12">
+        <div id="blogCarousel" class="carousel" data-ride="carousel">
+          <!--Controls--> 
+            <div class="controls-top"> <a class="btn-floating light-blue darken-4 left gradient " href="#blogCarousel" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+				<a class="btn-floating light-blue darken-4 right gradient " href="#blogCarousel" data-slide="next"><i class="fa fa-chevron-right"></i></a> </div> 
+            <!--Controls--> 
+          
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="gradient rounded p-4">
+                    <p class="posiotion text-uppercase rounded text-white p-2 pl-3 pr-3"><small>Online / Classroom</small></p>
+                    <div class="display-4 text-uppercase text-white pt-2">Data Science Certification</div>
+                    <p class="pt-2 mb-0 pb-0 text-white">189 Learners</p>
+                    <div class="row mb-2 mt-2">
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1 text-white">(78)</div>
+                    </div>
+                    <h6 class="pt-2 mb-2 text-white text-uppercase">Get certified from</h6>
+                    <div class="row mt-3">
+                      <div class="col-md-6"><img src="images/microsoft.png" width="100%"></div>
+                      <div class="col-md-6"><img src="images/hw.png" width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="gradient rounded p-4">
+                    <p class="posiotion text-uppercase rounded text-white p-2 pl-3 pr-3"><small>Online / Classroom</small></p>
+                    <div class="display-4 text-uppercase text-white pt-2">Data Science Certification</div>
+                    <p class="pt-2 mb-0 pb-0 text-white">189 Learners</p>
+                    <div class="row mb-2 mt-2">
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1 text-white">(78)</div>
+                    </div>
+                    <h6 class="pt-2 mb-2 text-white text-uppercase">Get certified from</h6>
+                    <div class="row mt-3">
+                      <div class="col-md-6"><img src="images/microsoft.png" width="100%"></div>
+                      <div class="col-md-6"><img src="images/hw.png" width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="gradient rounded p-4">
+                    <p class="posiotion text-uppercase rounded text-white p-2 pl-3 pr-3"><small>Online / Classroom</small></p>
+                    <div class="display-4 text-uppercase text-white pt-2">Data Science Certification</div>
+                    <p class="pt-2 mb-0 pb-0 text-white">189 Learners</p>
+                    <div class="row mb-2 mt-2">
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1 text-white">(78)</div>
+                    </div>
+                    <h6 class="pt-2 mb-2 text-white text-uppercase">Get certified from</h6>
+                    <div class="row mt-3">
+                      <div class="col-md-6"><img src="images/microsoft.png" width="100%"></div>
+                      <div class="col-md-6"><img src="images/hw.png" width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="gradient rounded p-4">
+                    <p class="posiotion text-uppercase rounded text-white p-2 pl-3 pr-3"><small>Online / Classroom</small></p>
+                    <div class="display-4 text-uppercase text-white pt-2">Data Science Certification</div>
+                    <p class="pt-2 mb-0 pb-0 text-white">189 Learners</p>
+                    <div class="row mb-2 mt-2">
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1 text-white">(78)</div>
+                    </div>
+                    <h6 class="pt-2 mb-2 text-white text-uppercase">Get certified from</h6>
+                    <div class="row mt-3">
+                      <div class="col-md-6"><img src="images/microsoft.png" width="100%"></div>
+                      <div class="col-md-6"><img src="images/hw.png" width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--.row--> 
+            </div>
+            <!--.item-->
+            
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="gradient rounded p-4">
+                    <p class="posiotion text-uppercase rounded text-white p-2 pl-3 pr-3"><small>Online / Classroom12</small></p>
+                    <div class="display-4 text-uppercase text-white pt-2">Data Science Certification</div>
+                    <p class="pt-2 mb-0 pb-0 text-white">189 Learners</p>
+                    <div class="row mb-2 mt-2">
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1 text-white">(78)</div>
+                    </div>
+                    <h6 class="pt-2 mb-2 text-white text-uppercase">Get certified from</h6>
+                    <div class="row mt-3">
+                      <div class="col-md-6"><img src="images/microsoft.png" width="100%"></div>
+                      <div class="col-md-6"><img src="images/hw.png" width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="gradient rounded p-4">
+                    <p class="posiotion text-uppercase rounded text-white p-2 pl-3 pr-3"><small>Online / Classroom</small></p>
+                    <div class="display-4 text-uppercase text-white pt-2">Data Science Certification</div>
+                    <p class="pt-2 mb-0 pb-0 text-white">189 Learners</p>
+                    <div class="row mb-2 mt-2">
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1 text-white">(78)</div>
+                    </div>
+                    <h6 class="pt-2 mb-2 text-white text-uppercase">Get certified from</h6>
+                    <div class="row mt-3">
+                      <div class="col-md-6"><img src="images/microsoft.png" width="100%"></div>
+                      <div class="col-md-6"><img src="images/hw.png" width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="gradient rounded p-4">
+                    <p class="posiotion text-uppercase rounded text-white p-2 pl-3 pr-3"><small>Online / Classroom</small></p>
+                    <div class="display-4 text-uppercase text-white pt-2">Data Science Certification</div>
+                    <p class="pt-2 mb-0 pb-0 text-white">189 Learners</p>
+                    <div class="row mb-2 mt-2">
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1 text-white">(78)</div>
+                    </div>
+                    <h6 class="pt-2 mb-2 text-white text-uppercase">Get certified from</h6>
+                    <div class="row mt-3">
+                      <div class="col-md-6"><img src="images/microsoft.png" width="100%"></div>
+                      <div class="col-md-6"><img src="images/hw.png" width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="gradient rounded p-4">
+                    <p class="posiotion text-uppercase rounded text-white p-2 pl-3 pr-3"><small>Online / Classroom</small></p>
+                    <div class="display-4 text-uppercase text-white pt-2">Data Science Certification</div>
+                    <p class="pt-2 mb-0 pb-0 text-white">189 Learners</p>
+                    <div class="row mb-2 mt-2">
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1"><img src="images/star5.png" width=""></div>
+                      <div class="col-md-1 text-white">(78)</div>
+                    </div>
+                    <h6 class="pt-2 mb-2 text-white text-uppercase">Get certified from</h6>
+                    <div class="row mt-3">
+                      <div class="col-md-6"><img src="images/microsoft.png" width="100%"></div>
+                      <div class="col-md-6"><img src="images/hw.png" width="100%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--.row--> 
+            </div>
+            <!--.item--> 
+            
+          </div>
+          <!--.carousel-inner--> 
+        </div>
+        <!--.Carousel--> 
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-contact-btn"> <a href="#" class="btn btn-primary text-uppercase font-weight-bold w-100">Contact us now</a> </div>
+<div id="back-top"> <a href="#top"><span><i class="fa fa-arrow-up" aria-hidden="true"> </i> </span></a> </div>
+<script>
+$('.carousel').carousel({
+  interval: 5000
+})
+</script> 
+<script type="text/javascript">
+$top = jQuery.noConflict();
+    $top(function () {
+
+	// hide #back-top first
+	$top("#back-top").hide();
+	
+	// fade in #back-top
+	$top(function () {
+		$top(window).scroll(function () {
+			if ($top(this).scrollTop() > 100) {
+				$top('#back-top').fadeIn();
+			} else {
+				$top('#back-top').fadeOut();
+			}
+		});
+
+		// scroll body to 0px on click
+		$top('#back-top a').click(function () {
+			$top('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+
+});
+</script> 
+
+<!--<h1>{{ blog.title }}</h1>
+by: <h3>{{ blog.user }}</h2>
+Date published: <h3>today</h3>
+<img src="{% static 'time.png' %}" alt="Article Image" width="500" height="600">
+<h2>{{ blog.body|safe }}<h2>
+Tags: <h3>{{ post.tags }}<h3>	
+<ul>
+	<li>Facebook: {{ blog.facebook }}</li>
+	<li>Twitter: {{ blog.twitter }}</li>
+	<li>LinkedIn: {{ blog.linkedin }}</li>
+</ul>-->
+
+{% endblock %}

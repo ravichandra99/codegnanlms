@@ -1,0 +1,185 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.cart .heading h2 {
+  background: linear-gradient(45deg, #005bea, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Mulish" sansserif;
+}
+
+.cart .heading p {
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #005bea, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cart .course-section .course-card {
+  padding: 2px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.cart .course-section .course-card .course-image {
+  width: 100%;
+  margin: 0px auto;
+}
+
+.cart .course-section .course-card .course-title {
+  background: linear-gradient(45deg, #005bea, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Mulish" sansserif;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+}
+
+.cart .course-section .course-card .course-description {
+  color: #000;
+  text-align: justify;
+}
+
+.cart .course-section .course-card .course-discount-price {
+  float: left;
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-left: 30px;
+  margin-top: 35px;
+}
+
+.cart .course-section .course-card .course-discount-price i::before {
+  font-size: large;
+}
+
+.cart .course-section .course-card .course-actual-price {
+  float: left;
+  text-decoration: line-through;
+  font-weight: 500;
+  margin: 41px 7px;
+}
+
+.cart .course-section .course-card .course-actual-price i::before {
+  font-size: small;
+}
+
+.cart .price-section {
+  text-align: center;
+}
+
+.cart .price-section h4 {
+  background: linear-gradient(45deg, #005bea, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Mulish" sansserif;
+  text-transform: uppercase;
+}
+
+.cart .price-section .final-price {
+  background: linear-gradient(45deg, #005bea, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Mulish" sansserif;
+  font-size: 2.7em;
+  font-weight: 700;
+}
+
+.cart .price-section .final-price i::before {
+  font-size: 0.7em;
+}
+
+.cart .price-section .actual-price {
+  text-decoration: line-through;
+  font-family: "Mulish" sansserif;
+  font-size: 1.7em;
+  font-weight: 500;
+}
+
+.cart .price-section .actual-price i::before {
+  font-size: 0.7em;
+}
+
+.cart .price-section .discount {
+  font-weight: bold;
+  font-size: large;
+}
+
+.cart .price-section .check-out-btn {
+  color: #FFF;
+  background: linear-gradient(45deg, #005bea, #00c6fb);
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+.cart .suggestions .suggestions-heading {
+  background: linear-gradient(45deg, #005bea, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Mulish" sansserif;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px) {
+  .cart .course-section .course-card img {
+    width: 100%;
+  }
+  .cart .course-section .course-card .course-title {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .cart .course-section .course-card .course-discount-price {
+    padding-left: 50px;
+    font-size: 1.5em;
+  }
+  .cart .course-section .course-card .course-discount-price i::before {
+    font-size: large;
+  }
+  .cart .course-section .course-card .course-actual-price {
+    padding-left: 10px;
+    text-decoration: line-through;
+  }
+  .cart .course-section .course-card .course-actual-price i::before {
+    font-size: small;
+  }
+  .cart .price-section {
+    position: fixed;
+    bottom: 0px;
+    background-color: #FFF;
+    -webkit-box-shadow: 2px 1px 7px 2px #354A54;
+            box-shadow: 2px 1px 7px 2px #354A54;
+  }
+  .cart .price-section h4 {
+    font-size: 1.7em;
+  }
+  .cart .price-section .final-price {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  .cart .price-section .final-price i::before {
+    font-size: large;
+  }
+  .cart .price-section .actual-price {
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .cart .price-section .actual-price i::before {
+    font-size: small;
+  }
+  .cart .price-section .check-out-btn {
+    padding: 10px;
+  }
+  .cart .suggestions {
+    margin-bottom: 350px;
+  }
+}
+/*# sourceMappingURL=cart.css.map */

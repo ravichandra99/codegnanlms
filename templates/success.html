@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'sass/home-style.css' %}">
+<style type="text/css">
+	table
+	{
+		 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-5 mb-5">
+<table class="table">
+  <thead>
+   
+  </thead>
+  <tbody>
+  	 <tr>
+    	 <th scope="col">User</th>
+     <td>{{user}}</td>
+     
+    </tr>
+    <tr>
+      
+    
+      
+    </tr>
+    <tr>
+    	 <th scope="col">Order Id</th>
+    	   <td>{{order_id}}</td>
+    </tr>
+       <tr>
+
+      <th scope="col">Course</th>
+        <td>{{course}}</td>
+     
+     
+    </tr>
+       <tr>
+       	 <th scope="col">Batch</th>
+       	  <td>{{online_class}}</td>
+    </tr>
+       <tr>
+       	 <th scope="col">Receipt</th>
+       	   <td>{{receipt}}</td>
+    </tr>
+       <tr>
+       	 <th scope="col">Price</th>
+       	  <td>{{amount}}</td>
+    </tr>
+       <tr>
+       	  <th scope="col">Payment</th>
+
+       {% if successful == True %}
+      <td>Success</td>
+      {% else %}
+      <td>Error</td>
+      {% endif %}
+    </tr>
+    
+
+  
+   
+    
+  </tbody>
+</table>
+</div>
+
+
+{% endblock %}

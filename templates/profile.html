@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<section class="container mt-5">
+  <div class="row details-form">
+
+   <div class="col-md-4 myprofilebg">
+ 
+<div class="nav flex-column nav-pills mb-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+    
+       <div class="text-center mt-5">
+          <a href="{% url 'authentication:profile' %}">
+        <img src="{{request.user.display_pic.url}}" class="img-fluid profileimg mb-3" alt="Responsive image" width="30%"></a>
+           
+</div>
+    <div class="text-center">
+  <div class="m-3">
+  <a class="mybtn" href="{% url 'authentication:profile' %}"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;My Profile</a>
+  </div>
+
+   <div class="m-3">
+  <a class="mybtn" href="{% url 'lms:mycourses' %}"><i class="fa fa-book"></i>&nbsp;&nbsp;My Courses</a>
+  </div>
+   <div class="m-3">
+  <a class="mybtn" href="{% url 'authentication:update' request.user.slug %}"><i class="fas fa-edit"></i>&nbsp;&nbsp;Edit / Update</a>
+  </div>
+  </div>
+</div>
+</div>
+ <div class="col-md-8">
+
+<div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+<table class="table mt-5">
+  <thead>
+    
+  
+  </thead>
+  <tbody>
+   
+      <th scope="row">username</th>
+      <td>{{request.user.username}}</td>
+     
+    
+    </tr>
+    <tr>
+      <th scope="row">First Name</th>
+      <td>{{request.user.first_name}}</td>
+    
+    </tr>
+     <tr>
+      <th scope="row">Last Name</th>
+      <td>{{request.user.last_name}}</td>
+    
+    </tr>
+     <tr>
+      <th scope="row">College</th>
+      <td>{{request.user.college}}</td>
+    
+    </tr>
+     <tr>
+      <th scope="row">Branch</th>
+      <td>{{request.user.branch}}</td>
+    
+    </tr>
+    
+    <tr>
+      <th scope="row">Email</th>
+      <td>{{request.user.email}}</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Phone Number</th>
+      <td>{{request.user.mobile}}</td>
+      
+    </tr>
+    
+   
+  </tbody>
+</table>
+
+  </div>
+  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+  </div>
+  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+ 
+
+
+
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+
+{% endblock %}
+

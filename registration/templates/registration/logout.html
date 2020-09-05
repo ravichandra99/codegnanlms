@@ -1,0 +1,21 @@
+{% extends "registration/registration_base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Logged out" %}{% endblock %}
+
+{% block content %}
+<section>
+	<div class="container">
+		<div class="row mt-5 text-center">
+			<div class="col-12">
+ <a href="{% url 'auth_login' %}"><i class="fa fa-sign-in fa-5x" aria-hidden="true"></i></a>
+<p class="allmsg">
+
+{% trans "Successfully logged out" %}.
+	</p>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,204 @@
+$primary-color:#005bea;
+$secondary-color:#00c6fb;
+$login-bg:rgba(0,0,0,0.25);
+$paragraph:#000;
+$light-clr:#FFF;
+$test-color:red;  
+$bx-shadow:#354A54;
+$btn-color:#339933;
+$mulish:'Mulish' sansserif;  
+*{
+    box-sizing: border-box;
+    transition: all 0.7s;
+    // border: 1px solid $test-color;
+}
+.cart{
+    .heading{
+        h2{
+            background: linear-gradient(45deg,$primary-color,$secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: $mulish;
+        }
+        p{
+            text-transform: uppercase;
+            background: linear-gradient(45deg,$primary-color,$secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+    }
+    .course-section{
+        .course-card{
+            padding: 2px 20px;
+            // border: 1px solid $login-bg;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+            // background: linear-gradient(45deg,$primary-color,$secondary-color);
+            padding: 10px;
+            .course-image{
+                width: 100%;
+                // float: left;
+                margin: 0px auto;
+            }
+            .course-title{
+            // color: $primary-color;
+            background: linear-gradient(45deg,$primary-color,$secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: $mulish;
+            text-transform: uppercase;
+            font-weight: 700;
+            // text-shadow: 2px 2px 4px $light-clr;
+            // text-transform: capitalize;
+            text-align: left;
+            }
+            .course-description{
+                color: $paragraph;
+                text-align: justify;
+                // text-shadow: 1px 2px 2px $login-bg;                
+            }
+            .course-discount-price{
+                float: left;
+                font-size: 1.5em;
+                font-weight: 500;
+                margin-left: 30px;
+                margin-top: 35px;
+                // margin: 30px 35px;
+                i::before{
+                    font-size: large;
+                }
+            }
+            .course-actual-price{
+                float: left;
+                text-decoration: line-through;
+                font-weight: 500;
+                margin: 41px 7px;
+                i::before{
+                    font-size: small;
+                }
+            }
+        }
+    }
+    .price-section{
+        text-align: center;
+        h4{
+            background: linear-gradient(45deg,$primary-color,$secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: $mulish;
+            text-transform: uppercase;
+            // padding: 0px 20px;
+        }
+        .final-price{
+            background: linear-gradient(45deg,$primary-color,$secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: $mulish;
+            font-size: 2.7em;
+            font-weight: 700;
+            // padding: 0px 70px;
+            i::before{
+                font-size: 0.7em;
+            }
+        }
+        .actual-price{
+            text-decoration: line-through;
+            font-family: $mulish;
+            // padding: 0px 70px;
+            font-size: 1.7em;
+            font-weight: 500;
+            i::before{
+                font-size: 0.7em;
+            }
+        }
+        .discount{
+            font-weight: bold;
+            font-size: large;
+            // padding: 0px 70px;
+        }
+        .check-out-btn{
+            color: $light-clr;
+            background: linear-gradient(45deg,$primary-color,$secondary-color);
+            box-shadow: 0px 0px 6px rgba(0,0,0,0.5);
+            font-weight: 500;
+            font-size: 1.2em;
+        }
+    }
+    .suggestions{
+        .suggestions-heading{
+            background: linear-gradient(45deg,$primary-color,$secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: $mulish;
+            text-transform: uppercase;
+        }
+    }
+}
+@media screen and (max-width:480px){
+    .cart{
+        .course-section{
+            .course-card{
+                img{
+                    width: 100%;
+                }
+                .course-title{
+                    font-size: 1.2em;
+                    text-align: center;
+                }
+                .course-discount-price{
+                    // margin: 0px 10px;
+                    padding-left: 50px;
+                    font-size: 1.5em;
+                    i::before{
+                        font-size: large;
+                    }
+                }
+                .course-actual-price{
+                    // margin: 0px 115px;
+                    padding-left: 10px;
+                    text-decoration: line-through;
+                    i::before{
+                        font-size: small;
+                    }
+                }
+            }
+        }
+        .price-section{ 
+            position: fixed;
+            bottom: 0px;
+            background-color: $light-clr;
+            box-shadow: 2px 1px 7px 2px $bx-shadow;
+            h4{
+                font-size: 1.7em;
+            }
+            .final-price{
+                font-size: 1.5em;
+                font-weight: 700;
+                // float: left;
+                // padding-left:20px;
+                // margin-left: 22px;
+                i::before{
+                    font-size: large;
+                }
+            }
+            .actual-price{
+                font-size: 1em;
+                font-weight: 500;
+                // margin-left: 20px;
+                // padding-left: 10px;
+                // margin-top: 10px;
+                i::before{
+                    font-size: small;
+                }
+            }
+            .check-out-btn{
+                padding: 10px;
+            }
+        }
+        .suggestions{
+            margin-bottom: 350px;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+
+{% endblock %}
+{% block content %}
+{% for i in object_list|slice:'1' %}
+{% for j in i.latest_blogs %}
+   {% if forloop.counter == 1 %}
+<div class="container-fluid pt-5">
+  <h1 class="text-center pb-4 text-uppercase h-heading">Blogs</h1>
+  <h3 class="pb-3 text-uppercase h-heading">Latest Blogs</h3>
+
+  <div class="row latest-blog">
+
+    <div class="col-md-8 latest-blog-div position-relative mb-4">
+      <div class="blog-img"><img src="{{j.image1024x576.url}}" width="100%"></div>
+      <div class="blog-txt">
+        
+        <h4><a href="{% url 'lms:article-detail' j.slug %}">{{j.title}}</a></h4>
+        <div class="row">
+          <div class="col-md-10">
+            <p><a href="{% url 'lms:article-detail' j.slug %}">Learn more</a></p>
+          </div>
+          <div class="col-md-2 float-right">{{j.views}} views</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      {% endif %}
+
+    {% if forloop.counter == 2 %}
+      <div class="blog-small mb-3">
+        <div class=" latest-blog-div position-relative">
+          <div class="blog-img"><img src="{{j.image1024x576.url}}" width="100%"></div>
+          <div class="blog-txt">
+            
+            <h4><a href="{% url 'lms:article-detail' j.slug %}">{{j.title}}</a></h4>
+            <div class="row">
+              <div class="col-md-6">
+                <p><a href="{% url 'lms:article-detail' j.slug %}">Learn more</a></p>
+              </div>
+              <div class="col-md-6 float-right">{{j.views}} views</div>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endif %}
+
+{% if forloop.counter == 3 %}
+  
+      <div class="blog-small">
+        <div class=" latest-blog-div position-relative">
+          <div class="blog-img"><img src="{{j.image1024x576.url}}" width="100%"></div>
+          <div class="blog-txt">
+            
+            <h4><a href="{% url 'lms:article-detail' j.slug %}">{{j.title}}</a></h4>
+            <div class="row">
+              <div class="col-md-6">
+                <p><a href="#">Learn more</a></p>
+              </div>
+              <div class="col-md-6 float-right">{{j.views}} views</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+{% endif %}
+{% endfor %}
+{% endfor %}
+  <div class="category mt-5">
+    
+    {% for i in object_list %}
+    <div class=""> <small><strong>Category</strong></small>
+      <h2>{{i.category}}</h2>
+    </div>
+    
+    <div class="row blog-cat-title">
+      {% for j in i.blog_set.all %}
+      <div class="col-md-3 mb-4">
+        <div class="shadow">
+          <div><img src="{{j.image1024x576.url}}" width="100%" alt="blog image"> </div>
+          <div class="p-3 pb-4">
+            <p class="pb-0 mb-2"><a href="{% url 'lms:article-detail' j.slug %}">{{j.title}}</a></p>
+            <div class="row">
+              <div class="col-md-8">
+                <p class="pb-0 mb-0"><small><a href="#">By {{j.author}}</a></small></p>
+              </div>
+              <div class="col-md-4"><small>{{j.views}} views</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    <div class="m-auto text-center pt-5"> <a href="{% url 'lms:article-detail' j.slug %}" class="btn font-weight-bold text-uppercase">See more</a> </div>
+  </div>
+
+        {% endfor %}
+  {% endfor %}
+  
+
+<div class="mobile-contact-btn"> <a href="#" class="btn btn-primary text-uppercase font-weight-bold w-100">Contact us now</a> </div>
+<div id="back-top"> <a href="#top"><span><i class="fa fa-arrow-up" aria-hidden="true"> </i> </span></a> </div>
+<script>
+$('.carousel').carousel({
+  interval: 5000
+})
+</script> 
+<script type="text/javascript">
+$top = jQuery.noConflict();
+    $top(function () {
+
+	// hide #back-top first
+	$top("#back-top").hide();
+	
+	// fade in #back-top
+	$top(function () {
+		$top(window).scroll(function () {
+			if ($top(this).scrollTop() > 100) {
+				$top('#back-top').fadeIn();
+			} else {
+				$top('#back-top').fadeOut();
+			}
+		});
+
+		// scroll body to 0px on click
+		$top('#back-top a').click(function () {
+			$top('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+
+});
+</script>
+{% endblock %}

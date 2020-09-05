@@ -1,0 +1,49 @@
+{% load payment_extras %}
+
+{% load static %}
+
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "rzp_test_wv0ntAoxdPAhGJ", // Enter the Key ID generated from the Dashboard
+            "amount": "{{ amount }}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Codegnan",
+            "description": "{{description}}",
+            "image": "{% static 'img/razlogo.jpg' %}",
+            "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "callback_url": "{% url 'payment:success' order_id %}",
+            "theme": {
+                "color": "#3383FF"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+<!-- <form action="http://127.0.0.1:8000/payment/success?order_id={{order_id}}/" method="POST">
+    <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_G2c0QUlUS7Uqet"
+        data-amount="{{amount}}" data-currency="INR" data-order_id="{{order_id}}" data-buttontext="Make Payment"
+        data-name="APSSDC" data-description="{{description}}" data-image="{% static 'img/logo.png' %}"
+        data-prefill.name="{{name}}" data-theme.color="#3383FF"></script>
+</form> -->

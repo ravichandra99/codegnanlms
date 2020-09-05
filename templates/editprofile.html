@@ -1,0 +1,403 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block content %}
+
+        <div class="container mb-5 mt-5">
+            <div class="row no-gutters">
+                <div class="side-bar col-12 col-sm-2 col-md-2">
+                    <div class="usr-pic">
+                        <img src="{% static 'profile/user.png' %}" alt="NAME" width="120" height="120">
+                        <h5 class="text-center py-2" data-toggle="tooltip" data-placement="bottom" title={{request.user}}>{{request.user}}</h5>
+                    </div>
+                    <div class="nav flex-column nav-pills" id="mytab" role="tablist" aria-orientation="vertical">
+                        
+
+                        <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true"><span>Profile</span></a>
+
+                        <a class="nav-link " id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="false"><span>Photo</span></a>
+                        <a class="nav-link " id="v-pills-account-tab" data-toggle="pill" href="#v-pills-account" role="tab" aria-controls="v-pills-account" aria-selected="false"><span>Account</span></a>
+                        <a class="nav-link " id="v-pills-payment-tab" data-toggle="pill" href="#v-pills-payment" role="tab" aria-controls="v-pills-payment" aria-selected="false"><span>Payment methods</span></a>
+                        <a class="nav-link " id="v-pills-privacy-tab" data-toggle="pill" href="#v-pills-privacy" role="tab" aria-controls="v-pills-privacy" aria-selected="false"><span>Privacy</span></a>
+                        <a class="nav-link " id="v-pills-notifications-tab" data-toggle="pill" href="#v-pills-notifications" role="tab" aria-controls="v-pills-notifications" aria-selected="false"><span>Notifications</span></a>
+                        <a class="nav-link " id="v-pills-closeaccount-tab" data-toggle="pill" href="#v-pills-closeaccount" role="tab" aria-controls="v-pills-account" aria-selected="false"><span>Close Account</span></a>
+                    </div>
+                </div>
+                
+                <!-- contents -->
+                <div class="main-section col-12 col-sm-10 col-md-10 p-0">
+                    <!-- tabs -->
+                    <div class="tab-content"> 
+                        <!-- public-profile   -->
+                        <div class="tab-pane fade show" id="v-pills-public-profile" role="tabpanel" aria-labelledby="v-pills-public-profile-tab">
+                                <div class="heading col-12 col-sm-12 col-md-12">
+                                    <h1>Vinay</h1>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                </div>
+                                <div class="content col-12 col-sm-12 col-md-12">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores cupiditate culpa quidem similique nulla iusto, consectetur quis dolor. Deleniti ut quos beatae facilis dolorem. Voluptatum labore consequatur adipisci porro fugiat?</p>
+                                </div>
+                        </div>  
+                        <!-- /public-profile   -->
+                        <!-- profile -->
+                        <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                <div class="heading col-12 col-sm-12 col-md-12">
+                                    <h3>My Profile</h3>
+                                    <p>Add Information about yourself</p>
+                                </div>
+                                <!-- <div class="container"> -->
+                                   <div class="content col-12 col-sm-12 col-md-12">
+                                    <form action="#" class="basics-form">
+                                            <div class="form-group row d-flex justify-content-center">
+                                                <label for="Basic" class=" col-10 col-sm-10 col-md-10 col-form-label">Basics:</label>
+                                                <input type="text" class="form-control  col-10 col-sm-10 col-md-10 mb-3" id="fname" placeholder="First Name">
+                                                <input type="text" class="form-control  col-10 col-sm-10 col-md-10 mb-3" id="lname" placeholder="Last Name">
+                                                <input type="text" class="form-control  col-10 col-sm-10 col-md-10 mb-3" id="headline" placeholder="Headline">
+                                                <p class="">Lorem ipsum dolor sit amet, consectetur</p>
+                                                <textarea name="info" id="info" cols="10" rows="5" class="form-control  col-10 col-sm-10 col-md-10 mb-3"></textarea>
+                                                <select name="lang" id="lang" class="form-control  col-10 col-sm-10 col-md-10">
+                                                    <option value="English(US)">English(US)</option>
+                                                    <option value="English(CN)">English(CN)</option>
+                                                    <option value="Telugu">Telugu</option>
+                                                    <option value="Hindi">Hindi</option>
+                                                </select>
+                                                <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-3 d-flex justify-content-center">
+                                                </section>
+                                                <section class="col-10 col-sm-10 col-md-10 mt-3">
+                                                    <label for="Link" class=" col-12 col-sm-12 col-md-12 col-form-label">Links:</label>
+                                                     <input type="text" class="form-control  col-12 col-sm-12 col-md-12 mb-3" id="weblink" placeholder="Website (https://..)">
+                                                     
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend  d-none d-sm-block">
+                                                          <span class="input-group-text" id="twitter">http://twitter.com/</span>
+                                                        </div>
+                                                        <div class="input-group-prepend d-block d-sm-none">
+                                                            <span class="input-group-text" id="addon-wrapping"><i class="fa fa-twitter" aria-hidden="true" style="font-size: 1.5em;"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="twitter-url" aria-describedby="twitter">
+                                                    </div>                                                    
+                                                    <p class="">Add your Twitter username (e.g. johnsmith).</p>
+
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend  d-none d-sm-block">
+                                                          <span class="input-group-text" id="facebook">http://facebook.com/</span>
+                                                        </div>
+                                                        <div class="input-group-prepend d-block d-sm-none">
+                                                            <span class="input-group-text" id="addon-wrapping"><i class="fa fa-facebook" aria-hidden="true" style="font-size: 1.5em;"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="facebook-url" aria-describedby="facebook">
+                                                    </div>  
+                                                    <p class="">Add your Facebook username (e.g. johnsmith).</p>
+
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend  d-none d-sm-block">
+                                                          <span class="input-group-text" id="linkedIn">http://LinkedIn.com/</span>
+                                                        </div>
+                                                        <div class="input-group-prepend d-block d-sm-none">
+                                                            <span class="input-group-text" id="addon-wrapping"><i class="fa fa-linkedin" aria-hidden="true" style="font-size: 1.5em;"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="linkedIn-url" aria-describedby="linkedIn">
+                                                    </div> 
+                                                    <p class="">Add your LinkedIn username (e.g. johnsmith).</p>
+
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend  d-none d-sm-block">
+                                                          <span class="input-group-text" id="youtube">http://youtube.com/</span>
+                                                        </div>
+                                                        <div class="input-group-prepend d-block d-sm-none">
+                                                            <span class="input-group-text" id="addon-wrapping"><i class="fa fa-youtube" aria-hidden="true" style="font-size: 1.5em;"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="youtube-url" aria-describedby="youtube">
+                                                    </div>  
+                                                    <p class="">Add your Youtube username (e.g. johnsmith).</p>
+                                                </section>
+                                                <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-3 d-flex justify-content-center">
+                                                    <a href="#" class="btn btn-danger mt-3" id="submit">Save</a>
+                                                </section>
+                                            </div>
+                                        </form>
+                                    </div>
+                                <!-- </div> -->
+                        </div>                    
+                    <!-- /profile -->  
+                    <!-- photo -->
+                    <div class="tab-pane fade show" id="v-pills-photo" role="tabpanel" aria-labelledby="v-pills-photo-tab">
+                        <div class="heading col-12 col-sm-12 col-md-12">
+                            <h1>Photo</h1>
+                            <p>Add a nice photo of yourself</p>
+                        </div>
+                        <div class="content col-12 col-sm-12 col-md-12">
+                            <form action="" class="photo-form">
+                                <div class="form-group row d-flex justify-content-center">
+                                    <label for="photo" class=" col-10 col-sm-10 col-md-10 col-form-label">Label:</label>
+                                    <div class="img-preview-wapper col-7 col-sm-7 col-md-7">
+                                        <div class="img-preview d-flex justify-content-center">
+                                            <img src="{% static 'profile/user.png' %}" alt="" width="200" height="200" id="img-source">
+                                        </div>
+                                    </div>
+                                    <label for="photo" class="col-10 col-sm-10 col-md-10 col-form-label">Add / Change Image:</label>
+                                    <div class="input-group mb-3  col-10 col-sm-10 col-md-10">
+                                        <div class="custom-file">
+                                          <input type="file" accept="image/*" class="custom-file-input" id="img-file" onchange="preview()">
+                                          <label class="custom-file-label" for="filename" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                                        </div>
+                                      </div>
+                                      <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-3 d-flex justify-content-center">
+                                        <a href="#" class="btn btn-danger mt-3" id="submit">Save</a>
+                                    </section>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--/photo -->
+                    <!-- Account -->
+                    <div class="tab-pane fade show" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab">
+                        <div class="heading col-12 col-sm-12 col-md-12">
+                            <h1>ACCOUNT</h1>
+                            <p>Edit your account settings and change password here.</p>
+                        </div>
+                        <div class="content col-12 col-sm-12 col-md-12">
+                            <form action="#" class="account-form">
+                                <div class="form-group row d-flex justify-content-center">
+                                    <label for="password" class=" col-10 col-sm-10 col-md-10 col-form-label">Email:</label>
+
+                                    <div class="input-group  mb-3  col-10 col-sm-10 col-md-10">
+                                        <input disabled type="text" class="form-control" aria-label="Your Email Id is" placeholder="Your Email ID is">
+                                        <div class="input-group-append">
+                                              <button class="input-group-text btn btn-sm" data-toggle="modal" data-target="#change-email-modal" id="btn-change-email-modal">
+                                                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                                              </button>
+                                        </div>
+                                      </div>
+                                      <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-3 d-flex justify-content-center">
+                                      </section>
+                                      <section class="col-10 col-sm-10 col-md-10 mt-3">
+                                            <label for="password" class="col-12 col-sm-12 col-md-12 col-form-label">Password:</label>
+                                            <input type="password" class="form-control  col-12 col-sm-12 col-md-12 mb-3" id="cpassword" placeholder="Current Password">
+                                            <input type="password" class="form-control  col-12 col-sm-12 col-md-12 mb-3" id="new-password" placeholder="New Password">
+                                            <input type="password" class="form-control  col-12 col-sm-12 col-md-12 mb-3" id="re-new-password" placeholder="Re-type New Password">
+                                        </section>
+                                    <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-3 d-flex justify-content-center">
+                                        <a href="#" class="btn btn-danger mt-3" id="submit">Change password</a>
+                                    </section>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div  id="change-email-modal" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Change Your Email</h5>
+                                    <button class="btn btn-sm" class="close" data-dismiss="modal"> <strong style="font-size: 2em;"> &times;</strong></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <input type="email" name="mailid" id="mailid" class="form-control" value="gummadivinaykumar18@gmail.com"><br>
+                                        <input type="password" name="password" id="password" class="form-control" placeholder="password">
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger">Save changes</button>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/account -->
+
+                    <!-- payment -->
+                    <div class="tab-pane fade show" id="v-pills-payment" role="tabpanel" aria-labelledby="v-pills-payments-tab">
+                        <div class="heading col-12 col-sm-12 col-md-12">
+                            <h1>Payments Methods</h1>
+                            <p>Update your credit card information.</p>
+                        </div>
+                        <div class="content col-12 col-sm-12 col-md-12">
+                            <form action="" class="payment-form">
+                                <div class="form-group row d-flex justify-content-center">
+                                    <label for="payment" class="col-10 col-sm-10 col-md-10 col-form-label">Payment settings:</label>
+                                        <div class="content-payment col-10 col-sm-10 col-md-10">
+                                            <div class="form-check mb-3 mr-sm-2">
+                                                <input class="form-check-input" type="checkbox" id="check1">
+                                                <label class="form-check-label" for="check1">
+                                                    Keep transaction information for further purchases
+                                                </label>
+                                            </div>
+                                        </div>
+                                    <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-5 d-flex justify-content-center">
+                                        <a href="#" class="btn btn-danger mt-3" id="submit">Save</a>
+                                    </section>
+                                </div>
+                            </form>
+                        </div>
+                </div> 
+                    <!-- /payment -->
+                    <!-- privacy -->
+                    <div class="tab-pane fade show" id="v-pills-privacy" role="tabpanel" aria-labelledby="v-pills-privacy-tab">
+                        <div class="heading col-12 col-sm-12 col-md-12">
+                            <h1>Privacy</h1>
+                            <p>Modify your privacy settings here.
+                            </p>
+                        </div>
+                        <div class="content col-12 col-sm-12 col-md-12">
+                            <form action="" class="privacy-form">
+                                <div class="form-group row d-flex justify-content-center">
+                                    <label for="payment" class="col-10 col-sm-10 col-md-10 col-form-label">Profile Page settings:</label>
+                                        <div class="content-privacy  col-10 col-sm-10 col-md-10">
+                                            <div class="form-check mb-3 mr-sm-2">
+                                                <input type="checkbox" id="privacy-check1" class="form-check-input">
+                                                <label for="privacy-check1" class="form-check-label">
+                                                    Show your profile on search engines
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-3 mr-sm-2">
+                                                <input type="checkbox" id="check2" class="form-check-input">
+                                                <label for="check2" class="form-check-label">Show courses you're taking on your profile page</label>
+                                            </div>
+                                        </div>
+                                        <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-5 d-flex justify-content-center">
+                                            <a href="#" class="btn btn-danger mt-3" id="submit">Save</a>
+                                        </section>
+                                    </div>
+                            </form>
+                        </div>
+                    </div> 
+                <!-- /privacy -->
+                    <!-- notifications -->
+                    <div class="tab-pane fade show" id="v-pills-notifications" role="tabpanel" aria-labelledby="v-pills-privacy-tab">
+                        <div class="heading col-12 col-sm-12 col-md-12">
+                            <h1>Notifications</h1>
+                            <p>Turn promotional email notifications from Udemy on or off
+                            </p>
+                        </div>
+                        <div class="content col-12 col-sm-12 col-md-12">
+                            <form action="" class="notification-form">
+                                <div class="form-group row d-flex justify-content-center">
+                                    <label for="notification" class="col-10 col-sm-10 col-md-10 col-form-label">I want to receive:</label>
+                                    <div class="content-notification  col-10 col-sm-10 col-md-8">
+                                            <div class="form-check mb-3 mr-sm-2">
+                                                <input class="form-check-input" type="checkbox" id="notification-check1">
+                                                <label class="form-check-label" for="notification-check1">
+                                                    Promotions, course recommendations, and helpful resources from Udemy.
+                                                </label>
+                                            </div>
+                                            <div class="check-div">
+                                            <div class="form-check mb-3 mr-sm-2">
+                                                    <input type="checkbox" id="notification-check2" class="form-check-input">
+                                                    <label for="notification-check2" class="form-check-label">
+                                                        Announcements from instructors whose course(s) I’m enrolled in.
+                                                        To adjust this preference by course, leave this box checked and go to the  course dashboard and click on "Options" to opt in or out of specific announcements.
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <section class="inner-section mb-3">
+                                                <div class="form-check mb-5 mr-sm-2 mt-2">
+                                                    <input type="checkbox" id="notification-check3" class="form-check-input">
+                                                    <label for="notification-check3" class="form-check-label">
+                                                        Don't send me any promotional mails.                  
+                                                        If this box is checked, please note that you will continue to receive important transactional emails like purchase receipts.
+                                                    </label>
+                                                </div>
+                                            </section>
+                                    </div>
+                                    <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-3 d-flex justify-content-center">
+                                        <a href="#" class="btn btn-danger mt-3" id="submit">Save</a>
+                                    </section>
+                                </div>
+                            </form>
+                        </div>
+                    </div> 
+                    <!-- /notifications -->
+
+                    <!-- close Account -->
+                    <div class="tab-pane fade show" id="v-pills-closeaccount" role="tabpanel" aria-labelledby="v-pills-closeaccount-tab">
+                        <div class="heading col-12 col-sm-12 col-md-12">
+                            <h1>Close ACCOUNT</h1>
+                            <p>Close your account permanently.
+                            </p>
+                        </div>
+                        <div class="content col-12 col-sm-12 col-md-12">
+                            <form action="" class="close-account-form">
+                                <div class="form-group row">
+                                    <label for="password" class="col-10 col-sm-10 col-md-10 col-form-label">Close Account:</label>
+                                    <p class=" col-10 col-sm-10 col-md-10 ">
+                                        <strong class="text-danger ">Warning:</strong>
+                                        If you close your account, you will be unsubscribed from all your <span>write the code for no.of courses</span> courses, and will lose access forever.
+                                    </p>
+                                    <section class="inner-section col-12 col-sm-12 col-md-12 p-0 mt-3 d-flex justify-content-center">
+                                        <button class="btn btn-outline-danger" data-toggle="modal" data-target="#close-account-modal" id="btn-close-account-modal">
+                                            Close Account
+                                        </button>
+                                    </section>                                
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div  id="close-account-modal" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Close Your Account?</h5>
+                                    <button class="btn btn-sm" class="close" data-dismiss="modal"><strong style="font-size: 2em;"> &times;</strong></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="#">
+                                        <span>Are you sure to close the account ?</span><br>
+                                        <input type="password" name="password" id="password" class="form-control" placeholder="Enter Your password">
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-danger">Close Account</button>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/close Account -->
+
+                    </div>
+                    <!-- /tabs -->
+                </div>
+                <!-- /contents -->
+            </div>
+            <!--/row-->
+        </div>
+        <!--/container-->
+        
+        <!-- modals script -->
+            <!-- <script>
+                $(document).ready(function(){
+                    $('#btn-change-email-modal').click(function(){
+                        $('#change-email-modal').modal('show');
+                    });
+                    $('#close-account-modal').on('shown.bs.modal', function () {
+                        $('#btn-close-account-modal').trigger('focus')
+                    })
+                });
+            </script> -->
+        <!-- /modals script -->
+
+
+    <!--Tabs Script Code-->
+        <script>
+            function preview(){
+                var file=document.getElementById('photoname');
+                var img=document.getElementById('img-source');
+                img.src = URL.createObjectURL(event.target.files[0]);
+            }
+
+            $('#myTab a').on('click', function (e) {
+                    e.preventDefault()
+                    $(this).tab('show')
+            })
+        </script>
+    <!--Tabs Script Code-->
+    <script>
+        $(function () {
+             $('[data-toggle="tooltip"]').tooltip()
+       })
+    </script>
+{% endblock %}

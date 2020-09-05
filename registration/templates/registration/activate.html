@@ -1,0 +1,29 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Activation Failure" %}{% endblock %}
+
+{% block content %}
+<section>
+	<div class="container">
+		<div class="row mt-5 text-center">
+			<div class="col-12">
+
+<p class="allmsg">
+{% trans "Account activation failed." %}
+</p>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}
+
+
+{% comment %}
+**registration/activate.html**
+
+Used if account activation fails. With the default setup, has the following context:
+
+``activation_key``
+    The activation key used during the activation attempt.
+{% endcomment %}

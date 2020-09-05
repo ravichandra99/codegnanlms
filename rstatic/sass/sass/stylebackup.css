@@ -1,0 +1,825 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 220px;
+}
+
+body h2 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body h1 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 900;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+
+body h6 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+body h3 {
+  font-family: "Mulish", sans-serif;
+  color: black;
+  font-weight: 800;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+body h4 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+body h5 {
+  font-family: "Mulish", sans-serif;
+  font-weight: 800;
+}
+
+body li {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+}
+
+nav a {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+}
+
+p {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+  color: black;
+}
+
+td {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+}
+
+th {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+}
+
+.curriculum {
+  position: relative !important;
+}
+
+.details-form {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 180px;
+}
+
+.course-form .details-form {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 120px;
+}
+
+.enroll-btn {
+  font-family: "Sora", sans-serif;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+  background-color: #fd6d02;
+  color: white;
+}
+
+.form-control:focus {
+  border: 2px solid #02429f !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.cg-logo img {
+  width: 200px;
+}
+
+.main-menu {
+  -webkit-box-shadow: gainsboro 0px 2px 10px;
+          box-shadow: gainsboro 0px 2px 10px;
+  background-color: white;
+}
+
+.main-menu a {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.main-menu .signup-btn {
+  background-color: transparent;
+  border: 2px solid #02429f;
+}
+
+.main-menu .highlight-btn {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  color: white;
+}
+
+.secondary-menu {
+  background-color: white;
+}
+
+.secondary-menu a {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.secondary-menu .input-group-text {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  color: white;
+}
+
+.secondary-menu .input-group {
+  border: 2px solid #02429f;
+}
+
+.course-menu {
+  background-color: white !important;
+}
+
+.course-menu a {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.course-menu {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 100px;
+  z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .course-menu {
+    display: none !important;
+  }
+}
+
+.course-menu {
+  background-color: white;
+  -webkit-box-shadow: gainsboro 0px 2px 10px;
+          box-shadow: gainsboro 0px 2px 10px;
+}
+
+.course-breadcrumb {
+  background-color: transparent !important;
+}
+
+.course-intro {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  padding: 40px 0px 40px 0px !important;
+  color: white;
+}
+
+.course-intro p {
+  color: white;
+}
+
+.course-intro li {
+  color: white !important;
+  font-family: "Sora", sans-serif;
+}
+
+.course-intro li a {
+  color: #f1f1f1 !important;
+}
+
+.course-intro .star-checked {
+  color: orange;
+  text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.4) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: white !important;
+}
+
+.intro-video {
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+.certification-partner img {
+  width: 120px !important;
+}
+
+.intro-certification {
+  background-color: white !important;
+  border-radius: 8px;
+}
+
+.form-container {
+  height: 600px;
+  margin-bottom: -300px;
+}
+
+.form-container-course {
+  height: 800px;
+  margin-bottom: -600px;
+}
+
+.hamburger-icon {
+  color: #02429f;
+}
+
+.details-form {
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  border-radius: 8px;
+}
+
+.details-form .form-control {
+  border: 1px solid grey;
+}
+
+.details-form .form-button {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  font-family: "Sora", sans-serif;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.training-options {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  padding: 40px 0px 40px 0px !important;
+  color: white;
+}
+
+.self-paced {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+  -webkit-box-shadow: gainsboro 0px 2px 10px;
+          box-shadow: gainsboro 0px 2px 10px;
+}
+
+.self-paced .fas {
+  color: #02429f;
+}
+
+.training-price {
+  font-size: 22px;
+  color: #02429f;
+  font-weight: 600;
+}
+
+.online-education {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+  margin-top: -120px;
+}
+
+.online-education .fas {
+  color: #02429f;
+}
+
+.online-education .far {
+  color: #02429f;
+}
+
+.online-education .table td {
+  border-top: 2px solid #02429f;
+}
+
+.online-education .table th {
+  border-top: 2px solid #02429f;
+}
+
+.online-schedule {
+  border: 2px solid #02429f;
+}
+
+.online-training-price {
+  font-size: 32px;
+  color: #02429f;
+  font-weight: 600;
+}
+
+.online-price-disabled {
+  font-size: 26px;
+  color: grey;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .online-edu-btn {
+    width: 80%;
+  }
+}
+
+.training-options {
+  padding-bottom: 100px !important;
+}
+
+@media (max-width: 767px) {
+  .training-options {
+    height: 1500px;
+  }
+  .online-education {
+    margin-top: -1030px;
+  }
+}
+
+@media (max-width: 575px) {
+  .training-options {
+    height: 1650px;
+  }
+  .online-education {
+    margin-top: -1180px;
+  }
+}
+
+@media (max-width: 575px) {
+  .curriculum {
+    padding-top: 80px;
+  }
+}
+
+#curriculumAccordion .card-header {
+  background-color: white;
+}
+
+#curriculumAccordion .card-header a {
+  color: black !important;
+  font-size: 24px !important;
+}
+
+#curriculumAccordion .card {
+  margin-top: -2px;
+  border: 2px solid #02429f !important;
+}
+
+#aboutAccordion .card-header {
+  background-color: white;
+}
+
+#aboutAccordion .card-header a {
+  color: black !important;
+  font-size: 24px !important;
+}
+
+#aboutAccordion .card {
+  margin-top: -2px;
+  border: 2px solid #02429f !important;
+}
+
+.project-card-body {
+  border: 2px solid #02429f;
+  border-top: 0px;
+}
+
+.project-card-head {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  color: white;
+}
+
+.project-card-head p {
+  color: white;
+}
+
+.course-projects > .full {
+  grid-column: 1/-1 !important;
+}
+
+.hs {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: (calc(90% - 40px))[6];
+      grid-template-columns: repeat(6, calc(90% - 40px));
+  -ms-grid-rows: minmax(150px, 1fr);
+      grid-template-rows: minmax(150px, 1fr);
+  overflow-x: scroll;
+}
+
+@media (min-width: 768px) {
+  .course-projects {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-project {
+    display: none !important;
+  }
+}
+
+#certificationHeading {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  padding: 40px 0px 40px 0px !important;
+  color: white;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+#certificationHeading h3 {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  #certificationHeading {
+    height: 300px;
+  }
+  #certificationHeading h3 {
+    padding-bottom: 30px;
+  }
+  #certifications .ms-certification {
+    background-color: white;
+    padding: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 0px;
+    color: black;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    margin-top: -200px;
+  }
+  #certificationsHP .hp-certification {
+    background-color: white;
+    padding: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 0px;
+    color: black;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+  }
+}
+
+#trainersSection {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  padding: 40px 0px 40px 0px !important;
+  color: white;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+#trainersSection h3 {
+  color: white;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .trainer-1 {
+    display: none !important;
+  }
+  .trainer-2 {
+    display: none !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .trainer-1 {
+    display: none !important;
+  }
+  .trainer-2 {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #trainersSection {
+    height: 200px;
+  }
+  .trainer-mobile-1 {
+    display: none !important;
+  }
+  .trainer-mobile-2 {
+    display: none !important;
+  }
+}
+
+.trainer-mobile-1 .trainer-details {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.trainer-mobile-1 .trainer-img-container {
+  z-index: 1;
+}
+
+.trainer-mobile-1 h5 {
+  color: #02429f;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.trainer-mobile-1 .trainer-experience {
+  color: #02429f;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.trainer-mobile-1 .fab {
+  font-size: 30px;
+}
+
+.trainer-mobile-1 a .fa-linkedin-in {
+  color: #006696;
+}
+
+.trainer-mobile-1 a .fa-quora {
+  color: #ce2017;
+}
+
+.trainer-1 {
+  margin-top: -100px;
+}
+
+.trainer-1 .trainer-details {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.trainer-1 .trainer-img-container {
+  z-index: 1;
+}
+
+@media only screen and (min-width: 992px) {
+  .trainer-mobile-1 .trainer-details {
+    padding-left: 50px !important;
+  }
+  .trainer-mobile-1 .trainer-img {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-left: 50px !important;
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .trainer-1 .trainer-details {
+    padding-left: 60px !important;
+  }
+  .trainer-1 .trainer-img {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-left: 70px !important;
+    width: 280px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .trainer-mobile-1 .trainer-details {
+    padding-top: 80px !important;
+  }
+  .trainer-mobile-1 .trainer-img {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-bottom: -80px !important;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .trainer-1 .trainer-details {
+    padding-top: 80px !important;
+  }
+  .trainer-1 .trainer-img {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-bottom: -80px !important;
+    width: 200px;
+  }
+}
+
+#trainer1 h5 {
+  color: #02429f;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+#trainer1 .trainer-experience {
+  color: #02429f;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#trainer1 .fab {
+  font-size: 30px;
+}
+
+#trainer1 a .fa-linkedin-in {
+  color: #006696;
+}
+
+#trainer1 a .fa-quora {
+  color: #ce2017;
+}
+
+.trainer-mobile-2 .trainer-details {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.trainer-mobile-2 .trainer-img-container {
+  z-index: 1;
+}
+
+.trainer-mobile-2 h5 {
+  color: #02429f;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.trainer-mobile-2 .trainer-experience {
+  color: #02429f;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.trainer-mobile-2 .fab {
+  font-size: 30px;
+}
+
+.trainer-mobile-2 a .fa-linkedin-in {
+  color: #006696;
+}
+
+.trainer-mobile-2 a .fa-quora {
+  color: #ce2017;
+}
+
+.trainer-2 .trainer-details {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.trainer-2 .trainer-img-container {
+  z-index: 1;
+}
+
+@media only screen and (min-width: 992px) {
+  .trainer-mobile-2 .trainer-details {
+    padding-left: 50px !important;
+  }
+  .trainer-mobile-2 .trainer-img {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-left: 50px !important;
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .trainer-2 .trainer-details {
+    padding-left: 60px !important;
+  }
+  .trainer-2 .trainer-img {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-left: 70px !important;
+    width: 280px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .trainer-mobile-2 .trainer-details {
+    padding-top: 80px !important;
+  }
+  .trainer-mobile-2 .trainer-img {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-bottom: -80px !important;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .trainer-2 .trainer-details {
+    padding-top: 80px !important;
+  }
+  .trainer-2 .trainer-img {
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin-bottom: -80px !important;
+    width: 200px;
+  }
+}
+
+#trainer2 h5 {
+  color: #02429f;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+#trainer2 .trainer-experience {
+  color: #02429f;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#trainer2 .fab {
+  font-size: 30px;
+}
+
+#trainer2 a .fa-linkedin-in {
+  color: #006696;
+}
+
+#trainer2 a .fa-quora {
+  color: #ce2017;
+}
+
+#faqAccordion .card-header {
+  background-color: white;
+}
+
+#faqAccordion .card-header a {
+  color: black !important;
+  font-size: 24px !important;
+}
+
+#faqAccordion .card {
+  margin-top: -2px;
+  border: 2px solid #02429f !important;
+}
+
+.partners-block {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.trending-certifications > .full {
+  grid-column: 1/-1 !important;
+}
+
+@media (min-width: 575px) {
+  .hs-course {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    -ms-grid-columns: (calc(40% - 40px))[6];
+        grid-template-columns: repeat(6, calc(40% - 40px));
+    -ms-grid-rows: minmax(150px, 1fr);
+        grid-template-rows: minmax(150px, 1fr);
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  .hs-course {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 20px;
+    -ms-grid-columns: (calc(90% - 40px))[6];
+        grid-template-columns: repeat(6, calc(90% - 40px));
+    -ms-grid-rows: minmax(150px, 1fr);
+        grid-template-rows: minmax(150px, 1fr);
+    overflow-x: scroll;
+  }
+}
+/*# sourceMappingURL=stylebackup.css.map */

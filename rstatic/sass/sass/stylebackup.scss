@@ -1,0 +1,761 @@
+// font-family: 'Mulish', sans-serif;
+// font-family: 'Sora', sans-serif;
+
+// General Styling
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 220px;
+}
+$highlightColor: #fd6d02;
+$siteBlue: #02429f;
+$breakpoint-mobile: 575px;
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 991px;
+$breakpoint-lg-desktop: 1199px;
+body {
+  h2 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 900;
+    font-size: 42px;
+    text-transform: uppercase;
+  }
+  h6 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  h3 {
+    font-family: "Mulish", sans-serif;
+    color: black;
+    font-weight: 800;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  h4 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  h5 {
+    font-family: "Mulish", sans-serif;
+    font-weight: 800;
+  }
+  li {
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+  }
+}
+nav {
+  a {
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+  }
+}
+p {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+  color: black;
+}
+td {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+}
+th {
+  font-size: 16px;
+  font-family: "Sora", sans-serif;
+}
+.curriculum{
+    position: relative !important;
+  }
+
+.details-form{
+    position: sticky !important;
+    top:180px;
+}
+.course-form{
+  .details-form{
+    position: sticky !important;
+    top:120px;
+}
+}
+
+// Gradient Background styling
+@mixin gradientBGSection {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  padding: 40px 0px 40px 0px !important;
+  color: white;
+}
+//General box-shadow styling
+@mixin courseBoxShadow {
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.4);
+  //   Used for modules in the body
+}
+@mixin lightShadow {
+  box-shadow: rgb(220, 220, 220) 0px 2px 10px;
+  //   Light shadow, used for navigation
+}
+@mixin buttonGeneralStyling {
+  font-family: "Sora", sans-serif;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+  //   General button style
+}
+@mixin enrollButton {
+  background-color: $highlightColor;
+  color: white;
+  // Enroll button styling
+}
+@mixin whiteBlock {
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
+  color: black;
+  border-radius: 8px;
+}
+.enroll-btn {
+  @include buttonGeneralStyling();
+  @include enrollButton();
+  // Enroll button styling
+}
+.form-control:focus {
+  border: 2px solid $siteBlue !important;
+  box-shadow: none !important;
+}
+
+// Header Styling
+.cg-logo {
+  img {
+    width: 200px;
+  }
+}
+.main-menu {
+  @include lightShadow();
+  background-color: white;
+  a{
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .signup-btn{
+    background-color: transparent;
+    border:2px solid $siteBlue;
+  }
+  .highlight-btn{
+    background-image: linear-gradient(45deg, #005bea, #00c6fb);
+    color: white;
+  }
+}
+.secondary-menu{
+  background-color: white;
+  a{
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .input-group-text{
+    background-image: linear-gradient(45deg, #005bea, #00c6fb);
+    color: white;
+  }
+  .input-group{
+    border: 2px solid $siteBlue;
+    // border-right: 0px;
+  }
+}
+.course-menu{
+  background-color: white !important;
+  a{
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+.course-menu{
+  position: sticky !important;
+  top:100px;
+  z-index: 2;
+}
+@media(max-width:991px){
+  .course-menu{
+    display: none !important;
+  }
+}
+// Header Styling ends here
+
+// Course Intro Styling starts here
+.course-menu {
+  background-color: white;
+  @include lightShadow();
+}
+.course-breadcrumb {
+  background-color: transparent !important;
+}
+.course-intro {
+  @include gradientBGSection();
+  p {
+    color: white;
+  }
+  li {
+    a {
+      color: #f1f1f1 !important;
+    }
+    color: white !important;
+    font-family: "Sora", sans-serif;
+  }
+
+  .star-checked {
+    color: orange;
+    text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.4) !important;
+  }
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  color: white !important;
+}
+.intro-video {
+  @include courseBoxShadow();
+  border-radius: 8px;
+}
+.certification-partner {
+  img {
+    width: 120px !important;
+  }
+}
+.intro-certification {
+  background-color: white !important;
+  border-radius: 8px;
+}
+// Course Styling Ends here
+.form-container{
+  height: 600px;
+  margin-bottom: -300px;
+}
+.form-container-course{
+  height: 800px;
+  margin-bottom: -600px;
+}
+// Course Details Stlying starts here
+.hamburger-icon {
+  color: $siteBlue;
+}
+.details-form {
+  @include courseBoxShadow();
+  background-color: white;
+  border-radius: 8px;
+  .form-control {
+    border: 1px solid grey;
+  }
+  .form-button {
+    background-image: linear-gradient(45deg, #005bea, #00c6fb);
+    @include buttonGeneralStyling();
+    color: white;
+  }
+}
+// Course Details Styling Ends here
+
+// Training options styling starts here
+// Self-paced training
+.training-options {
+  @include gradientBGSection();
+}
+.self-paced {
+  @include whiteBlock();
+  @include lightShadow();
+  .fas {
+    color: $siteBlue;
+  }
+}
+.training-price {
+  font-size: 22px;
+  color: $siteBlue;
+  font-weight: 600;
+}
+//Online Classroom
+.online-education {
+  @include whiteBlock();
+  @include courseBoxShadow();
+  .fas {
+    color: $siteBlue;
+  }
+  .far {
+    color: $siteBlue;
+  }
+  .table {
+    td {
+      border-top: 2px solid $siteBlue;
+    }
+    th {
+      border-top: 2px solid $siteBlue;
+    }
+  }
+  margin-top: -120px;
+}
+.online-schedule {
+  border: 2px solid $siteBlue;
+}
+.online-training-price {
+  font-size: 32px;
+  color: $siteBlue;
+  font-weight: 600;
+}
+.online-price-disabled {
+  font-size: 26px;
+  color: grey;
+  font-weight: 600;
+}
+@media (max-width: $breakpoint-tablet) {
+  .online-edu-btn {
+    width: 80%;
+  }
+}
+
+// Training options styling alignment
+.training-options {
+  padding-bottom: 100px !important;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .training-options {
+    height: 1500px;
+  }
+  .online-education {
+    margin-top: -1030px;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .training-options {
+    height: 1650px;
+  }
+  .online-education {
+    margin-top: -1180px;
+  }
+}
+// Training options styling starts here
+
+// Course curriculum styling starts here
+@mixin pageAccordion {
+  .card-header {
+    a {
+      color: black !important;
+      font-size: 24px !important;
+    }
+    background-color: white;
+  }
+  .card {
+    margin-top: -2px;
+    border: 2px solid $siteBlue !important;
+  }
+}
+@media (max-width: $breakpoint-mobile) {
+  .curriculum {
+    padding-top: 80px;
+  }
+}
+#curriculumAccordion {
+  @include pageAccordion();
+}
+#aboutAccordion {
+  @include pageAccordion();
+}
+// Course curriculum styling ends here
+
+// Project course styling starts here
+.project-card-body {
+  border: 2px solid $siteBlue;
+  border-top: 0px;
+}
+.project-card-head {
+  background-image: linear-gradient(45deg, #005bea, #00c6fb);
+  color: white;
+  p {
+    color: white;
+  }
+}
+.course-projects {
+  > .full {
+    grid-column: 1/-1 !important;
+  }
+}
+.hs {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, calc(90% - 40px));
+  grid-template-rows: minmax(150px, 1fr);
+  overflow-x: scroll;
+}
+@media (min-width: 768px) {
+  .course-projects {
+    display: none !important;
+  }
+}
+@media (max-width: $breakpoint-tablet) {
+  .desktop-project {
+    display: none !important;
+  }
+}
+// Project course styling ends here
+
+// Certifications Styling starts here
+#certificationHeading {
+  @include gradientBGSection();
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  h3 {
+    color: white;
+  }
+}
+@media (min-width: 768px) {
+  #certificationHeading {
+    height: 300px;
+    h3 {
+      padding-bottom: 30px;
+    }
+  }
+  #certifications {
+    .ms-certification {
+      @include whiteBlock();
+      @include courseBoxShadow();
+      margin-top: -200px;
+    }
+  }
+  #certificationsHP {
+    .hp-certification {
+      @include whiteBlock();
+      @include courseBoxShadow();
+    }
+  }
+}
+// Certifications styling ends here
+
+// Trainers styling starts here
+// Desktop View 
+#trainersSection {
+  @include gradientBGSection();
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  // height: 200px;
+  h3 {
+    color: white;
+  }
+}
+// Columns Hiding in Tablets and Large Mobiles 
+@media(min-width:576px) and (max-width:767px){
+  .trainer-1{
+    display: none !important;
+  }
+  .trainer-2{
+    display: none !important;
+  }
+}
+// Columns Hiding in Mobiles 
+@media(max-width:575px){
+  .trainer-1{
+    display: none !important;
+  }
+  .trainer-2{
+    display: none !important;
+  }
+}
+//Columns hiding in desktops and up
+@media(min-width:768px){
+  #trainersSection{
+    height: 200px;
+  }
+  .trainer-mobile-1{
+    display: none !important;
+  }
+  .trainer-mobile-2{
+    display: none !important;
+  }
+}
+// Trainer1 Styling
+.trainer-mobile-1{
+  //Mobile Styling
+  .trainer-details {
+    @include whiteBlock();
+    @include courseBoxShadow();
+  }
+  .trainer-img-container {
+    z-index: 1;
+  }
+  h5 {
+    color: $siteBlue;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 800;
+  }
+  .trainer-experience {
+    color: $siteBlue;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .fab {
+    font-size: 30px;
+  }
+  a {
+    .fa-linkedin-in {
+      color: #006696;
+    }
+    .fa-quora {
+      color: #ce2017;
+    }
+  }
+}
+.trainer-1 {
+  margin-top: -100px;
+  .trainer-details {
+    @include whiteBlock();
+    @include courseBoxShadow();
+  }
+  .trainer-img-container {
+    z-index: 1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  // Horizontal view for tablet screens and up (Mobile Styling)
+  .trainer-mobile-1 {
+    .trainer-details {
+      padding-left: 50px !important;
+    }
+    .trainer-img {
+      @include courseBoxShadow();
+      border-radius: 8px;
+      margin-left: 50px !important;
+      width: 300px;
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  // Horizontal view for tablet screens and up
+  .trainer-1 {
+    .trainer-details {
+      padding-left: 60px !important;
+    }
+    .trainer-img {
+      @include courseBoxShadow();
+      border-radius: 8px;
+      margin-left: 70px !important;
+      width: 280px;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  // Vertical view for small screens (Mobile Styling)
+  .trainer-mobile-1 {
+    .trainer-details {
+      padding-top: 80px !important;
+    }
+    .trainer-img {
+      @include courseBoxShadow();
+      border-radius: 8px;
+      margin-bottom: -80px !important;
+      width: 200px;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  // Vertical view for small screens
+  .trainer-1 {
+    .trainer-details {
+      padding-top: 80px !important;
+    }
+    .trainer-img {
+      @include courseBoxShadow();
+      border-radius: 8px;
+      margin-bottom: -80px !important;
+      width: 200px;
+    }
+  }
+}
+#trainer1 {
+  h5 {
+    color: $siteBlue;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 800;
+  }
+  .trainer-experience {
+    color: $siteBlue;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .fab {
+    font-size: 30px;
+  }
+  a {
+    .fa-linkedin-in {
+      color: #006696;
+    }
+    .fa-quora {
+      color: #ce2017;
+    }
+  }
+}
+// Trainer2 Styling
+.trainer-mobile-2{
+  // Mobile Styling
+  .trainer-details {
+    @include whiteBlock();
+    @include courseBoxShadow();
+  }
+  .trainer-img-container {
+    z-index: 1;
+  }
+  h5 {
+    color: $siteBlue;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 800;
+  }
+  .trainer-experience {
+    color: $siteBlue;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .fab {
+    font-size: 30px;
+  }
+  a {
+    .fa-linkedin-in {
+      color: #006696;
+    }
+    .fa-quora {
+      color: #ce2017;
+    }
+  }
+}
+.trainer-2 {
+  .trainer-details {
+    @include whiteBlock();
+    @include courseBoxShadow();
+  }
+  .trainer-img-container {
+    z-index: 1;
+  }
+  
+}
+@media only screen and (min-width: 992px) {
+  // Horizontal view for tablet screens and up
+  .trainer-mobile-2 {
+    .trainer-details {
+      padding-left: 50px !important;
+    }
+    .trainer-img {
+      @include courseBoxShadow();
+      border-radius: 8px;
+      margin-left: 50px !important;
+      width: 300px;
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  // Horizontal view for tablet screens and up
+  .trainer-2 {
+    .trainer-details {
+      padding-left: 60px !important;
+    }
+    .trainer-img {
+      @include courseBoxShadow();
+      border-radius: 8px;
+      margin-left: 70px !important;
+      width: 280px;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  // Vertical view for small screens
+  .trainer-mobile-2 {
+    .trainer-details {
+      padding-top: 80px !important;
+    }
+    .trainer-img {
+      @include courseBoxShadow();
+      border-radius: 8px;
+      margin-bottom: -80px !important;
+      width: 200px;
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  // Vertical view for small screens
+  .trainer-2 {
+    .trainer-details {
+      padding-top: 80px !important;
+    }
+    .trainer-img {
+      @include courseBoxShadow();
+      border-radius: 8px;
+      margin-bottom: -80px !important;
+      width: 200px;
+    }
+  }
+}
+#trainer2 {
+  h5 {
+    color: $siteBlue;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 800;
+  }
+  .trainer-experience {
+    color: $siteBlue;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .fab {
+    font-size: 30px;
+  }
+  a {
+    .fa-linkedin-in {
+      color: #006696;
+    }
+    .fa-quora {
+      color: #ce2017;
+    }
+  }
+}
+//Mobile View
+// Trainer section styling ends here 
+
+// FAQs styling starts here 
+#faqAccordion{
+  @include pageAccordion();
+}
+//FAQs styling ends here
+
+// Partners/Clients Styling starts here 
+.partners-block{
+  @include whiteBlock();
+  @include courseBoxShadow();
+}
+// Partners/Clients Styling ends here 
+
+//Trending Certifications Styling Starts Here
+.trending-certifications {
+  > .full {
+    grid-column: 1/-1 !important;
+  }
+}
+@media(min-width: $breakpoint-mobile){
+  .hs-course {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, calc(40% - 40px));
+    grid-template-rows: minmax(150px, 1fr);
+    overflow-x: scroll;
+  }
+}
+@media(max-width: 768px){
+  .hs-course {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, calc(90% - 40px));
+    grid-template-rows: minmax(150px, 1fr);
+    overflow-x: scroll;
+  }
+}
+//Trending Certifications Styling Ends here
+
